@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcrun xctrace:*)",
+      "Bash(security find-identity:*)",
+      "Bash(defaults read:*)"
+    ]
+  }
+}

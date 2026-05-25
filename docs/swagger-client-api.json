@@ -1,0 +1,6853 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "v5_1_2_2040",
+		"title": "Jobka WebAPI"
+	},
+	"host": "jobka-test-api.azurewebsites.net",
+	"schemes": [
+		"https"
+	],
+	"paths": {
+		"/api/Answer/New": {
+			"post": {
+				"tags": [
+					"Answer"
+				],
+				"operationId": "Answer_New",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.AnswerNewWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.AnswerNewWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Canteen/All": {
+			"get": {
+				"tags": [
+					"Canteen"
+				],
+				"operationId": "Canteen_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "model.externalPersonId",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.externalLogin",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "model.top",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.CanteenAllWSOutput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/Canteen/CarteChoiceAll": {
+			"get": {
+				"tags": [
+					"Canteen"
+				],
+				"operationId": "Canteen_CarteChoiceAll",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model.iD_Login",
+						"in": "query",
+						"description": "ID login",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "model.externalPersonId",
+						"in": "query",
+						"description": "Externí personal number",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.externalLogin",
+						"in": "query",
+						"description": "Externí login",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.externalCanteenId",
+						"in": "query",
+						"description": "Externí ID jídelny",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.iD_Canteen",
+						"in": "query",
+						"description": "ID jídelny",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "model.iD_CompanyMenuItem",
+						"in": "query",
+						"description": "ID CMI",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "model.day",
+						"in": "query",
+						"description": "Den",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Canteen.CarteChoiceAll.CarteChoiceAllSlotModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/Canteen/Login": {
+			"post": {
+				"tags": [
+					"Canteen"
+				],
+				"operationId": "Canteen_Login",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Canteen.Login.LoginCanteenModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.LoginCanteenOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Canteen/OrderNew": {
+			"post": {
+				"tags": [
+					"Canteen"
+				],
+				"operationId": "Canteen_OrderNew",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Card/ActualCard": {
+			"get": {
+				"tags": [
+					"Card"
+				],
+				"summary": "Vyhledání aktuální karty zaměstnance v tabulce IA_Card",
+				"operationId": "Card_ActualCard",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.CardAllActualCardWSOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Card/AddPromoCode": {
+			"post": {
+				"tags": [
+					"Card"
+				],
+				"operationId": "Card_AddPromoCode",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.DAL.Providers.CardProviders.Models.AddPromoCardProviderModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/Card/IsEmailRegistered": {
+			"get": {
+				"tags": [
+					"Card"
+				],
+				"operationId": "Card_IsEmailRegistered",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.email",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Card.IsEmailRegistered.IsEmailRegisteredCardOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Card/RegisterWithPromo": {
+			"post": {
+				"tags": [
+					"Card"
+				],
+				"operationId": "Card_RegisterWithPromo",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.DAL.Providers.CardProviders.RegisterWithPromoCardProviderModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/Company/CheckState": {
+			"get": {
+				"tags": [
+					"Company"
+				],
+				"operationId": "Company_CheckState",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.version",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "input.platform",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.CompanyDetailCheckStateWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/CompanyMenuItem/AllNumberOfNew": {
+			"get": {
+				"tags": [
+					"CompanyMenuItem"
+				],
+				"summary": "Načtení počtu nových událostí jednotlivých položek menu pro zaměstnance",
+				"operationId": "CompanyMenuItem_AllNumberOfNew",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.CompanyDetailCheckStateWSOutput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/Contact/All": {
+			"get": {
+				"tags": [
+					"Contact"
+				],
+				"operationId": "Contact_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.lastUpdate",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.ContactAllChangedWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/CustomModuleSettings/All": {
+			"get": {
+				"tags": [
+					"CustomModuleSettings"
+				],
+				"operationId": "CustomModuleSettings_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.name",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.CustomModulSettingsAllCompanyMenuItemWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/CustomPage/AllWeb": {
+			"post": {
+				"tags": [
+					"CustomPage"
+				],
+				"summary": "Načtení všech vlastních stránek jobky pro webovou jobku",
+				"operationId": "CustomPage_AllWeb",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"description": "Vstupní model API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.CustomPageAllWebWSInputModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/CustomPage/All": {
+			"get": {
+				"tags": [
+					"CustomPageOLD"
+				],
+				"operationId": "CustomPageOLD_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Company",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.dateUpdate",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "input.isSystem",
+						"in": "query",
+						"required": false,
+						"type": "boolean"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.CustomPageAllWSOutput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/v2/Data/AllCompanyMenuItem": {
+			"get": {
+				"tags": [
+					"Data"
+				],
+				"summary": "Načíst data přehledu",
+				"operationId": "Data_AllCompanyMenuItem",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.search",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "input.top",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.offset",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.queryParameters",
+						"in": "query",
+						"required": false,
+						"type": "object"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.DataAllCompanyMenuItemOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/v2/Data/DelDataItems": {
+			"post": {
+				"tags": [
+					"Data"
+				],
+				"summary": "Odstranit odpověď na formulář",
+				"operationId": "Data_DelDataItems",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"description": "Vstupní model API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.DelDataItems.DelDataItemInputModelV2"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.DataDelDataItemsWSOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/v2/Data/DetailCompanyMenuItem": {
+			"get": {
+				"tags": [
+					"Data"
+				],
+				"summary": "Načíst detail odpovědi na formulář",
+				"operationId": "Data_DetailCompanyMenuItem",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"description": "ID_Login",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_Data",
+						"in": "query",
+						"description": "ID_Data",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"description": "ID_CompanyMenuItem",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.queryParameters",
+						"in": "query",
+						"description": "Parametry předané v query requestu",
+						"required": false,
+						"type": "object"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.DataDetailCompanyMenuItemWSOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/v2/Data/NewDataItems": {
+			"post": {
+				"tags": [
+					"Data"
+				],
+				"summary": "",
+				"operationId": "Data_NewDataItems",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"description": "Vstupní model API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.NewDataItems.InputModelV2"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/v2/Data/Translate": {
+			"post": {
+				"tags": [
+					"Data"
+				],
+				"summary": "Překlad corsslinků pro novou aplikaci",
+				"operationId": "Data_Translate",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"description": "Vstupní model API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.Translate.DataTranslateInputModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/Data/AllCompanyMenuItem": {
+			"get": {
+				"tags": [
+					"DataOLD"
+				],
+				"summary": "Načíst data přehledu",
+				"operationId": "DataOLD_AllCompanyMenuItem",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.search",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "input.top",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.offset",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.queryParameters",
+						"in": "query",
+						"required": false,
+						"type": "object"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.AllCompanyMenuItem.ListDataCompanyMenuItemOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Data/DelDataItems": {
+			"post": {
+				"tags": [
+					"DataOLD"
+				],
+				"summary": "Odstranit odpověď na formulář",
+				"operationId": "DataOLD_DelDataItems",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"description": "Vstupní model API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.DelDataItems.DelDataItemInputModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.DataDelDataItemsWSOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Data/DetailCompanyMenuItem": {
+			"get": {
+				"tags": [
+					"DataOLD"
+				],
+				"summary": "Načíst detail odpovědi na formulář",
+				"operationId": "DataOLD_DetailCompanyMenuItem",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"description": "ID_Login",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_Data",
+						"in": "query",
+						"description": "ID_Data",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"description": "ID_CompanyMenuItem",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.queryParameters",
+						"in": "query",
+						"description": "Parametry předané v query requestu",
+						"required": false,
+						"type": "object"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.DataDetailCompanyMenuItemWSOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Data/NewDataItems": {
+			"post": {
+				"tags": [
+					"DataOLD"
+				],
+				"summary": "",
+				"operationId": "DataOLD_NewDataItems",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"description": "Vstupní model API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.NewDataItems.InputModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/Framework/Document/Detail": {
+			"get": {
+				"tags": [
+					"Document"
+				],
+				"operationId": "Document_Detail",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"description": "Přihlašovací token",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"description": "ID dokumentu",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.width",
+						"in": "query",
+						"description": "Šířka obrázku",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.height",
+						"in": "query",
+						"description": "Výška obrázku",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.effect",
+						"in": "query",
+						"description": "Efekt",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/Employee/Detail": {
+			"get": {
+				"tags": [
+					"Employee"
+				],
+				"summary": "Načtení detailu zaměstnance",
+				"operationId": "Employee_Detail",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/Employee/Register": {
+			"post": {
+				"tags": [
+					"Employee"
+				],
+				"operationId": "Employee_Register",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeRegisterInputModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/Employee/AllCompanyChat/{ID}": {
+			"get": {
+				"tags": [
+					"Employee"
+				],
+				"summary": "Načtení všech zaměstnanců firmy pro chat",
+				"operationId": "Employee_AllCompanyChat",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.displayName",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "input.personalNumber",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "input.iD_Group",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeAllCompanyChatWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/Employee/DetailUnread": {
+			"get": {
+				"tags": [
+					"Employee"
+				],
+				"operationId": "Employee_DetailUnread",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeDetailUnreadWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/EmployeeMessage/AllEmployee": {
+			"get": {
+				"tags": [
+					"EmployeeMessage"
+				],
+				"summary": "Načíst seznam zpráv se zadanou osobou",
+				"operationId": "EmployeeMessage_AllEmployee",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.top",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.offsetDate",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "input.offsetAscending",
+						"in": "query",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"name": "input.iD_Employee",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeMessageAllEmployeeWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/EmployeeMessage/AllMessageGroup": {
+			"get": {
+				"tags": [
+					"EmployeeMessage"
+				],
+				"summary": "Načíst seznam zpráv ve skupině",
+				"operationId": "EmployeeMessage_AllMessageGroup",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.top",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.offsetDate",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					},
+					{
+						"name": "input.offsetAscending",
+						"in": "query",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"name": "input.iD_MessageGroup",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeMessageAllMessageGroupWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/EmployeeMessage/All": {
+			"get": {
+				"tags": [
+					"EmployeeMessage"
+				],
+				"summary": "Načíst seznam konverzací uživatele",
+				"operationId": "EmployeeMessage_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.top",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeMessageAllWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/EmployeeMessage/Del": {
+			"post": {
+				"tags": [
+					"EmployeeMessage"
+				],
+				"operationId": "EmployeeMessage_Del",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeMessageDelChatWSInputModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeMessageDelChatWSOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/EmployeeMessage/New": {
+			"post": {
+				"tags": [
+					"EmployeeMessage"
+				],
+				"operationId": "EmployeeMessage_New",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeMessageNewWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeMessageNewWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/EmployeeMessage/IsNewMessageGroup": {
+			"get": {
+				"tags": [
+					"EmployeeMessage"
+				],
+				"operationId": "EmployeeMessage_IsNewMessageGroup",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "model.iD_MessageGroup",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "model.date",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeMessageIsNewMessageGroupWSOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/EmployeeMessage/IsNew": {
+			"get": {
+				"tags": [
+					"EmployeeMessage"
+				],
+				"operationId": "EmployeeMessage_IsNew",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "model.iD_Employee",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "model.date",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeMessageIsNewWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Employee/CheckPrivateData": {
+			"get": {
+				"tags": [
+					"EmployeeOLD"
+				],
+				"operationId": "EmployeeOLD_CheckPrivateData",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.dateUpdate",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "date-time"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeDetailCheckPrivateDataWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Employee/EditLanguage": {
+			"post": {
+				"tags": [
+					"EmployeeOLD"
+				],
+				"operationId": "EmployeeOLD_EditLanguage",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeEditLanguageWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeEditLanguageWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Employee/Login": {
+			"get": {
+				"tags": [
+					"EmployeeOLD"
+				],
+				"operationId": "EmployeeOLD_Login",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model.personalNumber",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.code",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.iD_Company",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "model.token",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.browser",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.lang",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.isPersistent",
+						"in": "query",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"name": "model.iD_PersistentLogin",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "model.uriPersonalNumber",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.deviceID",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.deviceName",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "model.iD_DeviceType",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeNewLoginWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/v2/FormItem/AllForm": {
+			"get": {
+				"tags": [
+					"FormItem"
+				],
+				"summary": "Načtení template formuláře",
+				"operationId": "FormItem_AllForm",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"description": "ID_Login",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"description": "ID_CompanyMenuItem",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Data",
+						"in": "query",
+						"description": "ID záznamu jehož hodnoty se mají nastavit jako defaultní hodnoty",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.queryParameters",
+						"in": "query",
+						"description": "Parametry z query",
+						"required": false,
+						"type": "object"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.FormItems.AllForm.OutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/FormItem/AllForm": {
+			"get": {
+				"tags": [
+					"FormItemOLD"
+				],
+				"summary": "Načtení template formuláře",
+				"operationId": "FormItemOLD_AllForm",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"description": "ID_Login",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"description": "ID_CompanyMenuItem",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Data",
+						"in": "query",
+						"description": "ID z�znamu jeho� hodnoty se maj� nastavit jako defaultn� hodnoty",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.queryParameters",
+						"in": "query",
+						"description": "Parametry z query",
+						"required": false,
+						"type": "object"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.FormItems.AllForm.OutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/Group/AllCompanyChat/{ID}": {
+			"get": {
+				"tags": [
+					"Group"
+				],
+				"summary": "Načtení seznamu skupin (pro přidávání všech zaměstnanců skupiny) pro chat z tabulky IA_Group",
+				"operationId": "Group_AllCompanyChat",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_CompanyMenuItem",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.displayName",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.GroupAllCompanyChatWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/Home/Index": {
+			"get": {
+				"tags": [
+					"Home"
+				],
+				"operationId": "Home_Index",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/LicensePlate/ProcessImage": {
+			"post": {
+				"tags": [
+					"LicensePlate"
+				],
+				"operationId": "LicensePlate_ProcessImage",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.LicensePlates.ProcessImage.ProcessImageLicensePlateInputModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.LicensePlates.ProcessImage.ProcessImageLicensePlateOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Member/All/{ID}": {
+			"get": {
+				"tags": [
+					"Member"
+				],
+				"summary": "Načíst seznam účastníků skupinového chatu",
+				"operationId": "Member_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.top",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_MessageGroup",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Employee",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_MemberPermission",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MemberAllMessageGroupWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/Member/Del/{ID}": {
+			"get": {
+				"tags": [
+					"Member"
+				],
+				"summary": "Smazat účastníka skupinového chatu",
+				"operationId": "Member_Del",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_MessageGroup",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Employee",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.isEntityLog",
+						"in": "query",
+						"required": false,
+						"type": "boolean"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MemberDelWSOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Member/EditPermission": {
+			"post": {
+				"tags": [
+					"Member"
+				],
+				"operationId": "Member_EditPermission",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MemberEditPermissionWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MemberEditPermissionWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Member/Edit": {
+			"post": {
+				"tags": [
+					"Member"
+				],
+				"operationId": "Member_Edit",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MemberEditWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MemberEditWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Member/New": {
+			"post": {
+				"tags": [
+					"Member"
+				],
+				"operationId": "Member_New",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MemberNewWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MemberNewWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/MessageGroup/Detail/{ID}": {
+			"get": {
+				"tags": [
+					"MessageGroup"
+				],
+				"summary": "Načíst detail skupinového chatu",
+				"operationId": "MessageGroup_Detail",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MessageGroupDetailWSOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/MessageGroup/All": {
+			"get": {
+				"tags": [
+					"MessageGroup"
+				],
+				"operationId": "MessageGroup_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.top",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.displayName",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "input.iD_Employee",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MessageGroupAllWSOutput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/MessageGroup/Del/{ID}": {
+			"get": {
+				"tags": [
+					"MessageGroup"
+				],
+				"operationId": "MessageGroup_Del",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		},
+		"/api/MessageGroup/Edit": {
+			"post": {
+				"tags": [
+					"MessageGroup"
+				],
+				"operationId": "MessageGroup_Edit",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MessageGroupEditWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MessageGroupEditWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/MessageGroup/New": {
+			"post": {
+				"tags": [
+					"MessageGroup"
+				],
+				"operationId": "MessageGroup_New",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MessageGroupNewWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.MessageGroupNewWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Post/Detail": {
+			"get": {
+				"tags": [
+					"Post"
+				],
+				"summary": "Načtení detailu sdělení",
+				"operationId": "Post_Detail",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_Post",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Posts.Detail.DetailPostOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Post/All": {
+			"get": {
+				"tags": [
+					"PostOLD"
+				],
+				"summary": "",
+				"operationId": "PostOLD_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_Module",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Company",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Employee",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.PostAllWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/Post/ChangeNewAll": {
+			"post": {
+				"tags": [
+					"PostOLD"
+				],
+				"operationId": "PostOLD_ChangeNewAll",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.PostEditChangeNewAllWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.PostEditChangeNewAllWSOutput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/StreamPost/All": {
+			"get": {
+				"tags": [
+					"StreamPost"
+				],
+				"operationId": "StreamPost_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.top",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Module",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.StreamPostAllWSOutput"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/StreamPost/Detail/{ID}": {
+			"get": {
+				"tags": [
+					"StreamPost"
+				],
+				"operationId": "StreamPost_Detail",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.StreamPostDetailWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/StreamPost/New": {
+			"post": {
+				"tags": [
+					"StreamPost"
+				],
+				"operationId": "StreamPost_New",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.StreamPostNewWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.StreamPostNewWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/StreamPostComment/New": {
+			"post": {
+				"tags": [
+					"StreamPostComment"
+				],
+				"operationId": "StreamPostComment_New",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.StreamPostCommentNewStreamPostWSInput"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.StreamPostCommentNewStreamPostWSOutput"
+						}
+					}
+				}
+			}
+		},
+		"/api/Survey/Detail/{ID}": {
+			"get": {
+				"tags": [
+					"Survey"
+				],
+				"summary": "Načíst detail dotazu pro api",
+				"operationId": "Survey_Detail",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Employee",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Surveys.Detail.DetailSurveyOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Survey/TmpDetail/{ID}": {
+			"get": {
+				"tags": [
+					"Survey"
+				],
+				"summary": "Načíst detail dotazu pro api",
+				"operationId": "Survey_TmpDetail",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Employee",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Surveys.Detail.DetailSurveyOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/Survey/All": {
+			"get": {
+				"tags": [
+					"SurveyOLD"
+				],
+				"operationId": "SurveyOLD_All",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.iD_Login",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "uuid"
+					},
+					{
+						"name": "input.iD_Company",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "input.iD_Module",
+						"in": "query",
+						"required": false,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.SurveyAllWSOutputModel"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/Television/DetailIsChanged": {
+			"get": {
+				"tags": [
+					"Television"
+				],
+				"summary": "Ověření zda se televize změnila oproti zadané verzi",
+				"operationId": "Television_DetailIsChanged",
+				"consumes": [],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input.key",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "input.version",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "input.lang",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.TelevisionDetailIsChangedOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/TrustBox/New": {
+			"post": {
+				"tags": [
+					"TrustBox"
+				],
+				"operationId": "TrustBox_New",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "model",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.TrustBox.New.NewTrustBoxModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"format": "int32",
+							"type": "integer"
+						}
+					}
+				}
+			}
+		},
+		"/api/UserPhoto/DelUserLogin": {
+			"post": {
+				"tags": [
+					"UserPhoto"
+				],
+				"summary": "Smazat fotografii přihlášeného uživatele",
+				"operationId": "UserPhoto_DelUserLogin",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"description": "Vstupní model API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.UserPhotoDelUserLoginInputModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.UserPhotoDelUserLoginOutputModel"
+						}
+					}
+				}
+			}
+		},
+		"/api/UserPhoto/EditUserLogin": {
+			"post": {
+				"tags": [
+					"UserPhoto"
+				],
+				"summary": "Upravit fotografii přihlášeného uživatele",
+				"operationId": "UserPhoto_EditUserLogin",
+				"consumes": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml",
+					"application/x-www-form-urlencoded"
+				],
+				"produces": [
+					"application/json",
+					"text/json",
+					"application/xml",
+					"text/xml"
+				],
+				"parameters": [
+					{
+						"name": "input",
+						"in": "body",
+						"description": "Vstupní model API",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.UserPhotos.EditUserLogin.EditUserLoginInputModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.UserPhotoEditUserLoginOutputModel"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"Skeleton.Jobka.Utils.Services.AnswerNewWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_Survey": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Text": {
+					"type": "string"
+				},
+				"ID_SurveyOption": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"SurveyOptions": {
+					"type": "array",
+					"items": {
+						"format": "int32",
+						"type": "integer"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.AnswerNewWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Framework.Utils.ValidateMessage": {
+			"type": "object",
+			"properties": {
+				"Property": {
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"ResourceName": {
+					"type": "string"
+				},
+				"Args": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CanteenAllWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ExternalPersonId": {
+					"type": "string"
+				},
+				"ExternalLogin": {
+					"type": "string"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Top": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CanteenAllWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"ExternalId": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.CarteChoiceAll.CarteChoiceAllInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ExternalPersonId": {
+					"description": "Externí personal number",
+					"type": "string"
+				},
+				"ExternalLogin": {
+					"description": "Externí login",
+					"type": "string"
+				},
+				"ExternalCanteenId": {
+					"description": "Externí ID jídelny",
+					"type": "string"
+				},
+				"ID_Canteen": {
+					"format": "int32",
+					"description": "ID jídelny",
+					"type": "integer"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"description": "ID CMI",
+					"type": "integer"
+				},
+				"Day": {
+					"format": "date-time",
+					"description": "Den",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.CarteChoiceAll.CarteChoiceAllSlotModel": {
+			"type": "object",
+			"properties": {
+				"ID_CarteSlot": {
+					"format": "int32",
+					"description": "ID Slotu",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"description": "Název slotu",
+					"type": "string"
+				},
+				"ExternalId": {
+					"description": "Externí id",
+					"type": "string"
+				},
+				"Sections": {
+					"description": "Sekce slotu (studená, teplá, minutka, ...)",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Canteen.CarteChoiceAll.CarteChoiceAllSectionModel"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.CarteChoiceAll.CarteChoiceAllSectionModel": {
+			"type": "object",
+			"properties": {
+				"ID_CarteSection": {
+					"format": "int32",
+					"description": "ID sekce",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"description": "Název sekce",
+					"type": "string"
+				},
+				"ExternalId": {
+					"description": "Externí ID",
+					"type": "string"
+				},
+				"Choices": {
+					"description": "Choices (Vajíčka, rohlík, ...)",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Canteen.CarteChoiceAll.CarteChoiceAllCarteChoiceModel"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.CarteChoiceAll.CarteChoiceAllCarteChoiceModel": {
+			"type": "object",
+			"properties": {
+				"ID_Choice": {
+					"format": "int32",
+					"description": "ID Jídla",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"description": "Název jídla",
+					"type": "string"
+				},
+				"Description": {
+					"description": "Popis",
+					"type": "string"
+				},
+				"FullPrice": {
+					"format": "double",
+					"description": "Plná cena",
+					"type": "number"
+				},
+				"AllowedPrice": {
+					"format": "double",
+					"description": "Dotovaná částka",
+					"type": "number"
+				},
+				"StateCount": {
+					"format": "int32",
+					"description": "Počet porcí",
+					"type": "integer"
+				},
+				"ExternalId": {
+					"description": "Externí ID",
+					"type": "string"
+				},
+				"CanOrder": {
+					"description": "Možnost objednání daného jídla",
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.Login.LoginCanteenModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID Login uživatele",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Password": {
+					"description": "Heslo strávníka",
+					"type": "string"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"description": "ID CMI",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.LoginCanteenOutput": {
+			"type": "object",
+			"properties": {
+				"ExternalLogin": {
+					"description": "External Session ID",
+					"type": "string"
+				},
+				"ExternalPersonId": {
+					"description": "External Personal number",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "Přihlašovací token",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ExternalPersonId": {
+					"description": "Externí personal number",
+					"type": "string"
+				},
+				"ExternalLogin": {
+					"description": "Externí login",
+					"type": "string"
+				},
+				"ID_Canteen": {
+					"format": "int32",
+					"description": "Časový slot",
+					"type": "integer"
+				},
+				"ExternalCanteenId": {
+					"description": "Externí ID jídelny",
+					"type": "string"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"description": "ID CMI",
+					"type": "integer"
+				},
+				"Day": {
+					"format": "date-time",
+					"description": "Den",
+					"type": "string"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"description": "Uživatel",
+					"type": "integer"
+				},
+				"CarteChoices": {
+					"description": "Vybraná jídla",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenCarteChoiceInput"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenCarteChoiceInput": {
+			"type": "object",
+			"properties": {
+				"ID_CarteChoice": {
+					"format": "int32",
+					"description": "ID CarteChoice",
+					"type": "integer"
+				},
+				"ExternalSlotId": {
+					"description": "Externí ID slotu",
+					"type": "string"
+				},
+				"ExternalSectionId": {
+					"description": "Externí ID sekce",
+					"type": "string"
+				},
+				"ExternalChoiceId": {
+					"description": "Externí ID jídla",
+					"type": "string"
+				},
+				"StateCount": {
+					"format": "int32",
+					"description": "Počet porcí",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenOutput": {
+			"type": "object",
+			"properties": {
+				"CarteChoices": {
+					"description": "Objednaná jídla",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenCarteChoiceOutput"
+					}
+				},
+				"SlotValidations": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenSlotValidationOutput"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenCarteChoiceOutput": {
+			"type": "object",
+			"properties": {
+				"ID_CarteChoice": {
+					"format": "int32",
+					"description": "ID jídla",
+					"type": "integer"
+				},
+				"ExternalSlotId": {
+					"type": "string"
+				},
+				"ExternalSectionId": {
+					"type": "string"
+				},
+				"ExternalChoiceId": {
+					"type": "string"
+				},
+				"IsSuccess": {
+					"description": "Zda objednání proběhlo úspěšně",
+					"type": "boolean"
+				},
+				"StateCount": {
+					"format": "int32",
+					"description": "Aktuální počet objednaných porcí",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Canteen.OrderNew.OrderNewCanteenSlotValidationOutput": {
+			"type": "object",
+			"properties": {
+				"ID_CarteSlot": {
+					"format": "int32",
+					"description": "ID Slotu",
+					"type": "integer"
+				},
+				"IsSuccess": {
+					"description": "Zda objednání proběhlo úspěšně",
+					"type": "boolean",
+					"readOnly": true
+				},
+				"ValidationMessages": {
+					"description": "Validační zprávy pro slot",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CardAllActualCardWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CardAllActualCardWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"EAN": {
+					"type": "string"
+				},
+				"ValidTo": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"DateRegistration": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"Email": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"CardState": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.DAL.Providers.CardProviders.Models.AddPromoCardProviderModel": {
+			"type": "object",
+			"properties": {
+				"PasswordHash": {
+					"type": "string"
+				},
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Email": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Card.IsEmailRegistered.IsEmailRegisteredCardInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Email": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Card.IsEmailRegistered.IsEmailRegisteredCardOutputModel": {
+			"type": "object",
+			"properties": {
+				"Result": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.DAL.Providers.CardProviders.RegisterWithPromoCardProviderModel": {
+			"type": "object",
+			"properties": {
+				"FirstName": {
+					"type": "string"
+				},
+				"LastName": {
+					"type": "string"
+				},
+				"Zip": {
+					"type": "string"
+				},
+				"PasswordHash": {
+					"type": "string"
+				},
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Email": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CompanyDetailCheckStateWSInput": {
+			"type": "object",
+			"properties": {
+				"Version": {
+					"type": "string"
+				},
+				"Platform": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CompanyDetailCheckStateWSOutput": {
+			"type": "object",
+			"properties": {
+				"ShowPage": {
+					"type": "boolean"
+				},
+				"IsUpdate": {
+					"type": "boolean"
+				},
+				"IsContinue": {
+					"type": "boolean"
+				},
+				"Message": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CompanyMenuItemAllNumberOfNewWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.ContactAllChangedWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"LastUpdate": {
+					"format": "date-time",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.ContactAllChangedWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"IsChange": {
+					"type": "boolean"
+				},
+				"LastUpdate": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"Data": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.ContactAllChangedWSItemOutputModel"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.ContactAllChangedWSItemOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"JobTitle": {
+					"type": "string"
+				},
+				"Department": {
+					"type": "string"
+				},
+				"Phone": {
+					"type": "string"
+				},
+				"SecondPhone": {
+					"type": "string"
+				},
+				"Email": {
+					"type": "string"
+				},
+				"SecondEmail": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				},
+				"NamePrefix": {
+					"type": "string"
+				},
+				"FirstName": {
+					"type": "string"
+				},
+				"MiddleName": {
+					"type": "string"
+				},
+				"LastName": {
+					"type": "string"
+				},
+				"NameSuffix": {
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"SortName": {
+					"type": "string"
+				},
+				"Initials": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CustomModulSettingsAllCompanyMenuItemWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Name": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CustomModulSettingsAllCompanyMenuItemWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"Value": {
+					"type": "string"
+				},
+				"Name": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CustomPageAllWebWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_Company": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"CustomPageList": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.CustomPageAllWebWSInputItemModel"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CustomPageAllWebWSInputItemModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"CultureCode": {
+					"type": "string"
+				},
+				"DateUpdate": {
+					"format": "date-time",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CustomPageAllWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Company": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DateUpdate": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"IsSystem": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.CustomPageAllWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Company": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Url": {
+					"type": "string"
+				},
+				"CultureCode": {
+					"type": "string"
+				},
+				"ID_Language": {
+					"type": "string"
+				},
+				"ZipFile": {
+					"type": "string"
+				},
+				"DateUpdate": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"IsZoomable": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.DataAllCompanyMenuItemInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Search": {
+					"type": "string"
+				},
+				"Top": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Offset": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"QueryParameters": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.DataAllCompanyMenuItemOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"Description": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"type": "string"
+				},
+				"Date": {
+					"type": "string"
+				},
+				"DateType": {
+					"type": "string"
+				},
+				"Highlighted": {
+					"type": "boolean"
+				},
+				"DetailCrossLink": {
+					"type": "string"
+				},
+				"ID_ListType": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.DelDataItems.DelDataItemInputModelV2": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "uuid",
+					"description": "Jeidnečné ID",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.DataDelDataItemsWSOutputModel": {
+			"type": "object",
+			"properties": {}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.DetailCompanyMenuItem.DetailDataCompanyMenuItemInputModelV2": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_Data": {
+					"format": "uuid",
+					"description": "ID_Data",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"description": "ID_CompanyMenuItem",
+					"type": "integer"
+				},
+				"QueryParameters": {
+					"description": "Parametry předané v query requestu",
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.DataDetailCompanyMenuItemWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID_EditFormCompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"UserInsert": {
+					"type": "string"
+				},
+				"IsUpdate": {
+					"type": "boolean"
+				},
+				"IsDelete": {
+					"type": "boolean"
+				},
+				"DateCreated": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"ID_EmployeeAuthor": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"EditCrossLink": {
+					"type": "string"
+				},
+				"Items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.DataDetailCompanyMenuItemWSOutputModelItem"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.DataDetailCompanyMenuItemWSOutputModelItem": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_FormItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_FormItemType": {
+					"type": "string"
+				},
+				"Name": {
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"Value": {
+					"type": "string"
+				},
+				"ValueName": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"type": "string"
+				},
+				"Order": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.NewDataItems.InputModelV2": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyForm": {
+					"format": "int32",
+					"description": "Formulář",
+					"type": "integer"
+				},
+				"ID_Data": {
+					"format": "uuid",
+					"description": "ID záznamu který chci editovat",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"DataItems": {
+					"description": "DataItemList",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.NewDataItems.InputItemModelV2"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.NewDataItems.InputItemModelV2": {
+			"type": "object",
+			"properties": {
+				"ID_FormItem": {
+					"format": "int32",
+					"description": "ID položky",
+					"type": "integer"
+				},
+				"Value": {
+					"description": "Hodnota položky",
+					"type": "string"
+				},
+				"File": {
+					"format": "byte",
+					"description": "Soubor",
+					"type": "string"
+				},
+				"FileName": {
+					"description": "Název souboru",
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"ID_FormItemType": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.Translate.DataTranslateInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.Translate.DataTranslateInputItemModel"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.Translate.DataTranslateInputItemModel": {
+			"type": "object",
+			"properties": {
+				"DataId": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"RowNumber": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.AllCompanyMenuItem.ListDataCompanyMenuItemOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID_NewFormCompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Description": {
+					"type": "string"
+				},
+				"EmptyDataText": {
+					"type": "string"
+				},
+				"IsNew": {
+					"type": "boolean"
+				},
+				"IsDetail": {
+					"type": "boolean"
+				},
+				"OneRecord": {
+					"type": "boolean"
+				},
+				"NewCrossLink": {
+					"type": "string"
+				},
+				"Items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.AllCompanyMenuItem.ListDataCompanyMenuItemsOutputModel"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.AllCompanyMenuItem.ListDataCompanyMenuItemsOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"description": "Jeidnečné ID",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"description": "DisplayName",
+					"type": "string"
+				},
+				"Description": {
+					"description": "Description",
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"description": "ID_Document",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"description": "DocumentHash",
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"description": "DocumentHash",
+					"type": "string"
+				},
+				"Date": {
+					"description": "Date",
+					"type": "string"
+				},
+				"DateType": {
+					"description": "Date",
+					"type": "string"
+				},
+				"Highlighted": {
+					"description": "Highlighted",
+					"type": "boolean"
+				},
+				"DetailCrossLink": {
+					"type": "string"
+				},
+				"ID_ListType": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.DelDataItems.DelDataItemInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"description": "Jeidnečné ID",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.DetailCompanyMenuItem.DetailDataCompanyMenuItemInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_Data": {
+					"format": "int32",
+					"description": "ID_Data",
+					"type": "integer"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"description": "ID_CompanyMenuItem",
+					"type": "integer"
+				},
+				"QueryParameters": {
+					"description": "Parametry předané v query requestu",
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.NewDataItems.InputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyForm": {
+					"format": "int32",
+					"description": "Formulář",
+					"type": "integer"
+				},
+				"ID_Data": {
+					"format": "int32",
+					"description": "ID záznamu který chci editovat",
+					"type": "integer"
+				},
+				"DataItems": {
+					"description": "DataItemList",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Data.NewDataItems.InputItemModel"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Data.NewDataItems.InputItemModel": {
+			"type": "object",
+			"properties": {
+				"ID_FormItem": {
+					"format": "int32",
+					"description": "ID položky",
+					"type": "integer"
+				},
+				"Value": {
+					"description": "Hodnota položky",
+					"type": "string"
+				},
+				"File": {
+					"format": "byte",
+					"description": "Soubor",
+					"type": "string"
+				},
+				"FileName": {
+					"description": "Název souboru",
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"ID_FormItemType": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Framework.Document.Detail.DetailDocumentInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "Přihlašovací token",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"description": "ID dokumentu",
+					"type": "integer"
+				},
+				"Width": {
+					"format": "int32",
+					"description": "Šířka obrázku",
+					"type": "integer"
+				},
+				"Height": {
+					"format": "int32",
+					"description": "Výška obrázku",
+					"type": "integer"
+				},
+				"Effect": {
+					"description": "Efekt",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeDetailWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeRegisterInputModel": {
+			"type": "object",
+			"properties": {
+				"RegisterKey": {
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"PersonalNumber": {
+					"type": "string"
+				},
+				"Email": {
+					"type": "string"
+				},
+				"Campaign": {
+					"type": "string"
+				},
+				"Lang": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeAllCompanyChatWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"PersonalNumber": {
+					"type": "string"
+				},
+				"ID_Group": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeAllCompanyChatWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"User": {
+					"type": "string"
+				},
+				"IsActive": {
+					"type": "boolean"
+				},
+				"PersonalNumber": {
+					"type": "string"
+				},
+				"DateCreated": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"Email": {
+					"type": "string"
+				},
+				"Phone": {
+					"type": "string"
+				},
+				"Group": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				},
+				"Initials": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"IsActiveUser": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeDetailUnreadWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeDetailUnreadWSOutput": {
+			"type": "object",
+			"properties": {
+				"EmployeeMessage": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageAllEmployeeWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Top": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"OffsetDate": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"OffsetAscending": {
+					"type": "boolean"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageAllEmployeeWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Message": {
+					"type": "string"
+				},
+				"Sent": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Hash": {
+					"type": "string"
+				},
+				"IsOut": {
+					"type": "boolean"
+				},
+				"Employee": {
+					"type": "string"
+				},
+				"EmployeeDocument": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"EmployeeDocumentHash": {
+					"type": "string"
+				},
+				"EmployeeReceiverDocument": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"EmployeeReceiverDocumentHash": {
+					"type": "string"
+				},
+				"EmployeeInicial": {
+					"type": "string"
+				},
+				"EmployeeColor": {
+					"type": "string"
+				},
+				"EmployeeReceiver": {
+					"type": "string"
+				},
+				"EmployeeRecieverInicial": {
+					"type": "string"
+				},
+				"EmployeeRecieverColor": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageAllMessageGroupWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Top": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"OffsetDate": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"OffsetAscending": {
+					"type": "boolean"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageAllMessageGroupWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Message": {
+					"type": "string"
+				},
+				"Sent": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Hash": {
+					"type": "string"
+				},
+				"IsOut": {
+					"type": "boolean"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"IsLogged": {
+					"type": "boolean"
+				},
+				"Initials": {
+					"type": "string"
+				},
+				"Inicials": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				},
+				"ID_DocumentEmployee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"HashEmployee": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageAllWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Top": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageAllWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Employee": {
+					"type": "string"
+				},
+				"Initials": {
+					"type": "string"
+				},
+				"Inicials": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"MessageGroup": {
+					"type": "string"
+				},
+				"Message": {
+					"type": "string"
+				},
+				"Sent": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"IsOut": {
+					"type": "boolean"
+				},
+				"IsRead": {
+					"type": "boolean"
+				},
+				"IsLogged": {
+					"type": "boolean"
+				},
+				"ID_Member": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MemberPermission": {
+					"type": "string"
+				},
+				"ID_EmployeeMember": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"EmployeeMember": {
+					"type": "string"
+				},
+				"EmployeeMemberInitials": {
+					"type": "string"
+				},
+				"EmployeeMemberInicials": {
+					"type": "string"
+				},
+				"EmployeeMemberColor": {
+					"type": "string"
+				},
+				"IsNotify": {
+					"type": "boolean"
+				},
+				"MemberCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"MemberRequestCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"IsLeavingEnabled": {
+					"type": "boolean"
+				},
+				"IsDocument": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageDelChatWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"EmployeesDel": {
+					"type": "array",
+					"items": {
+						"format": "int32",
+						"type": "integer"
+					}
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageDelChatWSOutputModel": {
+			"type": "object",
+			"properties": {}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageNewWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_EmployeeReceiver": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Message": {
+					"type": "string"
+				},
+				"DocumentContent": {
+					"format": "byte",
+					"type": "string"
+				},
+				"FileName": {
+					"type": "string"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageNewWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageIsNewMessageGroupWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Date": {
+					"format": "date-time",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageIsNewMessageGroupWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"IsNew": {
+					"type": "boolean"
+				},
+				"IsLogged": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageIsNewWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Date": {
+					"format": "date-time",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeMessageIsNewWSOutput": {
+			"type": "object",
+			"properties": {
+				"IsNew": {
+					"type": "boolean"
+				},
+				"IsLogged": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeDetailCheckPrivateDataWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"DateUpdate": {
+					"format": "date-time",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeDetailCheckPrivateDataWSOutput": {
+			"type": "object",
+			"properties": {
+				"Url": {
+					"type": "string"
+				},
+				"Date": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"IsChange": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeEditLanguageWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Code": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeEditLanguageWSOutput": {
+			"type": "object",
+			"properties": {
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeNewLoginWSInput": {
+			"type": "object",
+			"properties": {
+				"PersonalNumber": {
+					"type": "string"
+				},
+				"Code": {
+					"type": "string"
+				},
+				"ID_Company": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Token": {
+					"type": "string"
+				},
+				"Browser": {
+					"type": "string"
+				},
+				"Lang": {
+					"type": "string"
+				},
+				"IsPersistent": {
+					"type": "boolean"
+				},
+				"ID_PersistentLogin": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"UriPersonalNumber": {
+					"type": "string"
+				},
+				"DeviceID": {
+					"type": "string"
+				},
+				"DeviceName": {
+					"type": "string"
+				},
+				"ID_DeviceType": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeNewLoginWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_PersistentLogin": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"ID_User": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Language": {
+					"type": "string"
+				},
+				"IsFirstLogin": {
+					"type": "boolean"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Lang": {
+					"type": "string"
+				},
+				"IsTester": {
+					"type": "boolean"
+				},
+				"Languages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.EmployeeNewLoginWSLanguageOutput"
+					}
+				},
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				},
+				"Initials": {
+					"type": "string"
+				},
+				"Inicials": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"PersonalNumber": {
+					"type": "string"
+				},
+				"Phone": {
+					"type": "string"
+				},
+				"Email": {
+					"type": "string"
+				},
+				"QrCode": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"NoteJson": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.EmployeeNewLoginWSLanguageOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"type": "string"
+				},
+				"Caption": {
+					"type": "string"
+				},
+				"Code": {
+					"type": "string"
+				},
+				"IsBase": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.FormItems.AllForm.ListFormInputModel": {
+			"description": "Načtení template formuláře\r\nVstupní model entity - Položka formuláře",
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"description": "ID_CompanyMenuItem",
+					"type": "integer"
+				},
+				"ID_Data": {
+					"format": "uuid",
+					"description": "ID záznamu jehož hodnoty se mají nastavit jako defaultní hodnoty",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"QueryParameters": {
+					"description": "Parametry z query",
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.FormItems.AllForm.OutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"description": "Jeidnečné ID",
+					"type": "integer"
+				},
+				"ID_CompanyForm": {
+					"format": "int32",
+					"description": "ID formuláře",
+					"type": "integer"
+				},
+				"ID_FormItemType": {
+					"description": "Typ položky",
+					"type": "string"
+				},
+				"ID_FormItemParent": {
+					"format": "int32",
+					"description": "Odkaz na nadřazené pole podle kterého jsou položky tohoto pole filtrovány",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"description": "DisplayName",
+					"type": "string"
+				},
+				"Description": {
+					"description": "Description",
+					"type": "string"
+				},
+				"Placeholder": {
+					"description": "Placeholder",
+					"type": "string"
+				},
+				"IsRequired": {
+					"description": "Zda je položka povinná",
+					"type": "boolean"
+				},
+				"DefaultValue": {
+					"description": "Defaultní hodnota",
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"description": "ID_Document",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"description": "DocumentHash",
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"description": "Url dokumentu",
+					"type": "string"
+				},
+				"CheckBoxRequiredValue": {
+					"description": "Zda je požadována určitá hodnota checkboxu, null-libovolná, true-zaškrtnutý, false-nezaškrtnutý",
+					"type": "boolean"
+				},
+				"Options": {
+					"description": "Options for select (Picker)",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.FormItems.AllForm.OutputOptionModel"
+					}
+				},
+				"Order": {
+					"format": "int32",
+					"description": "Pořadí",
+					"type": "integer"
+				},
+				"Name": {
+					"description": "Interní název položky",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.FormItems.AllForm.OutputOptionModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"description": "Jedinečné ID",
+					"type": "integer"
+				},
+				"FormItemOptionDisplayName": {
+					"description": "FormItemOptionDisplayName",
+					"type": "string"
+				},
+				"DisplayName": {
+					"description": "Název volby",
+					"type": "string"
+				},
+				"Description": {
+					"description": "Description",
+					"type": "string"
+				},
+				"ParentValue": {
+					"format": "int32",
+					"description": "Hodnota nadřazeného pole podle kterého bude tato položka z výběru vyřazena nebo do něj bude zařazena",
+					"type": "integer"
+				},
+				"Name": {
+					"description": "Interní název položky",
+					"type": "string"
+				},
+				"Order": {
+					"format": "int32",
+					"description": "Pořadí položky",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.FormItems.AllForm.ListFormInputModelOld": {
+			"description": "Načtení template formuláře\r\nVstupní model entity - Položka formuláře",
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"description": "ID_CompanyMenuItem",
+					"type": "integer"
+				},
+				"ID_Data": {
+					"format": "int32",
+					"description": "ID z�znamu jeho� hodnoty se maj� nastavit jako defaultn� hodnoty",
+					"type": "integer"
+				},
+				"QueryParameters": {
+					"description": "Parametry z query",
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.GroupAllCompanyChatWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.GroupAllCompanyChatWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"Initials": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.LicensePlates.ProcessImage.ProcessImageLicensePlateInputModel": {
+			"description": "Založit poznávací značku\r\nModel builderu pro entitu - Poznávací značka vozidla",
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login zákazníka",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Image": {
+					"format": "byte",
+					"description": "Data obrázku",
+					"type": "string"
+				},
+				"LicensePlate": {
+					"description": "Poznávací značka - ručně zadaná",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.LicensePlates.ProcessImage.ProcessImageLicensePlateOutputModel": {
+			"description": "Založit poznávací značku\r\nModel builderu pro entitu - Poznávací značka vozidla",
+			"type": "object",
+			"properties": {
+				"ID_Employee": {
+					"format": "int32",
+					"description": "ID zaměstnance",
+					"type": "integer"
+				},
+				"Displayname": {
+					"description": "Jméno zaměstnance",
+					"type": "string"
+				},
+				"LicensePlate": {
+					"description": "Poznávací značka",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberAllMessageGroupWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Top": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MemberPermission": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberAllMessageGroupWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"MessageGroup": {
+					"type": "string"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Employee": {
+					"type": "string"
+				},
+				"RealName": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Hash": {
+					"type": "string"
+				},
+				"ID_MemberPermission": {
+					"type": "string"
+				},
+				"IsLogged": {
+					"type": "boolean"
+				},
+				"Initials": {
+					"type": "string"
+				},
+				"Inicials": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberDelWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"IsEntityLog": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberDelWSOutputModel": {
+			"type": "object",
+			"properties": {}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberEditPermissionWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MemberPermission": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberEditPermissionWSOutput": {
+			"type": "object",
+			"properties": {
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberEditWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"IsNotify": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberEditWSOutput": {
+			"type": "object",
+			"properties": {
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberNewWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_MessageGroup": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MemberPermission": {
+					"type": "string"
+				},
+				"Employees": {
+					"type": "string"
+				},
+				"Groups": {
+					"type": "string"
+				},
+				"IsNotify": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MemberNewWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MessageGroupDetailWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MessageGroupDetailWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"Description": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Employee": {
+					"type": "string"
+				},
+				"ID_Member": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MemberPermission": {
+					"type": "string"
+				},
+				"ID_EmployeeMember": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"EmployeeMember": {
+					"type": "string"
+				},
+				"IsNotify": {
+					"type": "boolean"
+				},
+				"MemberCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"MemberRequestCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"IsLeavingEnabled": {
+					"type": "boolean"
+				},
+				"Actions": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.ActionVerifyOutput"
+					}
+				},
+				"Initials": {
+					"type": "string"
+				},
+				"Color": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.ActionVerifyOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MessageGroupAllWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Top": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MessageGroupAllWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"Description": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Member": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_MemberPermission": {
+					"type": "string"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Employee": {
+					"type": "string"
+				},
+				"ID_EmployeeMember": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"EmployeeMember": {
+					"type": "string"
+				},
+				"IsNotify": {
+					"type": "boolean"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"MemberCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"MemberRequestCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"IsLeavingEnabled": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MessageGroupDelWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MessageGroupEditWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"Description": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentContent": {
+					"format": "byte",
+					"type": "string"
+				},
+				"FileName": {
+					"type": "string"
+				},
+				"IsLeavingEnabled": {
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MessageGroupEditWSOutput": {
+			"type": "object",
+			"properties": {
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MessageGroupNewWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentContent": {
+					"format": "byte",
+					"type": "string"
+				},
+				"FileName": {
+					"type": "string"
+				},
+				"IsLeavingEnabled": {
+					"type": "boolean"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"Description": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.MessageGroupNewWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.PostDetailWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_Post": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Posts.Detail.DetailPostOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"description": "Jedinečné ID",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"description": "DisplayName",
+					"type": "string"
+				},
+				"Text": {
+					"description": "Text Plaintext",
+					"type": "string"
+				},
+				"TextHtml": {
+					"description": "Text HTML",
+					"type": "string"
+				},
+				"DateCreated": {
+					"format": "date-time",
+					"description": "Datum vytvoření",
+					"type": "string"
+				},
+				"IsNew": {
+					"description": "IsNew",
+					"type": "boolean"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"description": "Dokument",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"description": "DocumentHash",
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"description": "DocumentUrl",
+					"type": "string"
+				},
+				"IsEdited": {
+					"description": "IsEdited",
+					"type": "boolean"
+				},
+				"Attachments": {
+					"description": "Přílohy sdělení",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Posts.Detail.DetailPostOutputDocumentModel"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Posts.Detail.DetailPostOutputDocumentModel": {
+			"type": "object",
+			"properties": {
+				"ID_Post": {
+					"format": "int32",
+					"description": "Sdělení",
+					"type": "integer"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"description": "Příloha",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"description": "DocumentHash",
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"description": "DocumentUrl",
+					"type": "string"
+				},
+				"DisplayName": {
+					"description": "DisplayName",
+					"type": "string"
+				},
+				"Size": {
+					"format": "int32",
+					"description": "Size",
+					"type": "integer"
+				},
+				"FileName": {
+					"description": "FileName",
+					"type": "string"
+				},
+				"ContentType": {
+					"description": "ContentType",
+					"type": "string"
+				},
+				"Extension": {
+					"description": "Extension",
+					"type": "string"
+				},
+				"Storage": {
+					"description": "Storage",
+					"type": "string"
+				},
+				"FileNameExtension": {
+					"description": "FileNameExtension",
+					"type": "string"
+				},
+				"ImageWidth": {
+					"format": "int32",
+					"description": "ImageWidth",
+					"type": "integer"
+				},
+				"ImageHeight": {
+					"format": "int32",
+					"description": "ImageHeight",
+					"type": "integer"
+				},
+				"Order": {
+					"format": "int32",
+					"description": "Order",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.PostAllWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_Module": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Company": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.PostAllWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"Text": {
+					"type": "string"
+				},
+				"TextHtml": {
+					"type": "string"
+				},
+				"DateCreated": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"IsNew": {
+					"type": "boolean"
+				},
+				"IsEdited": {
+					"type": "boolean"
+				},
+				"DocumentCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"type": "string"
+				},
+				"DocumentDisplayName": {
+					"type": "string"
+				},
+				"DocumentSize": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentFileName": {
+					"type": "string"
+				},
+				"DocumentContentType": {
+					"type": "string"
+				},
+				"DocumentExtension": {
+					"type": "string"
+				},
+				"DocumentFileNameExtension": {
+					"type": "string"
+				},
+				"DocumentImageWidth": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentImageHeight": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.PostEditChangeNewAllWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_CompanyMenuItem": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.PostEditChangeNewAllWSOutput": {
+			"type": "object",
+			"properties": {
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.StreamPostAllWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Top": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Module": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.StreamPostAllWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"DateCreated": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"Message": {
+					"type": "string"
+				},
+				"MessageHtml": {
+					"type": "string"
+				},
+				"Author": {
+					"type": "string"
+				},
+				"NumberOfComments": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.StreamPostDetailWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.StreamPostDetailWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"DateCreated": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"Message": {
+					"type": "string"
+				},
+				"MessageHtml": {
+					"type": "string"
+				},
+				"Author": {
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"type": "string"
+				},
+				"Comments": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.StreamPostDetailWSCommentOutput"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.StreamPostDetailWSCommentOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"IsReply": {
+					"type": "boolean"
+				},
+				"Author": {
+					"type": "string"
+				},
+				"DateCreated": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"Comment": {
+					"type": "string"
+				},
+				"Level": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ReplyComments": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Utils.Services.StreamPostDetailWSCommentOutput"
+					}
+				},
+				"ID_StreamPostParent": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.StreamPostNewWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"Message": {
+					"type": "string"
+				},
+				"MessageHtml": {
+					"type": "string"
+				},
+				"Photo": {
+					"format": "byte",
+					"type": "string"
+				},
+				"ID_Module": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.StreamPostNewWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.StreamPostCommentNewStreamPostWSInput": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_StreamPost": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_StreamPostComment": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"NotifyMe": {
+					"type": "boolean"
+				},
+				"Comment": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.StreamPostCommentNewStreamPostWSOutput": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ValidationMessages": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Framework.Utils.ValidateMessage"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.SurveyDetailWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Employee": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Surveys.Detail.DetailSurveyOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"description": "Jedinečné ID",
+					"type": "integer"
+				},
+				"DateCreated": {
+					"format": "date-time",
+					"description": "Datum vytvoření dotazu",
+					"type": "string"
+				},
+				"IsTextarea": {
+					"description": "Zda je textarea",
+					"type": "boolean"
+				},
+				"IsOptions": {
+					"description": "Zda je výčet odpovědí",
+					"type": "boolean"
+				},
+				"AnswerText": {
+					"description": "AnswerText",
+					"type": "string"
+				},
+				"IsAnswered": {
+					"description": "IsAnswered",
+					"type": "boolean"
+				},
+				"IsMultipleOptions": {
+					"description": "Zda je možné vybrat více odpovědí",
+					"type": "boolean"
+				},
+				"DateClose": {
+					"format": "date-time",
+					"description": "Deadline odpovědi na dotaz",
+					"type": "string"
+				},
+				"ID_SurveyState": {
+					"description": "ID stav dotazu",
+					"type": "string"
+				},
+				"DisplayName": {
+					"description": "DisplayName",
+					"type": "string"
+				},
+				"SurveyText": {
+					"description": "SurveyText Plaintext",
+					"type": "string"
+				},
+				"SurveyTextHtml": {
+					"description": "SurveyText HTML",
+					"type": "string"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"description": "Dokument",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"description": "DocumentHash",
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"description": "DocumentUrl",
+					"type": "string"
+				},
+				"Options": {
+					"description": "Odpovědi",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Surveys.Detail.DetailSurveyOptionOutputModel"
+					}
+				},
+				"Attachments": {
+					"description": "Přílohy Dotazu",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Skeleton.Jobka.Webservice.Controllers.Surveys.Detail.DetailSurveyOutputDocumentModel"
+					}
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Surveys.Detail.DetailSurveyOptionOutputModel": {
+			"description": "Možné odpovědi",
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"description": "ID",
+					"type": "integer"
+				},
+				"DisplayName": {
+					"description": "Opdověď",
+					"type": "string"
+				},
+				"IsSelected": {
+					"description": "Zda je odpověď vybraná",
+					"type": "boolean"
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.Surveys.Detail.DetailSurveyOutputDocumentModel": {
+			"type": "object",
+			"properties": {
+				"ID_Survey": {
+					"format": "int32",
+					"description": "Sdělení",
+					"type": "integer"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"description": "Příloha",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"description": "DocumentHash",
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"description": "DocumentUrl",
+					"type": "string"
+				},
+				"DisplayName": {
+					"description": "DisplayName",
+					"type": "string"
+				},
+				"Size": {
+					"format": "int32",
+					"description": "Size",
+					"type": "integer"
+				},
+				"FileName": {
+					"description": "FileName",
+					"type": "string"
+				},
+				"ContentType": {
+					"description": "ContentType",
+					"type": "string"
+				},
+				"Extension": {
+					"description": "Extension",
+					"type": "string"
+				},
+				"Storage": {
+					"description": "Storage",
+					"type": "string"
+				},
+				"FileNameExtension": {
+					"description": "FileNameExtension",
+					"type": "string"
+				},
+				"ImageWidth": {
+					"format": "int32",
+					"description": "ImageWidth",
+					"type": "integer"
+				},
+				"ImageHeight": {
+					"format": "int32",
+					"description": "ImageHeight",
+					"type": "integer"
+				},
+				"Order": {
+					"format": "int32",
+					"description": "Order",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.SurveyAllWSInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"ID_Company": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Module": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.SurveyAllWSOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DateCreated": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"DisplayName": {
+					"type": "string"
+				},
+				"SurveyText": {
+					"type": "string"
+				},
+				"SurveyTextHtml": {
+					"type": "string"
+				},
+				"IsAnswered": {
+					"type": "boolean"
+				},
+				"ID_SurveyState": {
+					"type": "string"
+				},
+				"DateClose": {
+					"format": "date-time",
+					"type": "string"
+				},
+				"DocumentCount": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"ID_Document": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentHash": {
+					"type": "string"
+				},
+				"DocumentUrl": {
+					"type": "string"
+				},
+				"DocumentDisplayName": {
+					"type": "string"
+				},
+				"DocumentSize": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentFileName": {
+					"type": "string"
+				},
+				"DocumentContentType": {
+					"type": "string"
+				},
+				"DocumentExtension": {
+					"type": "string"
+				},
+				"DocumentFileNameExtension": {
+					"type": "string"
+				},
+				"DocumentImageWidth": {
+					"format": "int32",
+					"type": "integer"
+				},
+				"DocumentImageHeight": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.TelevisionDetailIsChangedInputModel": {
+			"type": "object",
+			"properties": {
+				"Key": {
+					"type": "string"
+				},
+				"Version": {
+					"type": "string"
+				},
+				"Lang": {
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.TelevisionDetailIsChangedOutputModel": {
+			"type": "object",
+			"properties": {
+				"IsChanged": {
+					"type": "boolean"
+				},
+				"Version": {
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.TrustBox.New.NewTrustBoxModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "Přihlašovací token",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"Body": {
+					"description": "Tělo emailu",
+					"type": "string"
+				},
+				"Email": {
+					"description": "Email",
+					"type": "string"
+				},
+				"ID_Module": {
+					"format": "int32",
+					"description": "Položka",
+					"type": "integer"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.UserPhotoDelUserLoginInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.UserPhotoDelUserLoginOutputModel": {
+			"type": "object",
+			"properties": {}
+		},
+		"Skeleton.Jobka.Webservice.Controllers.UserPhotos.EditUserLogin.EditUserLoginInputModel": {
+			"type": "object",
+			"properties": {
+				"ID_Login": {
+					"format": "uuid",
+					"description": "ID_Login",
+					"type": "string",
+					"example": "00000000-0000-0000-0000-000000000000"
+				},
+				"FileName": {
+					"description": "Název dokumentu",
+					"type": "string"
+				},
+				"DocumentContent": {
+					"format": "byte",
+					"description": "Obsah dokumentu",
+					"type": "string"
+				}
+			}
+		},
+		"Skeleton.Jobka.Utils.Services.UserPhotoEditUserLoginOutputModel": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"format": "int32",
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
