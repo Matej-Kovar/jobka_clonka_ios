@@ -296,7 +296,7 @@ struct SurveyDetailView: View {
                 .font(.system(size: 72))
                 .foregroundStyle(.green)
                 .symbolEffect(.bounce, value: successAnimationTrigger)
-                .onAppear {
+                .onAppear{
                     successAnimationTrigger.toggle()
                 }
             Text("Survey Submitted")
