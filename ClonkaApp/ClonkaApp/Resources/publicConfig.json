@@ -1,0 +1,12 @@
+{
+  "Production": {
+    "webserviceUrl": "https://jobka-production-webservice-core.azurewebsites.net",
+    "clientApiUrl": "https://jobka-production-client-api.azurewebsites.net",
+    "azureFileUrl": "https://jobkaproduction.file.core.windows.net"
+  },
+  "Test": {
+    "webserviceUrl": "https://jobka-test-webservice-core.azurewebsites.net",
+    "clientApiUrl": "https://jobka-test-client-api.azurewebsites.net",
+    "azureFileUrl": "https://jobkatest.file.core.windows.net"
+  }
+}
