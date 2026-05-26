@@ -14,7 +14,7 @@ struct MenuTileView: View {
 
     var iconName: String {
         switch item.itemType {
-        case "PostList": return "newspaper"
+        case "PostList": return "exclamationmark.bubble"
         case "SurveyList": return "checklist"
         case "ChatList": return "bubble.left.and.bubble.right"
         case "Contacts": return "person.2"

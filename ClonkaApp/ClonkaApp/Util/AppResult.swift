@@ -1,6 +1,6 @@
 import Foundation
 
-enum AppResult<T> {
+enum AppResult<T>: @unchecked Sendable {
     case success(T)
     case failure(AppError)
 
@@ -27,7 +27,7 @@ enum AppResult<T> {
     }
 }
 
-enum AppError: Error, LocalizedError {
+enum AppError: Error, LocalizedError, @unchecked Sendable {
     case network(URLError)
     case server(statusCode: Int, message: String?)
     case decoding(Error)

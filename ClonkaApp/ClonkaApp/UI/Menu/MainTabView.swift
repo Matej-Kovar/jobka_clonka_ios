@@ -123,7 +123,7 @@ struct MainTabView: View {
         case .postList:
             PostListView(moduleId: moduleId)
         case .surveyList:
-            SurveyListView(moduleId: moduleId)
+            SurveyListRoot(moduleId: moduleId)
         case .chatList:
             MessageListView(moduleId: moduleId)
         case .contacts:

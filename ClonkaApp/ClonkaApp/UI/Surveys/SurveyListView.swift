@@ -22,7 +22,7 @@ struct SurveyListView: View {
                     LazyVStack(spacing: 12) {
                         ForEach(viewModel.surveys) { survey in
                             NavigationLink(value: SurveyDetailDestination(surveyId: survey.surveyId)) {
-                                surveyCard(survey)
+                                SurveyCardView(survey: survey)
                             }
                             .buttonStyle(.plain)
                         }
@@ -36,9 +36,26 @@ struct SurveyListView: View {
         .task { await viewModel.load() }
     }
 
-    @ViewBuilder
-    private func surveyCard(_ survey: SurveyListItem) -> some View {
-        let isAnswered = survey.state == "Answered"
+    // surveyCard removed from inside the view struct. Use the shared top-level SurveyCardView below.
+}
+
+// MARK: Helpers
+
+private func surveyTypeDictionary(_ type: String) -> String {
+    switch type {
+    case "SurveyType_Questionnaire": return "Dotazník"
+    case "SurveyType_Query": return "Dotaz"
+    default: return type
+    }
+}
+
+// MARK: - Shared Survey Card View
+
+struct SurveyCardView: View {
+    let survey: SurveyListItem
+
+    var body: some View {
+        let isAnswered = survey.state == "answered"
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top) {
                 Image(systemName: isAnswered ? "checkmark.circle.fill" : "circle.dotted")
@@ -52,7 +69,7 @@ struct SurveyListView: View {
                         .multilineTextAlignment(.leading)
 
                     if let type = survey.surveyType {
-                        Text(type)
+                        Text(surveyTypeDictionary(type))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -106,6 +123,64 @@ struct SurveyListView: View {
         .overlay {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .strokeBorder(Color(.systemGray5), lineWidth: 1)
+        }
+    }
+}
+
+// MARK: - Root with tabs (nové / archiv)
+
+struct SurveyListRoot: View {
+    let moduleId: Int
+    @StateObject private var viewModel: SurveyListViewModel
+    @State private var selection = 0
+
+    init(moduleId: Int) {
+        self.moduleId = moduleId
+        _viewModel = StateObject(wrappedValue: SurveyListViewModel(moduleId: moduleId))
+    }
+
+    var body: some View {
+        TabView(selection: $selection) {
+            listView(filtered: viewModel.surveys.filter { ($0.state ?? "") != "answered" })
+                .tag(0)
+                .tabItem { Label("Nové", systemImage: "envelope.fill") }
+
+            listView(filtered: viewModel.surveys.filter { ($0.state ?? "") == "answered" })
+                .tag(1)
+                .tabItem { Label("Archiv", systemImage: "archivebox.fill") }
+        }
+        .navigationTitle("Surveys")
+        .refreshable { await viewModel.load() }
+        .task { await viewModel.load() }
+    }
+
+    @ViewBuilder
+    private func listView(filtered: [SurveyListItem]) -> some View {
+        VStack(spacing: 0) {
+            Group {
+                if viewModel.isLoading && filtered.isEmpty {
+                    SLoading()
+                } else if let error = viewModel.errorMessage, filtered.isEmpty {
+                    SErrorState(message: error) { Task { await viewModel.load() } }
+                } else if filtered.isEmpty {
+                    SEmptyState(icon: "checklist", message: "No surveys available")
+                } else {
+                    ScrollView {
+                        LazyVStack(spacing: 12) {
+                            ForEach(filtered) { survey in
+                                NavigationLink(value: SurveyDetailDestination(surveyId: survey.surveyId)) {
+                                    SurveyCardView(survey: survey)
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
+                        .padding()
+                    }
+                }
+            }
+
+            Divider()
+                .padding(.vertical, 8)
         }
     }
 }

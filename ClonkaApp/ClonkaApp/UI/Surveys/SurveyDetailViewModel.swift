@@ -34,13 +34,22 @@ final class SurveyDetailViewModel: ObservableObject {
         switch result {
         case .success(let d):
             detail = d
-            isSubmitted = d.state == "Answered"
-            for q in d.questions ?? [] {
+            isSubmitted = d.state == "answered"
+            AppLogger.navigation.debug("📋 Survey loaded: \(d.questions?.count ?? 0) questions")
+            for (idx, q) in (d.questions ?? []).enumerated() {
+                if let attachments = q.attachments, !attachments.isEmpty {
+                    AppLogger.navigation.debug("📸 Q\(q.questionId) (index \(idx)): \(attachments.count) attachments - types: \(attachments.map { $0.contentType ?? "unknown" }.joined(separator: ", "))")
+                    for att in attachments {
+                        AppLogger.navigation.debug("   - \(att.displayName ?? "?") | \(att.contentType ?? "?") | URL: \(att.documentUrl ?? "NONE")")
+                    }
+                }
                 if let text = q.answerText { answers[q.questionId] = text }
                 let selected = q.options?.filter { $0.isSelected == true }.map { $0.questionOptionId } ?? []
                 if !selected.isEmpty { selectedOptions[q.questionId] = Set(selected) }
             }
-        case .failure(let error): errorMessage = error.localizedDescription
+        case .failure(let error):
+            errorMessage = error.localizedDescription
+            AppLogger.navigation.error("📋 Survey load failed: \(error.localizedDescription)")
         }
         isLoading = false
     }

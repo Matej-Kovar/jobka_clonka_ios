@@ -273,7 +273,7 @@ actor APIClient {
             )
 
             // Log every response to in-app debug store
-            let responseSnippet = String(data: data.prefix(500), encoding: .utf8)
+            let responseSnippet = String(data: data, encoding: .utf8)
             await DebugLogStore.shared.logHTTP(
                 level: (200...299).contains(statusCode) ? .info : .error,
                 method: method, url: urlStr,
@@ -286,7 +286,7 @@ actor APIClient {
                 AppLogger.api.warning(
                     "🐌 Slow request: \(method) \(urlStr) took \(String(format: "%.1f", elapsed))s"
                 )
-                let responsePreview = String(data: data.prefix(500), encoding: .utf8)
+                let responsePreview = String(data: data, encoding: .utf8)
                 await ErrorReportStore.shared.addSlowRequest(
                     url: urlStr, method: method, statusCode: statusCode,
                     duration: elapsed, responseBody: responsePreview)
@@ -305,9 +305,7 @@ actor APIClient {
 
             // Handle other errors
             guard (200...299).contains(statusCode) else {
-                let bodyPreview =
-                    String(data: data.prefix(500), encoding: .utf8)
-                    ?? "<binary>"
+                let bodyPreview = String(data: data, encoding: .utf8) ?? "<binary>"
                 AppLogger.api.error(
                     "❌ Server error \(statusCode): \(bodyPreview)")
                 await ErrorReportStore.shared.addError(
@@ -319,13 +317,13 @@ actor APIClient {
                     .server(
                         statusCode: statusCode,
                         message: String(
-                            data: data.prefix(200), encoding: .utf8)))
+                            data: data, encoding: .utf8)))
             }
 
             // Log response preview
-            let _ = String(data: data.prefix(300), encoding: .utf8).map { _ in
+            let _ = String(data: data, encoding: .utf8).map { _ in
                 AppLogger.api.debug(
-                    "📥 Response: \(AppLogger.redactBody(data.prefix(300)))")
+                    "📥 Response: \(AppLogger.redactBody(data))")
             }
 
             // Decode response

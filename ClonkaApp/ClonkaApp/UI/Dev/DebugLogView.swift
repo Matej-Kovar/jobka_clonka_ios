@@ -149,7 +149,8 @@ struct DebugLogView: View {
 
             Text(entry.source == .http ? (entry.url ?? entry.message) : entry.message)
                 .font(.caption)
-                .lineLimit(1)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
 
             HStack(spacing: 4) {
                 if entry.source == .app {

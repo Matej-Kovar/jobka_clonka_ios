@@ -4,6 +4,7 @@ struct FormView: View {
     let moduleId: Int
     @StateObject private var viewModel: FormViewModel
     @State private var successAnimationTrigger = false
+    @EnvironmentObject private var appState: AppState
     
     init(moduleId: Int) {
         self.moduleId = moduleId
@@ -26,6 +27,9 @@ struct FormView: View {
         }
         .navigationTitle("Form")
         .task { await viewModel.load() }
+        .environment(\.openURL, OpenURLAction { url in
+            handleLinkTap(url)
+        })
     }
 
     // MARK: - Success View
@@ -152,6 +156,7 @@ struct FormView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
         .background {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
@@ -167,7 +172,7 @@ struct FormView: View {
 
     private func labelField(_ field: FormFieldDefinition) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            htmlText(field.DisplayName ?? "")
+            Text(field.DisplayName ?? "")
                 .font(.headline)
             if let desc = field.Description, !desc.isEmpty {
                 htmlText(desc)
@@ -317,23 +322,133 @@ struct FormView: View {
 
     // MARK: - Helpers
 
-    private func htmlText(_ string: String) -> Text {
-        guard
-            !string.isEmpty,
-            let data = string.data(using: .utf8),
-            let attributed = try? NSAttributedString(
-                data: data,
-                options: [
-                    .documentType: NSAttributedString.DocumentType.html,
-                    .characterEncoding: String.Encoding.utf8.rawValue
-                ],
-                documentAttributes: nil
-            )
-        else {
-            return Text(string)
+    private func htmlText(_ string: String) -> some View {
+        Text(attributedHTMLText(string))
+    }
+
+    private func sanitizedHTMLText(_ string: String) -> String {
+        guard !string.isEmpty else { return "" }
+
+        let withLineBreaks = string
+            .replacingOccurrences(of: "(?i)<br\\s*/?>", with: "\n", options: .regularExpression)
+            .replacingOccurrences(of: "(?i)</p>", with: "\n", options: .regularExpression)
+
+        let withoutTags = withLineBreaks.replacingOccurrences(
+            of: "<[^>]+>",
+            with: "",
+            options: .regularExpression
+        )
+
+        return decodeHTMLEntities(withoutTags)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private func decodeHTMLEntities(_ value: String) -> String {
+        value
+            .replacingOccurrences(of: "&nbsp;", with: " ")
+            .replacingOccurrences(of: "&amp;", with: "&")
+            .replacingOccurrences(of: "&lt;", with: "<")
+            .replacingOccurrences(of: "&gt;", with: ">")
+            .replacingOccurrences(of: "&quot;", with: "\"")
+            .replacingOccurrences(of: "&#39;", with: "'")
+    }
+
+    private func attributedHTMLText(_ string: String) -> AttributedString {
+        let markdown = htmlToMarkdown(string)
+        if let attributed = try? AttributedString(
+            markdown: markdown,
+            options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace)
+        ) {
+            return attributed
+        }
+        return AttributedString(sanitizedHTMLText(string))
+    }
+
+    private func htmlToMarkdown(_ string: String) -> String {
+        guard !string.isEmpty else { return "" }
+
+        let unescapedQuotes = string.replacingOccurrences(of: "\\\"", with: "\"")
+        let withLineBreaks = unescapedQuotes
+            .replacingOccurrences(of: "(?i)<br\\s*/?>", with: "\n", options: .regularExpression)
+            .replacingOccurrences(of: "(?i)</p>", with: "\n", options: .regularExpression)
+
+        let withLinks = convertAnchorTagsToMarkdown(withLineBreaks)
+        let withoutTags = withLinks.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression)
+
+        return decodeHTMLEntities(withoutTags)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private func convertAnchorTagsToMarkdown(_ value: String) -> String {
+        let pattern = "(?is)<a\\s+[^>]*href\\s*=\\s*[\"']([^\"']+)[\"'][^>]*>(.*?)</a>"
+        guard let regex = try? NSRegularExpression(pattern: pattern) else { return value }
+
+        let range = NSRange(value.startIndex..<value.endIndex, in: value)
+        let matches = regex.matches(in: value, range: range)
+        guard !matches.isEmpty else { return value }
+
+        var result = value
+        for match in matches.reversed() {
+            guard
+                let hrefRange = Range(match.range(at: 1), in: result),
+                let textRange = Range(match.range(at: 2), in: result),
+                let fullRange = Range(match.range(at: 0), in: result)
+            else {
+                continue
+            }
+
+            let href = String(result[hrefRange])
+            let text = sanitizedHTMLText(String(result[textRange]))
+            result.replaceSubrange(fullRange, with: "[\(text)](\(href))")
         }
 
-        return Text(AttributedString(attributed))
+        return result
+    }
+
+    private func handleLinkTap(_ url: URL) -> OpenURLAction.Result {
+        guard url.scheme?.lowercased() == "appnavigation" else {
+            return .systemAction
+        }
+
+        Task {
+            await routeAppNavigationLink(url)
+        }
+
+        return .handled
+    }
+
+    private func routeAppNavigationLink(_ url: URL) async {
+        let moduleId = Int(url.host ?? "") ?? Int(url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/")))
+        guard let moduleId else {
+            AppLogger.navigation.warning("⚠️ Invalid appnavigation URL: \(url.absoluteString)")
+            return
+        }
+
+        let menuResult = await MenuAPIService.fetchMenuFromXML()
+        guard case .success(let config) = menuResult else {
+            AppLogger.navigation.warning("⚠️ Could not resolve module \(moduleId) from appnavigation URL")
+            return
+        }
+
+        guard let menuItem = config.menuItems.first(where: { $0.itemId == moduleId }) else {
+            AppLogger.navigation.warning("⚠️ Module \(moduleId) not found in menu config")
+            return
+        }
+
+        if menuItem.itemType == "Url", let urlString = menuItem.params["Url"] {
+            var destination = ModuleDestination(route: .url, moduleId: menuItem.itemId, title: menuItem.title)
+            destination.urlString = urlString
+            await MainActor.run {
+                appState.pendingNavigation = destination
+            }
+            return
+        }
+
+        let route = MenuRoute(rawValue: menuItem.itemType) ?? .unknown
+        let destination = ModuleDestination(route: route, moduleId: menuItem.itemId, title: menuItem.title)
+        await MainActor.run {
+            appState.pendingNavigation = destination
+        }
     }
 
     private func toggleMultiSelect(fieldId: Int, optionId: Int) {

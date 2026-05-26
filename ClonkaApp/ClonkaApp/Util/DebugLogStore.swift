@@ -78,7 +78,7 @@ final class DebugLogStore: ObservableObject {
                 e.durationMs.map { "\($0)ms" } ?? nil,
             ].compactMap { $0 }
             var line = parts.joined(separator: " ")
-            if let d = e.detail { line += "\n  \(d.prefix(300))" }
+            if let d = e.detail { line += "\n  \(d)" }
             return line
         }.joined(separator: "\n")
     }
