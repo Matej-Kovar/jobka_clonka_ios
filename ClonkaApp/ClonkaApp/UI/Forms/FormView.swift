@@ -163,10 +163,10 @@ struct FormView: View {
 
     private func labelField(_ field: FormFieldDefinition) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(field.DisplayName ?? "")
+            htmlText(field.DisplayName ?? "")
                 .font(.headline)
             if let desc = field.Description, !desc.isEmpty {
-                Text(desc)
+                htmlText(desc)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
@@ -312,6 +312,25 @@ struct FormView: View {
     }
 
     // MARK: - Helpers
+
+    private func htmlText(_ string: String) -> Text {
+        guard
+            !string.isEmpty,
+            let data = string.data(using: .utf8),
+            let attributed = try? NSAttributedString(
+                data: data,
+                options: [
+                    .documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf8.rawValue
+                ],
+                documentAttributes: nil
+            )
+        else {
+            return Text(string)
+        }
+
+        return Text(AttributedString(attributed))
+    }
 
     private func toggleMultiSelect(fieldId: Int, optionId: Int) {
         var ids = Set((viewModel.values[fieldId] ?? "").split(separator: ",").compactMap { Int($0) })
