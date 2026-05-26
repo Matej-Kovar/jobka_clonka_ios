@@ -3,7 +3,8 @@ import SwiftUI
 struct TrustBoxView: View {
     let moduleId: Int
     @StateObject private var viewModel: TrustBoxViewModel
-
+    @State private var successAnimationTrigger = false
+    
     init(moduleId: Int) {
         self.moduleId = moduleId
         _viewModel = StateObject(wrappedValue: TrustBoxViewModel(moduleId: moduleId))
@@ -25,7 +26,10 @@ struct TrustBoxView: View {
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 72))
                 .foregroundStyle(.green)
-                .symbolEffect(.bounce, options: .nonRepeating)
+                .symbolEffect(.bounce, value: successAnimationTrigger)
+                .onAppear{
+                    successAnimationTrigger.toggle()
+                }
             Text("Message Sent")
                 .font(.title2.bold())
             Text("Thank you for your feedback.")

@@ -3,7 +3,8 @@ import SwiftUI
 struct FormView: View {
     let moduleId: Int
     @StateObject private var viewModel: FormViewModel
-
+    @State private var successAnimationTrigger = false
+    
     init(moduleId: Int) {
         self.moduleId = moduleId
         _viewModel = StateObject(wrappedValue: FormViewModel(moduleId: moduleId))
@@ -34,7 +35,10 @@ struct FormView: View {
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 72))
                 .foregroundStyle(.green)
-                .symbolEffect(.bounce, options: .nonRepeating)
+                .symbolEffect(.bounce, value: successAnimationTrigger)
+                .onAppear{
+                    successAnimationTrigger.toggle()
+                }
             Text("Form Submitted")
                 .font(.title2.bold())
             Text("Your data has been saved.")
