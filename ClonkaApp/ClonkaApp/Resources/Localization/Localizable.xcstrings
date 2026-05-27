@@ -1,78 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
-    "—" : {
-
-    },
-    "(%lld)" : {
-
-    },
-    "[%@]" : {
-
-    },
-    "*" : {
-
-    },
-    "%@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$@"
-          }
-        }
-      }
-    },
-    "%lld" : {
-
-    },
-    "%lld characters" : {
-
-    },
-    "%lld/%lld" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld/%2$lld"
-          }
-        }
-      }
-    },
-    "%lld/%lld questions" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld/%2$lld questions"
-          }
-        }
-      }
-    },
-    "%lldms" : {
-
-    },
-    "© 2024 Skeleton s.r.o." : {
-
-    },
-    "🔴" : {
-
-    },
-    "🟡" : {
-
-    },
-    "About" : {
-
-    },
-    "About App" : {
-
-    },
-    "Actions" : {
-
-    },
     "Activate" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -89,39 +17,6 @@
           }
         }
       }
-    },
-    "Active URLs" : {
-
-    },
-    "Add comment..." : {
-
-    },
-    "All" : {
-
-    },
-    "Anonymous" : {
-
-    },
-    "Anonymous Feedback" : {
-
-    },
-    "Answered" : {
-
-    },
-    "API" : {
-
-    },
-    "API Environment" : {
-
-    },
-    "App" : {
-
-    },
-    "App Info" : {
-
-    },
-    "App Version" : {
-
     },
     "App_Description" : {
       "extractionState" : "manual",
@@ -191,18 +86,6 @@
           }
         }
       }
-    },
-    "Appearance" : {
-
-    },
-    "Approved" : {
-
-    },
-    "Archiv" : {
-
-    },
-    "Attachments" : {
-
     },
     "Auth_AccessCode" : {
       "extractionState" : "manual",
@@ -537,27 +420,6 @@
         }
       }
     },
-    "Azure File URL" : {
-
-    },
-    "Azure Files" : {
-
-    },
-    "Back" : {
-
-    },
-    "Build" : {
-
-    },
-    "by %@" : {
-
-    },
-    "Call" : {
-
-    },
-    "Camera" : {
-
-    },
     "Cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -581,81 +443,6 @@
         }
       }
     },
-    "Canteen" : {
-
-    },
-    "Card" : {
-
-    },
-    "Clear All Data" : {
-
-    },
-    "Clear Error Log" : {
-
-    },
-    "Client API" : {
-
-    },
-    "Client API URL" : {
-
-    },
-    "Clonka" : {
-
-    },
-    "Comments" : {
-
-    },
-    "Contact" : {
-
-    },
-    "Contacts" : {
-
-    },
-    "Copied!" : {
-
-    },
-    "Copy" : {
-
-    },
-    "Copy Device Info" : {
-
-    },
-    "Copy Error Log" : {
-
-    },
-    "Create" : {
-
-    },
-    "Custom Page" : {
-
-    },
-    "Custom URLs" : {
-
-    },
-    "Dark" : {
-
-    },
-    "Debug Log" : {
-
-    },
-    "Detail" : {
-
-    },
-    "Details" : {
-
-    },
-    "Developer" : {
-
-    },
-    "Developer Mode" : {
-
-    },
-    "Developer Mode Active" : {
-
-    },
-    "Developer Tools" : {
-
-    },
     "DeveloperMode" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -673,54 +460,15 @@
         }
       }
     },
-    "Device" : {
-
-    },
-    "Done" : {
-
-    },
-    "e.g. ABC-1234" : {
-
-    },
-    "Email" : {
-
-    },
-    "Email (optional)" : {
-
-    },
-    "email@example.com" : {
-
-    },
-    "Employee Portal" : {
-
-    },
-    "Enter developer password" : {
-
-    },
-    "Enter group name" : {
-
-    },
-    "Enter License Plate" : {
-
-    },
-    "Enter QR Code" : {
-
-    },
-    "Environment" : {
-
-    },
-    "Error" : {
-
-    },
-    "Error Detail" : {
-
-    },
-    "Error Log (%lld)" : {
-
-    },
     "Error_Generic" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Něco se pokazilo"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -729,36 +477,15 @@
         }
       }
     },
-    "Error_TryAgain" : {
-      "extractionState" : "manual"
-    },
-    "Errors" : {
-
-    },
-    "Form Submitted" : {
-
-    },
-    "Group Name" : {
-
-    },
-    "HTTP" : {
-
-    },
-    "https://..." : {
-
-    },
-    "ID_Login" : {
-
-    },
-    "Image failed to load" : {
-
-    },
-    "Image URL not available" : {
-
-    },
     "Image_Fail" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obrázek se nepovedlo načíst"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -770,6 +497,12 @@
     "Image_URL" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL obrázku není dostupné"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -778,33 +511,15 @@
         }
       }
     },
-    "Info" : {
-
-    },
-    "Key" : {
-      "extractionState" : "manual"
-    },
-    "Key 1" : {
-      "extractionState" : "manual"
-    },
-    "Key 2" : {
-      "extractionState" : "manual"
-    },
-    "Language" : {
-
-    },
-    "License Plates" : {
-
-    },
-    "Light" : {
-
-    },
-    "Load More" : {
-
-    },
     "Loading" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Načítání"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -813,15 +528,15 @@
         }
       }
     },
-    "Log Entries" : {
-
-    },
-    "Logout" : {
-
-    },
     "MaintenanceView_Description" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikace je momentálně v údržbě. Prosím, zkuste to znovu později."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -833,6 +548,12 @@
     "MaintenenceMode_Title" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Údržba"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -842,11 +563,30 @@
       }
     },
     "Manual" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zadat ručně"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manual"
+          }
+        }
+      }
     },
     "Menu_Favorites" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oblíbené"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -856,11 +596,31 @@
       }
     },
     "Menu_NoItems" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nebyly nalezeny žádné moduly"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No menu items found"
+          }
+        }
+      }
     },
     "Menu_SearchMenu" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyhledávání"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -869,51 +629,15 @@
         }
       }
     },
-    "Message Sent" : {
-
-    },
-    "Message..." : {
-
-    },
-    "Messages" : {
-
-    },
-    "Minimum 10 characters" : {
-
-    },
-    "Mode" : {
-
-    },
-    "New Group" : {
-
-    },
-    "New Message" : {
-
-    },
-    "New Post" : {
-
-    },
-    "Next" : {
-
-    },
-    "No content available" : {
-
-    },
-    "No errors recorded" : {
-
-    },
-    "No log entries yet" : {
-
-    },
-    "No menu items" : {
-
-    },
-    "No response body captured" : {
-
-    },
     "NoItemsFound" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žádná položka nebyla nalezena"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -922,39 +646,15 @@
         }
       }
     },
-    "Nové" : {
-
-    },
-    "OK" : {
-
-    },
-    "Open" : {
-
-    },
-    "Overview" : {
-
-    },
-    "Page ID: %lld" : {
-
-    },
-    "Password" : {
-
-    },
-    "Platform" : {
-
-    },
-    "PN: %@" : {
-
-    },
-    "Post" : {
-
-    },
-    "Post Detail" : {
-
-    },
     "Post_ApprovalFail" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potvrzení selhalo"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -966,6 +666,12 @@
     "Post_Approve" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potvrdit"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -977,6 +683,12 @@
     "Post_Approved" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potvrzeno"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -988,6 +700,12 @@
     "Post_ApproveMessage" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potvrzuji že jsem si přečetl toto sdělení"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -999,6 +717,12 @@
     "Post_Attachments" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přílohy"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1010,6 +734,12 @@
     "Post_Detail" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detail sdělení"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1021,6 +751,12 @@
     "Post_NoPosts" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatím žádná sdělení"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1032,6 +768,12 @@
     "Post_Title" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sdělení"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1040,81 +782,14 @@
         }
       }
     },
-    "Profile" : {
-
-    },
-    "QR Code / Access Code" : {
-
-    },
-    "Question %lld of %lld" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Question %1$lld of %2$lld"
-          }
-        }
-      }
-    },
-    "Remove Photo" : {
-
-    },
-    "Required" : {
-
-    },
-    "Result" : {
-
-    },
-    "Retry" : {
-
-    },
-    "s" : {
-
-    },
-    "Save Custom URLs" : {
-
-    },
-    "Scan QR Code" : {
-
-    },
-    "Scan to verify" : {
-
-    },
-    "Search" : {
-
-    },
-    "Search contacts" : {
-
-    },
-    "Search employees" : {
-
-    },
-    "seconds" : {
-
-    },
-    "Select all that apply" : {
-
-    },
-    "Select..." : {
-
-    },
-    "Settings" : {
-
-    },
-    "Slow Requests" : {
-
-    },
-    "Slow Threshold" : {
-
-    },
-    "Source" : {
-
-    },
-    "Stream" : {
-
-    },
     "Submit" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potvrdit"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1123,15 +798,15 @@
         }
       }
     },
-    "Survey" : {
-
-    },
-    "Survey Submitted" : {
-
-    },
     "Survey_Anonymous" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anonymní"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1143,6 +818,12 @@
     "Survey_Answered" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odpovězeno"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1154,6 +835,12 @@
     "Survey_Archive" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archiv"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1165,6 +852,12 @@
     "Survey_ListTitle" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dotazy"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1176,6 +869,12 @@
     "Survey_New" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nový"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1187,6 +886,12 @@
     "Survey_Open" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřeno"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1198,6 +903,12 @@
     "Survey_Query" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dotaz"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1209,6 +920,12 @@
     "Survey_Question" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otázka"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1231,6 +948,12 @@
     "Survey_Questionnaire" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dotazník"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1242,6 +965,12 @@
     "Survey_Required" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Povinné"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1253,6 +982,12 @@
     "Survey_SellectAll" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyberte vše co odpovídá"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1264,6 +999,12 @@
     "Survey_Submitted" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dotaz odeslán"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1275,6 +1016,12 @@
     "Survey_Thanks" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Děkujeme za vaše odpovědi"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1286,6 +1033,12 @@
     "Survey_Title" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dotaz"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1297,6 +1050,12 @@
     "Survey_Type" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napište svou odpověď"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1305,12 +1064,15 @@
         }
       }
     },
-    "Surveys" : {
-
-    },
     "Suvey_NotAvailable" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žádné dotazy nejsou dostupné"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1318,33 +1080,6 @@
           }
         }
       }
-    },
-    "System" : {
-
-    },
-    "Tester Account" : {
-
-    },
-    "Thank you for your answers." : {
-
-    },
-    "Thank you for your feedback." : {
-
-    },
-    "Theme" : {
-
-    },
-    "This page has no content" : {
-
-    },
-    "Time" : {
-
-    },
-    "Trust Box" : {
-
-    },
-    "Type your answer..." : {
-
     },
     "UnknownModule_Description" : {
       "extractionState" : "manual",
@@ -1379,33 +1114,6 @@
           }
         }
       }
-    },
-    "User" : {
-
-    },
-    "Version" : {
-
-    },
-    "Version 1.0.0" : {
-
-    },
-    "Webservice URL" : {
-
-    },
-    "WS API" : {
-
-    },
-    "WS URL" : {
-
-    },
-    "Your data has been saved." : {
-
-    },
-    "Your identity is not shared with anyone." : {
-
-    },
-    "Your Message" : {
-
     }
   },
   "version" : "1.0"

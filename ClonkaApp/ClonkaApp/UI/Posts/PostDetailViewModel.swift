@@ -50,7 +50,7 @@ final class PostDetailViewModel: ObservableObject {
         if result.isSuccess {
             isApproved = true
         } else {
-            approveError = result.error?.localizedDescription ?? "Approval failed"
+            approveError = result.error?.localizedDescription ?? L10n.Post_ApproveFail.string
         }
         isApproving = false
     }

@@ -47,7 +47,7 @@ struct PostDetailView: View {
                         // Attachments
                         if let attachments = detail.attachments, !attachments.isEmpty {
                             VStack(alignment: .leading, spacing: 10) {
-                                Text(L10n.Post_Attachments.key)
+                                Text(L10n.Post_Attachments.string)
                                     .font(.headline)
                                 ForEach(attachments) { att in
                                     HStack(spacing: 10) {
@@ -78,7 +78,7 @@ struct PostDetailView: View {
                                     Image(systemName: "checkmark.seal.fill")
                                         .foregroundStyle(.green)
                                     VStack(alignment: .leading, spacing: 2) {
-                                        Text(L10n.Post_Approved.key)
+                                        Text(L10n.Post_Approved.string)
                                             .font(.body.weight(.medium))
                                             .foregroundStyle(.green)
                                         if let date = detail.dateApproved {
@@ -129,7 +129,7 @@ struct PostDetailView: View {
                                         } else {
                                             HStack(spacing: 6) {
                                                 Image(systemName: "checkmark.seal")
-                                                Text(detail.textApprovalButton ?? L10n.Post_Approve.key)
+                                                Text(detail.textApprovalButton ?? L10n.Post_Approve.string)
                                             }
                                             .font(.body.weight(.semibold))
                                             .frame(maxWidth: .infinity)

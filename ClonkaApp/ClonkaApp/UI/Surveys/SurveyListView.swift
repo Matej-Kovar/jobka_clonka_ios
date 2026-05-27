@@ -31,7 +31,7 @@ struct SurveyListView: View {
                 }
             }
         }
-        .navigationTitle(L10n.Survey_ListTitle.key)
+        .navigationTitle(L10n.Survey_ListTitle.string)
         .refreshable { await viewModel.load() }
         .task { await viewModel.load() }
     }
@@ -106,7 +106,7 @@ struct SurveyCardView: View {
                             .foregroundStyle(.tertiary)
                         Spacer()
                         if survey.isAnonymous == true {
-                            Label(L10n.Survey_Anonymous, systemImage: "eye.slash")
+                            Label(L10n.Survey_Anonymous.string, systemImage: "eye.slash")
                                 .font(.caption2)
                                 .foregroundStyle(.tertiary)
                         }
@@ -143,13 +143,13 @@ struct SurveyListRoot: View {
         TabView(selection: $selection) {
             listView(filtered: viewModel.surveys.filter { ($0.state ?? "") != "answered" })
                 .tag(0)
-                .tabItem { Label(L10n.Survey_New.key, systemImage: "envelope.fill") }
+                .tabItem { Label(L10n.Survey_New.string, systemImage: "envelope.fill") }
 
             listView(filtered: viewModel.surveys.filter { ($0.state ?? "") == "answered" })
                 .tag(1)
-                .tabItem { Label(L10n.Survey_Archive.key, systemImage: "archivebox.fill") }
+                .tabItem { Label(L10n.Survey_Archive.string, systemImage: "archivebox.fill") }
         }
-        .navigationTitle(L10n.Survey_ListTitle.key)
+        .navigationTitle(L10n.Survey_ListTitle.string)
         .refreshable { await viewModel.load() }
         .task { await viewModel.load() }
     }
@@ -163,7 +163,7 @@ struct SurveyListRoot: View {
                 } else if let error = viewModel.errorMessage, filtered.isEmpty {
                     SErrorState(message: error) { Task { await viewModel.load() } }
                 } else if filtered.isEmpty {
-                    SEmptyState(icon: "checklist", message: L10n.Survey_NotAvailable.key)
+                    SEmptyState(icon: "checklist", message: L10n.Survey_NotAvailable.string)
                 } else {
                     ScrollView {
                         LazyVStack(spacing: 12) {
