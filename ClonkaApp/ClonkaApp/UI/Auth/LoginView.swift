@@ -16,7 +16,7 @@ struct LoginView: View {
                         Text(L10n.App_Name.key)
                             .font(.largeTitle.bold())
                             .foregroundStyle(JobkaTheme.primary)
-                        Text("Employee Portal")
+                        Text(L10n.App_Description.key)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
@@ -42,7 +42,7 @@ struct LoginView: View {
                     Spacer(minLength: 40)
 
                     // Version
-                    Text("Clonka Swift v1.0.0")
+                    Text(L10n.App_NameDetail.key)
                         .font(.caption)
                         .foregroundStyle(.tertiary)
                         .onTapGesture {
@@ -57,17 +57,17 @@ struct LoginView: View {
                 if viewModel.isLoading {
                     Color.black.opacity(0.3)
                         .ignoresSafeArea()
-                    ProgressView("Logging in...")
+                    ProgressView(L10n.Auth_LoggingIn.key)
                         .padding()
                         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))
                 }
             }
-            .alert("Developer Mode", isPresented: $viewModel.showDeveloperPrompt) {
-                TextField("Password", text: $viewModel.developerPassword)
-                Button("Cancel", role: .cancel) {}
-                Button("Activate") { viewModel.activateDeveloperMode() }
+            .alert(L10n.DeveloperMode.key, isPresented: $viewModel.showDeveloperPrompt) {
+                TextField(L10n.Auth_Password.key, text: $viewModel.developerPassword)
+                Button(L10n.Cancel.key, role: .cancel) {}
+                Button(L10n.Activate.key) { viewModel.activateDeveloperMode() }
             } message: {
-                Text("Enter developer password")
+                Text(L10n.Auth_EnterDeveloperPassword.key)
             }
             .sheet(isPresented: $viewModel.showQRScanner) {
                 QRScannerView { code in
@@ -85,7 +85,7 @@ struct LoginView: View {
 
     private var savedProfilesSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Saved Accounts")
+            Text(L10n.Auth_SavedAccounts.key)
                 .font(.headline)
                 .padding(.horizontal)
 
@@ -116,7 +116,7 @@ struct LoginView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(profile.displayName)
                         .font(.body.weight(.medium))
-                    Text("PN: \(profile.personalNumber)")
+                    Text("\(L10n.Auth_PN.key) \(profile.personalNumber)")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -145,7 +145,7 @@ struct LoginView: View {
             Button(role: .destructive) {
                 viewModel.deleteProfile(profile)
             } label: {
-                Label("Delete", systemImage: "trash")
+                Label(L10n.Delete.key, systemImage: "trash")
             }
         }
     }
@@ -154,15 +154,15 @@ struct LoginView: View {
 
     private var loginFormSection: some View {
         VStack(spacing: 16) {
-            Text("Login")
+            Text(L10n.Auth_Login.key)
                 .font(.headline)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("Personal Number")
+                Text(L10n.Auth_PersonalNumber.key)
                     .font(.caption)
                     .foregroundStyle(.secondary)
-                TextField("Enter personal number", text: $viewModel.personalNumber)
+                TextField(L10n.Auth_EnterPersonalNumber.key, text: $viewModel.personalNumber)
                     .textFieldStyle(.roundedBorder)
                     .keyboardType(.numberPad)
                     .autocorrectionDisabled()
@@ -170,10 +170,10 @@ struct LoginView: View {
             }
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("Access Code")
+                Text(L10n.Auth_AccessCode.key)
                     .font(.caption)
                     .foregroundStyle(.secondary)
-                SecureField("Enter access code or scan QR", text: $viewModel.accessCode)
+                SecureField(L10n.Auth_EnterAccessCode.key, text: $viewModel.accessCode)
                     .textFieldStyle(.roundedBorder)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
@@ -183,7 +183,7 @@ struct LoginView: View {
                 Button {
                     viewModel.showQRScanner = true
                 } label: {
-                    Label("Scan QR", systemImage: "qrcode.viewfinder")
+                    Label(L10n.Auth_ScanQRCode.key, systemImage: "qrcode.viewfinder")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
@@ -192,7 +192,7 @@ struct LoginView: View {
                 Button {
                     Task { await viewModel.login() }
                 } label: {
-                    Text("Login")
+                    Text(L10n.Auth_Login.key)
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)

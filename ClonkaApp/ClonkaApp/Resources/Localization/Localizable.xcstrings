@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Activate" : {
+      "extractionState" : "manual"
+    },
     "App_Description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -139,6 +142,9 @@
         }
       }
     },
+    "Auth_EnterDeveleoperPassword" : {
+      "extractionState" : "manual"
+    },
     "Auth_EnterPersonalNumber" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -214,19 +220,19 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Přihlašování"
+            "value" : "Přihlašování..."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Anmeldung läuft"
+            "value" : "Anmeldung läuft..."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Logging in"
+            "value" : "Logging in..."
           }
         }
       }
@@ -277,6 +283,9 @@
         }
       }
     },
+    "Auth_Password" : {
+      "extractionState" : "manual"
+    },
     "Auth_PersonalNumber" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -296,6 +305,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Personal Number"
+          }
+        }
+      }
+    },
+    "Auth_PN" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PČ"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PN"
           }
         }
       }
@@ -369,6 +395,20 @@
         }
       }
     },
+    "Delete" : {
+      "extractionState" : "manual"
+    },
+    "DeveloperMode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer Mode"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }
