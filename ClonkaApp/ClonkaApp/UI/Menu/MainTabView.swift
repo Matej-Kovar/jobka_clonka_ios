@@ -43,7 +43,7 @@ struct MainTabView: View {
                     }
                 }
             }
-            .searchable(text: $menuViewModel.searchText, prompt: "Search menu")
+            .searchable(text: $menuViewModel.searchText, prompt: L10n.Menu_SearchMenu.key)
             .refreshable {
                 await menuViewModel.refresh()
             }

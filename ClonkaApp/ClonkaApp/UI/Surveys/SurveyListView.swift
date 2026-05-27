@@ -16,7 +16,7 @@ struct SurveyListView: View {
             } else if let error = viewModel.errorMessage, viewModel.surveys.isEmpty {
                 SErrorState(message: error) { Task { await viewModel.load() } }
             } else if viewModel.surveys.isEmpty {
-                SEmptyState(icon: "checklist", message: "No surveys available")
+                SEmptyState(icon: "checklist", message: L10n.Survey_NotAvailable.string)
             } else {
                 ScrollView {
                     LazyVStack(spacing: 12) {
@@ -31,7 +31,7 @@ struct SurveyListView: View {
                 }
             }
         }
-        .navigationTitle("Surveys")
+        .navigationTitle(L10n.Survey_ListTitle.key)
         .refreshable { await viewModel.load() }
         .task { await viewModel.load() }
     }
@@ -43,8 +43,8 @@ struct SurveyListView: View {
 
 private func surveyTypeDictionary(_ type: String) -> String {
     switch type {
-    case "SurveyType_Questionnaire": return "Dotazník"
-    case "SurveyType_Query": return "Dotaz"
+    case "SurveyType_Questionnaire": return L10n.Survey_Questionnaire.string
+    case "SurveyType_Query": return L10n.Survey_Query.string
     default: return type
     }
 }
@@ -63,7 +63,7 @@ struct SurveyCardView: View {
                     .foregroundStyle(isAnswered ? .green : .orange)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(survey.displayName ?? "Survey")
+                    Text(survey.displayName ?? L10n.Survey_Title.string)
                         .font(.headline)
                         .foregroundStyle(.primary)
                         .multilineTextAlignment(.leading)
@@ -77,7 +77,7 @@ struct SurveyCardView: View {
 
                 Spacer()
 
-                Text(isAnswered ? "Answered" : "Open")
+                Text(isAnswered ? L10n.Survey_Answered.string :L10n.Survey_Open.string)
                     .font(.caption.bold())
                     .foregroundStyle(.white)
                     .padding(.horizontal, 10)
@@ -106,7 +106,7 @@ struct SurveyCardView: View {
                             .foregroundStyle(.tertiary)
                         Spacer()
                         if survey.isAnonymous == true {
-                            Label("Anonymous", systemImage: "eye.slash")
+                            Label(L10n.Survey_Anonymous, systemImage: "eye.slash")
                                 .font(.caption2)
                                 .foregroundStyle(.tertiary)
                         }
@@ -143,13 +143,13 @@ struct SurveyListRoot: View {
         TabView(selection: $selection) {
             listView(filtered: viewModel.surveys.filter { ($0.state ?? "") != "answered" })
                 .tag(0)
-                .tabItem { Label("Nové", systemImage: "envelope.fill") }
+                .tabItem { Label(L10n.Survey_New.key, systemImage: "envelope.fill") }
 
             listView(filtered: viewModel.surveys.filter { ($0.state ?? "") == "answered" })
                 .tag(1)
-                .tabItem { Label("Archiv", systemImage: "archivebox.fill") }
+                .tabItem { Label(L10n.Survey_Archive.key, systemImage: "archivebox.fill") }
         }
-        .navigationTitle("Surveys")
+        .navigationTitle(L10n.Survey_ListTitle.key)
         .refreshable { await viewModel.load() }
         .task { await viewModel.load() }
     }
@@ -163,7 +163,7 @@ struct SurveyListRoot: View {
                 } else if let error = viewModel.errorMessage, filtered.isEmpty {
                     SErrorState(message: error) { Task { await viewModel.load() } }
                 } else if filtered.isEmpty {
-                    SEmptyState(icon: "checklist", message: "No surveys available")
+                    SEmptyState(icon: "checklist", message: L10n.Survey_NotAvailable.key)
                 } else {
                     ScrollView {
                         LazyVStack(spacing: 12) {

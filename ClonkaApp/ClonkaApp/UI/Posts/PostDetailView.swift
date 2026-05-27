@@ -4,7 +4,7 @@ struct PostDetailView: View {
     @StateObject private var viewModel: PostDetailViewModel
     let title: String
 
-    init(postId: Int, title: String = "Post") {
+    init(postId: Int, title: String = L10n.Post_Title.string) {
         _viewModel = StateObject(wrappedValue: PostDetailViewModel(postId: postId))
         self.title = title
     }
@@ -47,7 +47,7 @@ struct PostDetailView: View {
                         // Attachments
                         if let attachments = detail.attachments, !attachments.isEmpty {
                             VStack(alignment: .leading, spacing: 10) {
-                                Text("Attachments")
+                                Text(L10n.Post_Attachments.key)
                                     .font(.headline)
                                 ForEach(attachments) { att in
                                     HStack(spacing: 10) {
@@ -59,7 +59,7 @@ struct PostDetailView: View {
                                                 .font(.callout)
                                                 .foregroundStyle(.secondary)
                                         }
-                                        Text(att.displayName ?? att.fileName ?? "Attachment")
+                                        Text(att.displayName ?? att.fileName ?? L10n.Post_Attachments.string)
                                             .font(.callout)
                                             .lineLimit(1)
                                     }
@@ -78,7 +78,7 @@ struct PostDetailView: View {
                                     Image(systemName: "checkmark.seal.fill")
                                         .foregroundStyle(.green)
                                     VStack(alignment: .leading, spacing: 2) {
-                                        Text("Approved")
+                                        Text(L10n.Post_Approved.key)
                                             .font(.body.weight(.medium))
                                             .foregroundStyle(.green)
                                         if let date = detail.dateApproved {
@@ -103,7 +103,7 @@ struct PostDetailView: View {
                                                     ? "checkmark.square.fill" : "square")
                                                     .font(.title3)
                                                     .foregroundStyle(viewModel.checkboxChecked ? Color.accentColor : Color(.systemGray3))
-                                                Text(detail.textApprovalCheckbox ?? "I confirm I have read this post")
+                                                Text(detail.textApprovalCheckbox ?? L10n.Post_ApproveMessage.string)
                                                     .font(.subheadline)
                                                     .foregroundStyle(.primary)
                                                     .multilineTextAlignment(.leading)
@@ -129,7 +129,7 @@ struct PostDetailView: View {
                                         } else {
                                             HStack(spacing: 6) {
                                                 Image(systemName: "checkmark.seal")
-                                                Text(detail.textApprovalButton ?? "Approve")
+                                                Text(detail.textApprovalButton ?? L10n.Post_Approve.key)
                                             }
                                             .font(.body.weight(.semibold))
                                             .frame(maxWidth: .infinity)
@@ -146,7 +146,7 @@ struct PostDetailView: View {
                 }
             }
         }
-        .navigationTitle("Post Detail")
+        .navigationTitle(L10n.Post_Detail.string)
         .navigationBarTitleDisplayMode(.inline)
         .task { await viewModel.load() }
     }

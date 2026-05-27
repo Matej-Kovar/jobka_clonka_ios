@@ -1,8 +1,127 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "—" : {
+
+    },
+    "(%lld)" : {
+
+    },
+    "[%@]" : {
+
+    },
+    "*" : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+
+    },
+    "%lld characters" : {
+
+    },
+    "%lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "%lld/%lld questions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld questions"
+          }
+        }
+      }
+    },
+    "%lldms" : {
+
+    },
+    "© 2024 Skeleton s.r.o." : {
+
+    },
+    "🔴" : {
+
+    },
+    "🟡" : {
+
+    },
+    "About" : {
+
+    },
+    "About App" : {
+
+    },
+    "Actions" : {
+
+    },
     "Activate" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivovat"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activate"
+          }
+        }
+      }
+    },
+    "Active URLs" : {
+
+    },
+    "Add comment..." : {
+
+    },
+    "All" : {
+
+    },
+    "Anonymous" : {
+
+    },
+    "Anonymous Feedback" : {
+
+    },
+    "Answered" : {
+
+    },
+    "API" : {
+
+    },
+    "API Environment" : {
+
+    },
+    "App" : {
+
+    },
+    "App Info" : {
+
+    },
+    "App Version" : {
+
     },
     "App_Description" : {
       "extractionState" : "manual",
@@ -73,6 +192,18 @@
         }
       }
     },
+    "Appearance" : {
+
+    },
+    "Approved" : {
+
+    },
+    "Archiv" : {
+
+    },
+    "Attachments" : {
+
+    },
     "Auth_AccessCode" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -142,8 +273,22 @@
         }
       }
     },
-    "Auth_EnterDeveleoperPassword" : {
-      "extractionState" : "manual"
+    "Auth_EnterDeveloperPassword" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napsat vývojářské heslo"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Developer Password"
+          }
+        }
+      }
     },
     "Auth_EnterPersonalNumber" : {
       "extractionState" : "manual",
@@ -284,7 +429,21 @@
       }
     },
     "Auth_Password" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heslo"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        }
+      }
     },
     "Auth_PersonalNumber" : {
       "extractionState" : "manual",
@@ -315,10 +474,16 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "PČ"
+            "value" : "OČ"
           }
         },
         "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "PN"
+          }
+        },
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "PN"
@@ -349,7 +514,7 @@
         }
       }
     },
-    "Auth_ScanQrCode" : {
+    "Auth_ScanQRCode" : {
       "extractionState" : "manual",
       "localizations" : {
         "cs" : {
@@ -371,6 +536,27 @@
           }
         }
       }
+    },
+    "Azure File URL" : {
+
+    },
+    "Azure Files" : {
+
+    },
+    "Back" : {
+
+    },
+    "Build" : {
+
+    },
+    "by %@" : {
+
+    },
+    "Call" : {
+
+    },
+    "Camera" : {
+
     },
     "Cancel" : {
       "extractionState" : "manual",
@@ -395,12 +581,90 @@
         }
       }
     },
-    "Delete" : {
-      "extractionState" : "manual"
+    "Canteen" : {
+
+    },
+    "Card" : {
+
+    },
+    "Clear All Data" : {
+
+    },
+    "Clear Error Log" : {
+
+    },
+    "Client API" : {
+
+    },
+    "Client API URL" : {
+
+    },
+    "Clonka" : {
+
+    },
+    "Comments" : {
+
+    },
+    "Contact" : {
+
+    },
+    "Contacts" : {
+
+    },
+    "Copied!" : {
+
+    },
+    "Copy" : {
+
+    },
+    "Copy Device Info" : {
+
+    },
+    "Copy Error Log" : {
+
+    },
+    "Create" : {
+
+    },
+    "Custom Page" : {
+
+    },
+    "Custom URLs" : {
+
+    },
+    "Dark" : {
+
+    },
+    "Debug Log" : {
+
+    },
+    "Detail" : {
+
+    },
+    "Details" : {
+
+    },
+    "Developer" : {
+
+    },
+    "Developer Mode" : {
+
+    },
+    "Developer Mode Active" : {
+
+    },
+    "Developer Tools" : {
+
     },
     "DeveloperMode" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vývojářský režim"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -408,6 +672,740 @@
           }
         }
       }
+    },
+    "Device" : {
+
+    },
+    "Done" : {
+
+    },
+    "e.g. ABC-1234" : {
+
+    },
+    "Email" : {
+
+    },
+    "Email (optional)" : {
+
+    },
+    "email@example.com" : {
+
+    },
+    "Employee Portal" : {
+
+    },
+    "Enter developer password" : {
+
+    },
+    "Enter group name" : {
+
+    },
+    "Enter License Plate" : {
+
+    },
+    "Enter QR Code" : {
+
+    },
+    "Environment" : {
+
+    },
+    "Error" : {
+
+    },
+    "Error Detail" : {
+
+    },
+    "Error Log (%lld)" : {
+
+    },
+    "Error_Generic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong"
+          }
+        }
+      }
+    },
+    "Error_TryAgain" : {
+      "extractionState" : "manual"
+    },
+    "Errors" : {
+
+    },
+    "Form Submitted" : {
+
+    },
+    "Group Name" : {
+
+    },
+    "HTTP" : {
+
+    },
+    "https://..." : {
+
+    },
+    "ID_Login" : {
+
+    },
+    "Image failed to load" : {
+
+    },
+    "Image URL not available" : {
+
+    },
+    "Image_Fail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image failed to load"
+          }
+        }
+      }
+    },
+    "Image_URL" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image URL not available"
+          }
+        }
+      }
+    },
+    "Info" : {
+
+    },
+    "Key" : {
+      "extractionState" : "manual"
+    },
+    "Key 1" : {
+      "extractionState" : "manual"
+    },
+    "Key 2" : {
+      "extractionState" : "manual"
+    },
+    "Language" : {
+
+    },
+    "License Plates" : {
+
+    },
+    "Light" : {
+
+    },
+    "Load More" : {
+
+    },
+    "Loading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        }
+      }
+    },
+    "Log Entries" : {
+
+    },
+    "Logout" : {
+
+    },
+    "MaintenanceView_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The app is currently under maintenance. Please try again later."
+          }
+        }
+      }
+    },
+    "MaintenenceMode_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maintenance Mode"
+          }
+        }
+      }
+    },
+    "Manual" : {
+
+    },
+    "Menu_Favorites" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        }
+      }
+    },
+    "Menu_NoItems" : {
+      "extractionState" : "manual"
+    },
+    "Menu_SearchMenu" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search menu"
+          }
+        }
+      }
+    },
+    "Message Sent" : {
+
+    },
+    "Message..." : {
+
+    },
+    "Messages" : {
+
+    },
+    "Minimum 10 characters" : {
+
+    },
+    "Mode" : {
+
+    },
+    "New Group" : {
+
+    },
+    "New Message" : {
+
+    },
+    "New Post" : {
+
+    },
+    "Next" : {
+
+    },
+    "No content available" : {
+
+    },
+    "No errors recorded" : {
+
+    },
+    "No log entries yet" : {
+
+    },
+    "No menu items" : {
+
+    },
+    "No response body captured" : {
+
+    },
+    "NoItemsFound" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No items found"
+          }
+        }
+      }
+    },
+    "Nové" : {
+
+    },
+    "OK" : {
+
+    },
+    "Open" : {
+
+    },
+    "Overview" : {
+
+    },
+    "Page ID: %lld" : {
+
+    },
+    "Password" : {
+
+    },
+    "Platform" : {
+
+    },
+    "PN: %@" : {
+
+    },
+    "Post" : {
+
+    },
+    "Post Detail" : {
+
+    },
+    "Post_ApprovalFail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Approval failed"
+          }
+        }
+      }
+    },
+    "Post_Approve" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Approve"
+          }
+        }
+      }
+    },
+    "Post_Approved" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Approved"
+          }
+        }
+      }
+    },
+    "Post_ApproveMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I confirm I have read this post"
+          }
+        }
+      }
+    },
+    "Post_Attachments" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attachments"
+          }
+        }
+      }
+    },
+    "Post_Detail" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Post Detail"
+          }
+        }
+      }
+    },
+    "Post_NoPosts" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No posts ye"
+          }
+        }
+      }
+    },
+    "Post_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Post"
+          }
+        }
+      }
+    },
+    "Profile" : {
+
+    },
+    "QR Code / Access Code" : {
+
+    },
+    "Question %lld of %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Question %1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "Remove Photo" : {
+
+    },
+    "Required" : {
+
+    },
+    "Result" : {
+
+    },
+    "Retry" : {
+
+    },
+    "s" : {
+
+    },
+    "Save Custom URLs" : {
+
+    },
+    "Scan QR Code" : {
+
+    },
+    "Scan to verify" : {
+
+    },
+    "Search" : {
+
+    },
+    "Search contacts" : {
+
+    },
+    "Search employees" : {
+
+    },
+    "seconds" : {
+
+    },
+    "Select all that apply" : {
+
+    },
+    "Select..." : {
+
+    },
+    "Settings" : {
+
+    },
+    "Slow Requests" : {
+
+    },
+    "Slow Threshold" : {
+
+    },
+    "Source" : {
+
+    },
+    "Stream" : {
+
+    },
+    "Submit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Submit"
+          }
+        }
+      }
+    },
+    "Survey" : {
+
+    },
+    "Survey Submitted" : {
+
+    },
+    "Survey_Anonymous" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anonymous"
+          }
+        }
+      }
+    },
+    "Survey_Answered" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Answered"
+          }
+        }
+      }
+    },
+    "Survey_Archive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archive"
+          }
+        }
+      }
+    },
+    "Survey_ListTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Survey"
+          }
+        }
+      }
+    },
+    "Survey_New" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New"
+          }
+        }
+      }
+    },
+    "Survey_Open" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open"
+          }
+        }
+      }
+    },
+    "Survey_Query" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Query"
+          }
+        }
+      }
+    },
+    "Survey_Question" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Question"
+          }
+        }
+      }
+    },
+    "Survey_QuestionCount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Question %1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "Survey_Questionnaire" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questionnaire"
+          }
+        }
+      }
+    },
+    "Survey_Required" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Required"
+          }
+        }
+      }
+    },
+    "Survey_SellectAll" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select all that apply"
+          }
+        }
+      }
+    },
+    "Survey_Submitted" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Survey Submitted"
+          }
+        }
+      }
+    },
+    "Survey_Thanks" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank you for your answers."
+          }
+        }
+      }
+    },
+    "Survey_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Survey"
+          }
+        }
+      }
+    },
+    "Survey_Type" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type your answer"
+          }
+        }
+      }
+    },
+    "Surveys" : {
+
+    },
+    "Suvey_NotAvailable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No surveys available"
+          }
+        }
+      }
+    },
+    "System" : {
+
+    },
+    "Tester Account" : {
+
+    },
+    "Thank you for your answers." : {
+
+    },
+    "Thank you for your feedback." : {
+
+    },
+    "Theme" : {
+
+    },
+    "This page has no content" : {
+
+    },
+    "Time" : {
+
+    },
+    "Trust Box" : {
+
+    },
+    "Type your answer..." : {
+
+    },
+    "UnknownModule_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tento modul ještě není dostupný"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This module is not yet available"
+          }
+        }
+      }
+    },
+    "UnknownModule_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neznámý modul"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Module"
+          }
+        }
+      }
+    },
+    "User" : {
+
+    },
+    "Version" : {
+
+    },
+    "Version 1.0.0" : {
+
+    },
+    "Webservice URL" : {
+
+    },
+    "WS API" : {
+
+    },
+    "WS URL" : {
+
+    },
+    "Your data has been saved." : {
+
+    },
+    "Your identity is not shared with anyone." : {
+
+    },
+    "Your Message" : {
+
     }
   },
   "version" : "1.0"

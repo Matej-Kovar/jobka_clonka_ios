@@ -21,7 +21,7 @@ struct SurveyDetailView: View {
                 successView
             }
         }
-        .navigationTitle("Survey")
+        .navigationTitle(L10n.Survey_Title.key)
         .navigationBarTitleDisplayMode(.inline)
         .task { await viewModel.load() }
     }
@@ -78,7 +78,7 @@ struct SurveyDetailView: View {
             }
             .animation(.spring(response: 0.3), value: viewModel.currentPage)
 
-            Text("Question \(viewModel.currentPage + 1) of \(viewModel.questions.count)")
+            Text(L10n.Survey_Question.formatted(with: viewModel.currentPage + 1, viewModel.questions.count))
                 .font(.caption)
                 .foregroundStyle(.tertiary)
         }
@@ -106,10 +106,10 @@ struct SurveyDetailView: View {
                         .background(Circle().fill(Color.accentColor))
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(q.questionText ?? "Question")
+                        Text(q.questionText ?? L10n.Survey_Question.string)
                             .font(.title3.weight(.semibold))
                         if q.isRequired == true {
-                            Text("Required")
+                            Text(L10n.Survey_Required.key)
                                 .font(.caption.weight(.medium))
                                 .foregroundStyle(.red)
                                 .padding(.horizontal, 8)
@@ -199,7 +199,7 @@ struct SurveyDetailView: View {
                                 .frame(maxWidth: .infinity)
                                 .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                         case .failure(let error):
-                            Label("Image failed to load", systemImage: "photo")
+                            Label(L10n.Image_Fail.key, systemImage: "photo")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                                 .frame(maxWidth: .infinity, minHeight: 180)
@@ -218,7 +218,7 @@ struct SurveyDetailView: View {
                         .background(Color(.systemGray6))
                         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                 } else {
-                    Label("Image URL not available", systemImage: "photo")
+                    Label(L10n.Image_URL.key, systemImage: "photo")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                         .frame(maxWidth: .infinity, minHeight: 180)
@@ -264,7 +264,7 @@ struct SurveyDetailView: View {
     private func optionsView(_ q: SurveyQuestion) -> some View {
         let isMulti = q.isMultipleOptions == true
         if isMulti {
-            Text("Select all that apply")
+            Text(L10n.Survey_SelectAll.key)
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
@@ -379,7 +379,7 @@ struct SurveyDetailView: View {
                             .strokeBorder(Color(.systemGray4), lineWidth: 1)
                     }
             } else {
-                TextField("Type your answer...", text: binding)
+                TextField(L10n.Survey_Type.key, text: binding)
                     .padding(12)
                     .background(Color(.systemGray6))
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -401,7 +401,7 @@ struct SurveyDetailView: View {
             } label: {
                 HStack(spacing: 4) {
                     Image(systemName: "chevron.left")
-                    Text("Back")
+                    Text(L10n.Back.key)
                 }
                 .font(.body.weight(.medium))
                 .frame(maxWidth: .infinity)
@@ -417,7 +417,7 @@ struct SurveyDetailView: View {
                     withAnimation { viewModel.currentPage += 1 }
                 } label: {
                     HStack(spacing: 4) {
-                        Text("Next")
+                        Text(L10n.Next.key)
                         Image(systemName: "chevron.right")
                     }
                     .font(.body.weight(.medium))
@@ -430,7 +430,7 @@ struct SurveyDetailView: View {
                     Button {
                     } label: {
                         HStack(spacing: 4) {
-                            Text("Next")
+                            Text(L10n.Next.key)
                             Image(systemName: "chevron.right")
                         }
                         .font(.body.weight(.medium))
@@ -451,7 +451,7 @@ struct SurveyDetailView: View {
                         } else {
                             HStack(spacing: 4) {
                                 Image(systemName: "paperplane.fill")
-                                Text("Submit")
+                                Text(L10n.Submit.key)
                             }
                             .font(.body.weight(.semibold))
                             .frame(maxWidth: .infinity)
@@ -476,9 +476,9 @@ struct SurveyDetailView: View {
                 .onAppear{
                     successAnimationTrigger.toggle()
                 }
-            Text("Survey Submitted")
+            Text(L10n.Survey_Submitted.key)
                 .font(.title2.bold())
-            Text("Thank you for your answers.")
+            Text(L10n.Survey_Thanks.key)
                 .font(.body)
                 .foregroundStyle(.secondary)
         }

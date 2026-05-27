@@ -6,10 +6,10 @@ struct UnknownModuleView: View {
             Image(systemName: "questionmark.circle")
                 .font(.system(size: 48))
                 .foregroundStyle(.secondary)
-            Text("This module is not yet available.")
+            Text(L10n.UnknownModule_Description.key)
                 .font(.callout)
                 .foregroundStyle(.secondary)
         }
-        .navigationTitle("Unknown Module")
+        .navigationTitle(L10n.UnknownModule_Title.key)
     }
 }

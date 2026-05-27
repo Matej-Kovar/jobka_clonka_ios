@@ -15,7 +15,7 @@ struct MenuGridView: View {
             LazyVStack(alignment: .leading, spacing: 16) {
                 // Favorites section
                 if !viewModel.favoriteItems.isEmpty && !viewModel.isInFolder {
-                    Text("Favorites")
+                    Text(L10n.Menu_Favorites.key)
                         .font(.headline)
                         .padding(.horizontal)
 
@@ -54,7 +54,7 @@ struct MenuGridView: View {
                             .font(.callout)
                             .foregroundStyle(.secondary)
                             .multilineTextAlignment(.center)
-                        Button("Retry") {
+                        Button(L10n.Error_TryAgain.key) {
                             Task { await viewModel.refresh() }
                         }
                         .buttonStyle(.bordered)
@@ -66,7 +66,7 @@ struct MenuGridView: View {
                         Image(systemName: "tray")
                             .font(.system(size: 40))
                             .foregroundStyle(.secondary)
-                        Text("No menu items")
+                        Text(L10n.Menu_NoItems.key)
                             .font(.callout)
                             .foregroundStyle(.secondary)
                     }

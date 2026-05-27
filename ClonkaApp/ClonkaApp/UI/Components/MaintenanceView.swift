@@ -5,9 +5,9 @@ struct MaintenanceView: View {
         VStack {
             Image(systemName: "wrench.and.screwdriver")
                 .font(.system(size: 60))
-            Text("Maintenance Mode")
+            Text(L10n.MaintenanceMode_Title.key)
                 .font(.title)
-            Text("The app is currently under maintenance. Please try again later.")
+            Text(L10n.MaintenanceMode_Description.key)
                 .multilineTextAlignment(.center)
                 .padding()
         }

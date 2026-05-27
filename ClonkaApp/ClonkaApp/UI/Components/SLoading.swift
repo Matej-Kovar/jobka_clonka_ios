@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SLoading: View {
-    var message: String = "Loading..."
+    var message: String = L10n.Loading.string
 
     var body: some View {
         VStack(spacing: 16) {

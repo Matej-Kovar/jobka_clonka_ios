@@ -9,7 +9,7 @@ struct SErrorState: View {
             Image(systemName: "exclamationmark.triangle.fill")
                 .font(.system(size: 48))
                 .foregroundStyle(.orange)
-            Text("Something went wrong")
+            Text(L10n.Error_Generic.key)
                 .font(.headline)
             Text(message)
                 .font(.subheadline)
@@ -21,7 +21,7 @@ struct SErrorState: View {
                 } label: {
                     HStack(spacing: 6) {
                         Image(systemName: "arrow.clockwise")
-                        Text("Try Again")
+                        Text(L10n.Error_TryAgain.key)
                     }
                     .font(.body.weight(.medium))
                     .padding(.horizontal, 20)

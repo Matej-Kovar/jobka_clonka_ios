@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SEmptyState: View {
     var icon: String = "tray"
-    var message: String = "No items found"
+    var message: String = L10n.NoItemsFound.string
 
     var body: some View {
         VStack(spacing: 16) {

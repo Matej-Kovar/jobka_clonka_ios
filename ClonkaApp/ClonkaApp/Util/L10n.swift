@@ -23,9 +23,59 @@ enum L10n: String {
     case Activate
     case Auth_PN
     case Delete
+    case UnknownModule_Title
+    case UnknownModule_Description
+    case MaintenanceMode_Title
+    case MaintenanceMode_Description
+    case Loading
+    case NoItemsFound
+    case Error_Generic
+    case Error_TryAgain
+    case Menu_SearchMenu
+    case Menu_Favorites
+    case Menu_NoItems
+    case Post_NoPosts
+    case Post_Title
+    case Post_Attachments
+    case Post_Approved
+    case Post_ApproveMessage
+    case Post_Approve
+    case Post_Detail
+    case Survey_NotAvailable
+    case Survey_ListTitle
+    case Survey_Questionnaire
+    case Survey_Query
+    case Survey_Title
+    case Survey_Answered
+    case Survey_Open
+    case Survey_Anonymous
+    case Survey_Archive
+    case Survey_New
+    case Survey_Question
+    case Survey_QuestionCount
+    case Survey_Required
+    case Image_Fail
+    case Image_URL
+    case Survey_SelectAll
+    case Survey_Type
+    case Back
+    case Next
+    case Submit
+    case Survey_Submitted
+    case Survey_Thanks
     
     var key: LocalizedStringKey {
         LocalizedStringKey(rawValue)
+    }
+    
+    var string: String {
+        String(localized: LocalizedStringResource(stringLiteral: rawValue))
+    }
+    
+    /// Format a localized string with parameters (e.g., %1$lld, %2$lld)
+    /// Usage: L10n.Survey_QuestionCount.formatted(with: current, total)
+    func formatted(with args: CVarArg...) -> String {
+        String(format: string, arguments: args)
     }
     
 }

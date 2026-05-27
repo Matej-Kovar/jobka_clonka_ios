@@ -116,7 +116,7 @@ struct LoginView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(profile.displayName)
                         .font(.body.weight(.medium))
-                    Text("\(L10n.Auth_PN.key) \(profile.personalNumber)")
+                    Text("\(L10n.Auth_PN.string) \(profile.personalNumber)")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -280,7 +280,7 @@ struct LoginSettingsSheet: View {
 
                 Section("Developer") {
                     HStack {
-                        Text("Developer Mode")
+                        Text(L10n.DeveloperMode.key)
                         Spacer()
                         Image(systemName: AppState.shared.isDeveloperMode ? "checkmark.circle.fill" : "circle")
                             .foregroundStyle(AppState.shared.isDeveloperMode ? .green : .secondary)

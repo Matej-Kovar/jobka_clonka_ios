@@ -18,7 +18,7 @@ struct PostListView: View {
             } else if let error = viewModel.errorMessage, viewModel.posts.isEmpty {
                 SErrorState(message: error) { Task { await viewModel.loadPosts() } }
             } else if viewModel.posts.isEmpty {
-                SEmptyState(icon: "newspaper", message: "No posts yet")
+                SEmptyState(icon: "newspaper", message: L10n.Post_NoPosts.string)
             } else {
                 ScrollView {
                     LazyVStack(spacing: 0) {
@@ -64,7 +64,7 @@ struct PostListView: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
-                    Text(post.displayName ?? "Post")
+                    Text(post.displayName ?? L10n.Post_Title.string)
                         .font(.body.weight(post.isRead ? .regular : .semibold))
                         .foregroundStyle(.primary)
                         .lineLimit(2)
