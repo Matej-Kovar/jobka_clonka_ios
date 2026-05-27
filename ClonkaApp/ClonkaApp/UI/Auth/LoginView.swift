@@ -13,7 +13,7 @@ struct LoginView: View {
                         Image(systemName: "building.2")
                             .font(.system(size: 60))
                             .foregroundStyle(JobkaTheme.primary)
-                        Text("Clonka")
+                        Text(L10n.App_Name.key)
                             .font(.largeTitle.bold())
                             .foregroundStyle(JobkaTheme.primary)
                         Text("Employee Portal")

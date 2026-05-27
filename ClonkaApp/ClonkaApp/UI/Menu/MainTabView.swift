@@ -121,7 +121,7 @@ struct MainTabView: View {
         let moduleId = destination.moduleId
         switch destination.route {
         case .postList:
-            PostListView(moduleId: moduleId)
+            PostListView(moduleId: moduleId, title: destination.title)
         case .surveyList:
             SurveyListRoot(moduleId: moduleId)
         case .chatList:
@@ -133,7 +133,7 @@ struct MainTabView: View {
         case .aboutApp:
             AboutAppView()
         case .form:
-            FormView(moduleId: moduleId)
+            FormView(moduleId: moduleId, title: destination.title)
         case .canteen:
             CanteenView(moduleId: moduleId)
         case .stream:
@@ -151,7 +151,7 @@ struct MainTabView: View {
         case .television:
             TelevisionView(moduleId: moduleId)
         case .list:
-            DataListView(moduleId: moduleId)
+            DataListView(moduleId: moduleId, title: destination.title)
         case .unknown:
             UnknownModuleView()
         }

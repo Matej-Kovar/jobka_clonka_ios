@@ -1,1141 +1,1155 @@
 // !$*UTF8*$!
 {
-    archiveVersion = 1;
-    classes = {
-    };
-    objectVersion = 56;
-    objects = {
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
 
 /* Begin PBXBuildFile section */
-        A1B2C3D4E5F60001000001 /* ClonkaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000001 /* ClonkaApp.swift */; };
-        A1B2C3D4E5F60001000002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000002 /* AppState.swift */; };
-        A1B2C3D4E5F60001000003 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000003 /* RootView.swift */; };
-        A1B2C3D4E5F60001000004 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000004 /* SessionManager.swift */; };
-        A1B2C3D4E5F60001000005 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000005 /* LoginView.swift */; };
-        A1B2C3D4E5F60001000006 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000006 /* MainTabView.swift */; };
-        A1B2C3D4E5F60001000007 /* MaintenanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000007 /* MaintenanceView.swift */; };
-        A1B2C3D4E5F60001000008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000008 /* Assets.xcassets */; };
-        A1B2C3D4E5F60001000009 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000009 /* Preview Assets.xcassets */; };
-        A1B2C3D4E5F6000100000A /* ClonkaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000A /* ClonkaAppTests.swift */; };
-        A1B2C3D4E5F6000100000B /* APIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000B /* APIIntegrationTests.swift */; };
-        A1B2C3D4E5F6000100000C /* XMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000C /* XMLParserTests.swift */; };
-        A1B2C3D4E5F6000100000D /* AppResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000D /* AppResultTests.swift */; };
-        A1B2C3D4E5F6000100000E /* AppLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000E /* AppLoggerTests.swift */; };
-        A1B2C3D4E5F6000100100A /* AppResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100A /* AppResult.swift */; };
-        A1B2C3D4E5F6000100100B /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100B /* AppLogger.swift */; };
-        A1B2C3D4E5F6000100100C /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100C /* ConfigManager.swift */; };
-        A1B2C3D4E5F6000100100D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100D /* APIClient.swift */; };
-        A1B2C3D4E5F6000100100E /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100E /* AuthModels.swift */; };
-        A1B2C3D4E5F6000100100F /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100F /* MenuModels.swift */; };
-        A1B2C3D4E5F60001001010 /* PostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001010 /* PostModels.swift */; };
-        A1B2C3D4E5F60001001011 /* SurveyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001011 /* SurveyModels.swift */; };
-        A1B2C3D4E5F60001001012 /* MessageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001012 /* MessageModels.swift */; };
-        A1B2C3D4E5F60001001013 /* ContactModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001013 /* ContactModels.swift */; };
-        A1B2C3D4E5F60001001014 /* CanteenModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001014 /* CanteenModels.swift */; };
-        A1B2C3D4E5F60001001015 /* OtherModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001015 /* OtherModels.swift */; };
-        A1B2C3D4E5F60001002001 /* AuthAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002002001 /* AuthAPIService.swift */; };
-        A1B2C3D4E5F60001002002 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002002002 /* LoginViewModel.swift */; };
-        A1B2C3D4E5F60001002003 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002002003 /* QRScannerView.swift */; };
-        A1B2C3D4E5F60001002004 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002002004 /* ColorExtensions.swift */; };
-        A1B2C3D4E5F60001003001 /* MenuAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003001 /* MenuAPIService.swift */; };
-        A1B2C3D4E5F60001003002 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003002 /* MenuViewModel.swift */; };
-        A1B2C3D4E5F60001003003 /* MenuGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003003 /* MenuGridView.swift */; };
-        A1B2C3D4E5F60001003004 /* MenuTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003004 /* MenuTileView.swift */; };
-        A1B2C3D4E5F60001003005 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003005 /* PostListView.swift */; };
-        A1B2C3D4E5F60001003006 /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003006 /* SurveyListView.swift */; };
-        A1B2C3D4E5F60001003007 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003007 /* MessageListView.swift */; };
-        A1B2C3D4E5F60001003008 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003008 /* ContactListView.swift */; };
-        A1B2C3D4E5F60001003009 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003009 /* SettingsView.swift */; };
-        A1B2C3D4E5F6000100300A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300A /* ProfileView.swift */; };
-        A1B2C3D4E5F6000100300B /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300B /* AboutAppView.swift */; };
-        A1B2C3D4E5F6000100300C /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300C /* FormView.swift */; };
-        A1B2C3D4E5F6000100300D /* CanteenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300D /* CanteenView.swift */; };
-        A1B2C3D4E5F6000100300E /* StreamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300E /* StreamListView.swift */; };
-        A1B2C3D4E5F6000100300F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300F /* CardView.swift */; };
-        A1B2C3D4E5F60001003010 /* TrustBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003010 /* TrustBoxView.swift */; };
-        A1B2C3D4E5F60001003011 /* CustomPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003011 /* CustomPageView.swift */; };
-        A1B2C3D4E5F60001003012 /* LicensePlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003012 /* LicensePlateView.swift */; };
-        A1B2C3D4E5F60001003013 /* TelevisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003013 /* TelevisionView.swift */; };
-        A1B2C3D4E5F60001003014 /* DataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003014 /* DataListView.swift */; };
-        A1B2C3D4E5F60001003015 /* UnknownModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003015 /* UnknownModuleView.swift */; };
-        A1B2C3D4E5F60001003016 /* publicConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003016 /* publicConfig.json */; };
-        A1B2C3D4E5F60001004001 /* PostAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004001 /* PostAPIService.swift */; };
-        A1B2C3D4E5F60001004002 /* SurveyAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004002 /* SurveyAPIService.swift */; };
-        A1B2C3D4E5F60001004003 /* MessageAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004003 /* MessageAPIService.swift */; };
-        A1B2C3D4E5F60001004004 /* ContactAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004004 /* ContactAPIService.swift */; };
-        A1B2C3D4E5F60001004005 /* CanteenAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004005 /* CanteenAPIService.swift */; };
-        A1B2C3D4E5F60001004006 /* StreamAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004006 /* StreamAPIService.swift */; };
-        A1B2C3D4E5F60001004007 /* CardAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004007 /* CardAPIService.swift */; };
-        A1B2C3D4E5F60001004008 /* TrustBoxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004008 /* TrustBoxAPIService.swift */; };
-        A1B2C3D4E5F60001004009 /* CustomPageAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004009 /* CustomPageAPIService.swift */; };
-        A1B2C3D4E5F6000100400A /* DataListAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400A /* DataListAPIService.swift */; };
-        A1B2C3D4E5F6000100401F /* DocumentAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200401F /* DocumentAPIService.swift */; };
-        A1B2C3D4E5F6000100400B /* FormAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400B /* FormAPIService.swift */; };
-        A1B2C3D4E5F6000100400C /* EmployeeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400C /* EmployeeAPIService.swift */; };
-        A1B2C3D4E5F6000100400D /* TelevisionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400D /* TelevisionAPIService.swift */; };
-        A1B2C3D4E5F6000100400E /* LicensePlateAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400E /* LicensePlateAPIService.swift */; };
-        A1B2C3D4E5F6000100400F /* XMLConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400F /* XMLConfigurationParser.swift */; };
-        A1B2C3D4E5F60001005001 /* SLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005001 /* SLoading.swift */; };
-        A1B2C3D4E5F60001005002 /* SEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005002 /* SEmptyState.swift */; };
-        A1B2C3D4E5F60001005003 /* SErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005003 /* SErrorState.swift */; };
-        A1B2C3D4E5F60001005004 /* SAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005004 /* SAvatar.swift */; };
-        A1B2C3D4E5F60001005005 /* HTMLContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005005 /* HTMLContentView.swift */; };
-        A1B2C3D4E5F60001005006 /* WebURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005006 /* WebURLView.swift */; };
-        A1B2C3D4E5F60001006001 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006001 /* PostListViewModel.swift */; };
-        A1B2C3D4E5F60001006002 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006002 /* PostDetailViewModel.swift */; };
-        A1B2C3D4E5F60001006003 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006003 /* PostDetailView.swift */; };
-        A1B2C3D4E5F60001006004 /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006004 /* SurveyListViewModel.swift */; };
-        A1B2C3D4E5F60001006005 /* SurveyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006005 /* SurveyDetailViewModel.swift */; };
-        A1B2C3D4E5F60001006006 /* SurveyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006006 /* SurveyDetailView.swift */; };
-        A1B2C3D4E5F60001006007 /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006007 /* MessageListViewModel.swift */; };
-        A1B2C3D4E5F60001006008 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006008 /* ChatViewModel.swift */; };
-        A1B2C3D4E5F60001006009 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006009 /* ChatView.swift */; };
-        A1B2C3D4E5F6000100600A /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600A /* ContactListViewModel.swift */; };
-        A1B2C3D4E5F6000100600B /* CanteenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600B /* CanteenViewModel.swift */; };
-        A1B2C3D4E5F6000100600C /* StreamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600C /* StreamListViewModel.swift */; };
-        A1B2C3D4E5F6000100600D /* StreamDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600D /* StreamDetailViewModel.swift */; };
-        A1B2C3D4E5F6000100600E /* StreamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600E /* StreamDetailView.swift */; };
-        A1B2C3D4E5F6000100600F /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600F /* CardViewModel.swift */; };
-        A1B2C3D4E5F60001006010 /* TrustBoxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006010 /* TrustBoxViewModel.swift */; };
-        A1B2C3D4E5F60001006011 /* CustomPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006011 /* CustomPageViewModel.swift */; };
-        A1B2C3D4E5F60001006012 /* DataListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006012 /* DataListViewModel.swift */; };
-        A1B2C3D4E5F60001006013 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006013 /* FormViewModel.swift */; };
-        A1B2C3D4E5F60001006014 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006014 /* ProfileViewModel.swift */; };
-        A1B2C3D4E5F60001006015 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006015 /* SettingsViewModel.swift */; };
-        A1B2C3D4E5F60001006016 /* TelevisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006016 /* TelevisionViewModel.swift */; };
-        A1B2C3D4E5F60001006017 /* LicensePlateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006017 /* LicensePlateViewModel.swift */; };
-        A1B2C3D4E5F60001007001 /* ErrorReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002007001 /* ErrorReportStore.swift */; };
-        A1B2C3D4E5F60001007002 /* DevToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002007002 /* DevToolsView.swift */; };
-        A1B2C3D4E5F60001008001 /* DebugLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002008001 /* DebugLogStore.swift */; };
-        A1B2C3D4E5F60001008002 /* JobkaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002008002 /* JobkaTheme.swift */; };
-        A1B2C3D4E5F60001008003 /* DebugLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002008003 /* DebugLogView.swift */; };
+		A1B2C3D4E5F60001000001 /* ClonkaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000001 /* ClonkaApp.swift */; };
+		A1B2C3D4E5F60001000002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000002 /* AppState.swift */; };
+		A1B2C3D4E5F60001000003 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000003 /* RootView.swift */; };
+		A1B2C3D4E5F60001000004 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000004 /* SessionManager.swift */; };
+		A1B2C3D4E5F60001000005 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000005 /* LoginView.swift */; };
+		A1B2C3D4E5F60001000006 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000006 /* MainTabView.swift */; };
+		A1B2C3D4E5F60001000007 /* MaintenanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000007 /* MaintenanceView.swift */; };
+		A1B2C3D4E5F60001000008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000008 /* Assets.xcassets */; };
+		A1B2C3D4E5F60001000009 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002000009 /* Preview Assets.xcassets */; };
+		A1B2C3D4E5F6000100000A /* ClonkaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000A /* ClonkaAppTests.swift */; };
+		A1B2C3D4E5F6000100000B /* APIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000B /* APIIntegrationTests.swift */; };
+		A1B2C3D4E5F6000100000C /* XMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000C /* XMLParserTests.swift */; };
+		A1B2C3D4E5F6000100000D /* AppResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000D /* AppResultTests.swift */; };
+		A1B2C3D4E5F6000100000E /* AppLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200000E /* AppLoggerTests.swift */; };
+		A1B2C3D4E5F6000100100A /* AppResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100A /* AppResult.swift */; };
+		A1B2C3D4E5F6000100100B /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100B /* AppLogger.swift */; };
+		A1B2C3D4E5F6000100100C /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100C /* ConfigManager.swift */; };
+		A1B2C3D4E5F6000100100D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100D /* APIClient.swift */; };
+		A1B2C3D4E5F6000100100E /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100E /* AuthModels.swift */; };
+		A1B2C3D4E5F6000100100F /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200100F /* MenuModels.swift */; };
+		A1B2C3D4E5F60001001010 /* PostModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001010 /* PostModels.swift */; };
+		A1B2C3D4E5F60001001011 /* SurveyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001011 /* SurveyModels.swift */; };
+		A1B2C3D4E5F60001001012 /* MessageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001012 /* MessageModels.swift */; };
+		A1B2C3D4E5F60001001013 /* ContactModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001013 /* ContactModels.swift */; };
+		A1B2C3D4E5F60001001014 /* CanteenModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001014 /* CanteenModels.swift */; };
+		A1B2C3D4E5F60001001015 /* OtherModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002001015 /* OtherModels.swift */; };
+		A1B2C3D4E5F60001002001 /* AuthAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002002001 /* AuthAPIService.swift */; };
+		A1B2C3D4E5F60001002002 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002002002 /* LoginViewModel.swift */; };
+		A1B2C3D4E5F60001002003 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002002003 /* QRScannerView.swift */; };
+		A1B2C3D4E5F60001002004 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002002004 /* ColorExtensions.swift */; };
+		A1B2C3D4E5F60001003001 /* MenuAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003001 /* MenuAPIService.swift */; };
+		A1B2C3D4E5F60001003002 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003002 /* MenuViewModel.swift */; };
+		A1B2C3D4E5F60001003003 /* MenuGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003003 /* MenuGridView.swift */; };
+		A1B2C3D4E5F60001003004 /* MenuTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003004 /* MenuTileView.swift */; };
+		A1B2C3D4E5F60001003005 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003005 /* PostListView.swift */; };
+		A1B2C3D4E5F60001003006 /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003006 /* SurveyListView.swift */; };
+		A1B2C3D4E5F60001003007 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003007 /* MessageListView.swift */; };
+		A1B2C3D4E5F60001003008 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003008 /* ContactListView.swift */; };
+		A1B2C3D4E5F60001003009 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003009 /* SettingsView.swift */; };
+		A1B2C3D4E5F6000100300A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300A /* ProfileView.swift */; };
+		A1B2C3D4E5F6000100300B /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300B /* AboutAppView.swift */; };
+		A1B2C3D4E5F6000100300C /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300C /* FormView.swift */; };
+		A1B2C3D4E5F6000100300D /* CanteenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300D /* CanteenView.swift */; };
+		A1B2C3D4E5F6000100300E /* StreamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300E /* StreamListView.swift */; };
+		A1B2C3D4E5F6000100300F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200300F /* CardView.swift */; };
+		A1B2C3D4E5F60001003010 /* TrustBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003010 /* TrustBoxView.swift */; };
+		A1B2C3D4E5F60001003011 /* CustomPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003011 /* CustomPageView.swift */; };
+		A1B2C3D4E5F60001003012 /* LicensePlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003012 /* LicensePlateView.swift */; };
+		A1B2C3D4E5F60001003013 /* TelevisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003013 /* TelevisionView.swift */; };
+		A1B2C3D4E5F60001003014 /* DataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003014 /* DataListView.swift */; };
+		A1B2C3D4E5F60001003015 /* UnknownModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003015 /* UnknownModuleView.swift */; };
+		A1B2C3D4E5F60001003016 /* publicConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002003016 /* publicConfig.json */; };
+		A1B2C3D4E5F60001004001 /* PostAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004001 /* PostAPIService.swift */; };
+		A1B2C3D4E5F60001004002 /* SurveyAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004002 /* SurveyAPIService.swift */; };
+		A1B2C3D4E5F60001004003 /* MessageAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004003 /* MessageAPIService.swift */; };
+		A1B2C3D4E5F60001004004 /* ContactAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004004 /* ContactAPIService.swift */; };
+		A1B2C3D4E5F60001004005 /* CanteenAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004005 /* CanteenAPIService.swift */; };
+		A1B2C3D4E5F60001004006 /* StreamAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004006 /* StreamAPIService.swift */; };
+		A1B2C3D4E5F60001004007 /* CardAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004007 /* CardAPIService.swift */; };
+		A1B2C3D4E5F60001004008 /* TrustBoxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004008 /* TrustBoxAPIService.swift */; };
+		A1B2C3D4E5F60001004009 /* CustomPageAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002004009 /* CustomPageAPIService.swift */; };
+		A1B2C3D4E5F6000100400A /* DataListAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400A /* DataListAPIService.swift */; };
+		A1B2C3D4E5F6000100400B /* FormAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400B /* FormAPIService.swift */; };
+		A1B2C3D4E5F6000100400C /* EmployeeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400C /* EmployeeAPIService.swift */; };
+		A1B2C3D4E5F6000100400D /* TelevisionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400D /* TelevisionAPIService.swift */; };
+		A1B2C3D4E5F6000100400E /* LicensePlateAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400E /* LicensePlateAPIService.swift */; };
+		A1B2C3D4E5F6000100400F /* XMLConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200400F /* XMLConfigurationParser.swift */; };
+		A1B2C3D4E5F6000100401F /* DocumentAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200401F /* DocumentAPIService.swift */; };
+		A1B2C3D4E5F60001005001 /* SLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005001 /* SLoading.swift */; };
+		A1B2C3D4E5F60001005002 /* SEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005002 /* SEmptyState.swift */; };
+		A1B2C3D4E5F60001005003 /* SErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005003 /* SErrorState.swift */; };
+		A1B2C3D4E5F60001005004 /* SAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005004 /* SAvatar.swift */; };
+		A1B2C3D4E5F60001005005 /* HTMLContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005005 /* HTMLContentView.swift */; };
+		A1B2C3D4E5F60001005006 /* WebURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002005006 /* WebURLView.swift */; };
+		A1B2C3D4E5F60001006001 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006001 /* PostListViewModel.swift */; };
+		A1B2C3D4E5F60001006002 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006002 /* PostDetailViewModel.swift */; };
+		A1B2C3D4E5F60001006003 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006003 /* PostDetailView.swift */; };
+		A1B2C3D4E5F60001006004 /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006004 /* SurveyListViewModel.swift */; };
+		A1B2C3D4E5F60001006005 /* SurveyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006005 /* SurveyDetailViewModel.swift */; };
+		A1B2C3D4E5F60001006006 /* SurveyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006006 /* SurveyDetailView.swift */; };
+		A1B2C3D4E5F60001006007 /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006007 /* MessageListViewModel.swift */; };
+		A1B2C3D4E5F60001006008 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006008 /* ChatViewModel.swift */; };
+		A1B2C3D4E5F60001006009 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006009 /* ChatView.swift */; };
+		A1B2C3D4E5F6000100600A /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600A /* ContactListViewModel.swift */; };
+		A1B2C3D4E5F6000100600B /* CanteenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600B /* CanteenViewModel.swift */; };
+		A1B2C3D4E5F6000100600C /* StreamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600C /* StreamListViewModel.swift */; };
+		A1B2C3D4E5F6000100600D /* StreamDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600D /* StreamDetailViewModel.swift */; };
+		A1B2C3D4E5F6000100600E /* StreamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600E /* StreamDetailView.swift */; };
+		A1B2C3D4E5F6000100600F /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000200600F /* CardViewModel.swift */; };
+		A1B2C3D4E5F60001006010 /* TrustBoxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006010 /* TrustBoxViewModel.swift */; };
+		A1B2C3D4E5F60001006011 /* CustomPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006011 /* CustomPageViewModel.swift */; };
+		A1B2C3D4E5F60001006012 /* DataListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006012 /* DataListViewModel.swift */; };
+		A1B2C3D4E5F60001006013 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006013 /* FormViewModel.swift */; };
+		A1B2C3D4E5F60001006014 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006014 /* ProfileViewModel.swift */; };
+		A1B2C3D4E5F60001006015 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006015 /* SettingsViewModel.swift */; };
+		A1B2C3D4E5F60001006016 /* TelevisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006016 /* TelevisionViewModel.swift */; };
+		A1B2C3D4E5F60001006017 /* LicensePlateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002006017 /* LicensePlateViewModel.swift */; };
+		A1B2C3D4E5F60001007001 /* ErrorReportStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002007001 /* ErrorReportStore.swift */; };
+		A1B2C3D4E5F60001007002 /* DevToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002007002 /* DevToolsView.swift */; };
+		A1B2C3D4E5F60001008001 /* DebugLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002008001 /* DebugLogStore.swift */; };
+		A1B2C3D4E5F60001008002 /* JobkaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002008002 /* JobkaTheme.swift */; };
+		A1B2C3D4E5F60001008003 /* DebugLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002008003 /* DebugLogView.swift */; };
+		A1B2C3D4E5F60001008004 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002008004 /* L10n.swift */; };
+		CF17E9A72FC6D52C003ED170 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CF17E9A52FC6D52C003ED170 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-        A1B2C3D4E5F60003000001 /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = A1B2C3D4E5F60004000001 /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = A1B2C3D4E5F60005000001;
-            remoteInfo = ClonkaApp;
-        };
+		A1B2C3D4E5F60003000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1B2C3D4E5F60004000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B2C3D4E5F60005000001;
+			remoteInfo = ClonkaApp;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-        A1B2C3D4E5F60002000001 /* ClonkaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClonkaApp.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002000002 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002000003 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002000004 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002000005 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002000006 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002000007 /* MaintenanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002000008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002000009 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200000A /* ClonkaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClonkaAppTests.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200000B /* APIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIIntegrationTests.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200000C /* XMLParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserTests.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200000D /* AppResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResultTests.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200000E /* AppLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoggerTests.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200100A /* AppResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResult.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200100B /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200100C /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200100D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200100E /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200100F /* MenuModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModels.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002001010 /* PostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModels.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002001011 /* SurveyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModels.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002001012 /* MessageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModels.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002001013 /* ContactModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModels.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002001014 /* CanteenModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenModels.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002001015 /* OtherModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherModels.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002002001 /* AuthAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002002002 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002002003 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002002004 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003001 /* MenuAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003002 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003003 /* MenuGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuGridView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003004 /* MenuTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTileView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003005 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003006 /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003007 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003008 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200300A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200300B /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200300C /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200300D /* CanteenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200300E /* StreamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamListView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200300F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003010 /* TrustBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustBoxView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003011 /* CustomPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003012 /* LicensePlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003013 /* TelevisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003014 /* DataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003015 /* UnknownModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownModuleView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002003016 /* publicConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = publicConfig.json; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002004001 /* PostAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002004002 /* SurveyAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002004003 /* MessageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002004004 /* ContactAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002004005 /* CanteenAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002004006 /* StreamAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002004007 /* CardAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002004008 /* TrustBoxAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustBoxAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002004009 /* CustomPageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200400A /* DataListAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200401F /* DocumentAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200400B /* FormAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200400C /* EmployeeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200400D /* TelevisionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200400E /* LicensePlateAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateAPIService.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200400F /* XMLConfigurationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLConfigurationParser.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002005001 /* SLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLoading.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002005002 /* SEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEmptyState.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002005003 /* SErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SErrorState.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002005004 /* SAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAvatar.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002005005 /* HTMLContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLContentView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002005006 /* WebURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebURLView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006001 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006002 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006003 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006004 /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006005 /* SurveyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006006 /* SurveyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006007 /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006008 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006009 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200600A /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200600B /* CanteenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200600C /* StreamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamListViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200600D /* StreamDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamDetailViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200600E /* StreamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamDetailView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F6000200600F /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006010 /* TrustBoxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustBoxViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006011 /* CustomPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006012 /* DataListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006013 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006014 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006015 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006016 /* TelevisionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002006017 /* LicensePlateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateViewModel.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002007001 /* ErrorReportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorReportStore.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002007002 /* DevToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevToolsView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002008001 /* DebugLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogStore.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002008002 /* JobkaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobkaTheme.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60002008003 /* DebugLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogView.swift; sourceTree = "<group>"; };
-        A1B2C3D4E5F60006000001 /* ClonkaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClonkaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-        A1B2C3D4E5F60006000002 /* ClonkaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClonkaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D4E5F60002000001 /* ClonkaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClonkaApp.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002000002 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002000003 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002000004 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002000005 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002000006 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002000007 /* MaintenanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002000008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002000009 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200000A /* ClonkaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClonkaAppTests.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200000B /* APIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIIntegrationTests.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200000C /* XMLParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserTests.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200000D /* AppResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResultTests.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200000E /* AppLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoggerTests.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200100A /* AppResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResult.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200100B /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200100C /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200100D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200100E /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200100F /* MenuModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModels.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002001010 /* PostModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModels.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002001011 /* SurveyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModels.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002001012 /* MessageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModels.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002001013 /* ContactModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModels.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002001014 /* CanteenModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenModels.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002001015 /* OtherModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherModels.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002002001 /* AuthAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002002002 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002002003 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002002004 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003001 /* MenuAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003002 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003003 /* MenuGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuGridView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003004 /* MenuTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTileView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003005 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003006 /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003007 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003008 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200300A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200300B /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200300C /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200300D /* CanteenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200300E /* StreamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamListView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200300F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003010 /* TrustBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustBoxView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003011 /* CustomPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003012 /* LicensePlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003013 /* TelevisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003014 /* DataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003015 /* UnknownModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownModuleView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002003016 /* publicConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = publicConfig.json; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002004001 /* PostAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002004002 /* SurveyAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002004003 /* MessageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002004004 /* ContactAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002004005 /* CanteenAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002004006 /* StreamAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002004007 /* CardAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002004008 /* TrustBoxAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustBoxAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002004009 /* CustomPageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200400A /* DataListAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200400B /* FormAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200400C /* EmployeeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200400D /* TelevisionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200400E /* LicensePlateAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200400F /* XMLConfigurationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLConfigurationParser.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200401F /* DocumentAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAPIService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002005001 /* SLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLoading.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002005002 /* SEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEmptyState.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002005003 /* SErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SErrorState.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002005004 /* SAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAvatar.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002005005 /* HTMLContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLContentView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002005006 /* WebURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebURLView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006001 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006002 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006003 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006004 /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006005 /* SurveyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006006 /* SurveyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006007 /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006008 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006009 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200600A /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200600B /* CanteenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200600C /* StreamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamListViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200600D /* StreamDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamDetailViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200600E /* StreamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamDetailView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000200600F /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006010 /* TrustBoxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustBoxViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006011 /* CustomPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006012 /* DataListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006013 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006014 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006015 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006016 /* TelevisionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelevisionViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002006017 /* LicensePlateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateViewModel.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002007001 /* ErrorReportStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorReportStore.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002007002 /* DevToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevToolsView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002008001 /* DebugLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogStore.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002008002 /* JobkaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobkaTheme.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002008003 /* DebugLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60002008004 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60006000001 /* ClonkaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClonkaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D4E5F60006000002 /* ClonkaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClonkaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF17E9A52FC6D52C003ED170 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-        A1B2C3D4E5F60007000001 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        A1B2C3D4E5F60007000002 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		A1B2C3D4E5F60007000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B2C3D4E5F60007000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-        A1B2C3D4E5F60008000001 = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60008000002 /* ClonkaApp */,
-                A1B2C3D4E5F60008000010 /* ClonkaAppTests */,
-                A1B2C3D4E5F60008000011 /* Products */,
-            );
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000002 /* ClonkaApp */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60008000003 /* App */,
-                A1B2C3D4E5F60008000004 /* UI */,
-                A1B2C3D4E5F60008000005 /* Domain */,
-                A1B2C3D4E5F60008000006 /* Data */,
-                A1B2C3D4E5F60008000007 /* DI */,
-                A1B2C3D4E5F60008000008 /* Util */,
-                A1B2C3D4E5F60008000009 /* Resources */,
-                A1B2C3D4E5F6000800000A /* Preview Content */,
-            );
-            path = ClonkaApp;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000003 /* App */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002000001 /* ClonkaApp.swift */,
-                A1B2C3D4E5F60002000002 /* AppState.swift */,
-                A1B2C3D4E5F60002000003 /* RootView.swift */,
-                A1B2C3D4E5F60002000004 /* SessionManager.swift */,
-            );
-            path = App;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000004 /* UI */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000800000B /* Auth */,
-                A1B2C3D4E5F6000800000C /* Menu */,
-                A1B2C3D4E5F6000800000D /* Components */,
-                A1B2C3D4E5F6000800000E /* Posts */,
-                A1B2C3D4E5F6000800000F /* Surveys */,
-                A1B2C3D4E5F60008000012 /* Messages */,
-                A1B2C3D4E5F60008000013 /* Profile */,
-                A1B2C3D4E5F60008000014 /* Settings */,
-                A1B2C3D4E5F60008000015 /* Contacts */,
-                A1B2C3D4E5F60008000016 /* Canteen */,
-                A1B2C3D4E5F60008000017 /* Stream */,
-                A1B2C3D4E5F60008000018 /* Card */,
-                A1B2C3D4E5F60008000019 /* TrustBox */,
-                A1B2C3D4E5F6000800001A /* CustomPages */,
-                A1B2C3D4E5F6000800001B /* DataList */,
-                A1B2C3D4E5F6000800001C /* Forms */,
-                A1B2C3D4E5F6000800001D /* LicensePlate */,
-                A1B2C3D4E5F6000800001E /* Television */,
-                A1B2C3D4E5F6000800001F /* Dev */,
-            );
-            path = UI;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000005 /* Domain */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60008000020 /* Model */,
-                A1B2C3D4E5F60008000021 /* Repository */,
-            );
-            path = Domain;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000006 /* Data */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60008000022 /* API */,
-                A1B2C3D4E5F60008000026 /* Repository */,
-                A1B2C3D4E5F60008000027 /* Local */,
-            );
-            path = Data;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000007 /* DI */ = {
-            isa = PBXGroup;
-            children = (
-            );
-            path = DI;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000008 /* Util */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000200100A /* AppResult.swift */,
-                A1B2C3D4E5F6000200100B /* AppLogger.swift */,
-                A1B2C3D4E5F6000200100C /* ConfigManager.swift */,
-                A1B2C3D4E5F60002002004 /* ColorExtensions.swift */,
-                A1B2C3D4E5F60002007001 /* ErrorReportStore.swift */,
-                A1B2C3D4E5F60002008001 /* DebugLogStore.swift */,
-                A1B2C3D4E5F60002008002 /* JobkaTheme.swift */,
-            );
-            path = Util;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000009 /* Resources */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002000008 /* Assets.xcassets */,
-                A1B2C3D4E5F60002003016 /* publicConfig.json */,
-            );
-            path = Resources;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800000A /* Preview Content */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002000009 /* Preview Assets.xcassets */,
-            );
-            path = "Preview Content";
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800000B /* Auth */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002000005 /* LoginView.swift */,
-                A1B2C3D4E5F60002002002 /* LoginViewModel.swift */,
-                A1B2C3D4E5F60002002003 /* QRScannerView.swift */,
-            );
-            path = Auth;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800000C /* Menu */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002000006 /* MainTabView.swift */,
-                A1B2C3D4E5F60002003002 /* MenuViewModel.swift */,
-                A1B2C3D4E5F60002003003 /* MenuGridView.swift */,
-                A1B2C3D4E5F60002003004 /* MenuTileView.swift */,
-            );
-            path = Menu;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800000D /* Components */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002000007 /* MaintenanceView.swift */,
-                A1B2C3D4E5F60002003015 /* UnknownModuleView.swift */,
-                A1B2C3D4E5F60002005001 /* SLoading.swift */,
-                A1B2C3D4E5F60002005002 /* SEmptyState.swift */,
-                A1B2C3D4E5F60002005003 /* SErrorState.swift */,
-                A1B2C3D4E5F60002005004 /* SAvatar.swift */,
-                A1B2C3D4E5F60002005005 /* HTMLContentView.swift */,
-            );
-            path = Components;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800000E /* Posts */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003005 /* PostListView.swift */,
-                A1B2C3D4E5F60002006001 /* PostListViewModel.swift */,
-                A1B2C3D4E5F60002006002 /* PostDetailViewModel.swift */,
-                A1B2C3D4E5F60002006003 /* PostDetailView.swift */,
-            );
-            path = Posts;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800000F /* Surveys */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003006 /* SurveyListView.swift */,
-                A1B2C3D4E5F60002006004 /* SurveyListViewModel.swift */,
-                A1B2C3D4E5F60002006005 /* SurveyDetailViewModel.swift */,
-                A1B2C3D4E5F60002006006 /* SurveyDetailView.swift */,
-            );
-            path = Surveys;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000010 /* ClonkaAppTests */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000200000A /* ClonkaAppTests.swift */,
-                A1B2C3D4E5F6000200000B /* APIIntegrationTests.swift */,
-                A1B2C3D4E5F6000200000C /* XMLParserTests.swift */,
-                A1B2C3D4E5F6000200000D /* AppResultTests.swift */,
-                A1B2C3D4E5F6000200000E /* AppLoggerTests.swift */,
-            );
-            path = ClonkaAppTests;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000011 /* Products */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60006000001 /* ClonkaApp.app */,
-                A1B2C3D4E5F60006000002 /* ClonkaAppTests.xctest */,
-            );
-            name = Products;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000012 /* Messages */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003007 /* MessageListView.swift */,
-                A1B2C3D4E5F60002006007 /* MessageListViewModel.swift */,
-                A1B2C3D4E5F60002006008 /* ChatViewModel.swift */,
-                A1B2C3D4E5F60002006009 /* ChatView.swift */,
-            );
-            path = Messages;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000013 /* Profile */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000200300A /* ProfileView.swift */,
-                A1B2C3D4E5F6000200300B /* AboutAppView.swift */,
-                A1B2C3D4E5F60002006014 /* ProfileViewModel.swift */,
-            );
-            path = Profile;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000014 /* Settings */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003009 /* SettingsView.swift */,
-                A1B2C3D4E5F60002006015 /* SettingsViewModel.swift */,
-                A1B2C3D4E5F60002007002 /* DevToolsView.swift */,
-            );
-            path = Settings;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000015 /* Contacts */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003008 /* ContactListView.swift */,
-                A1B2C3D4E5F6000200600A /* ContactListViewModel.swift */,
-            );
-            path = Contacts;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000016 /* Canteen */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000200300D /* CanteenView.swift */,
-                A1B2C3D4E5F6000200600B /* CanteenViewModel.swift */,
-            );
-            path = Canteen;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000017 /* Stream */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000200300E /* StreamListView.swift */,
-                A1B2C3D4E5F6000200600C /* StreamListViewModel.swift */,
-                A1B2C3D4E5F6000200600D /* StreamDetailViewModel.swift */,
-                A1B2C3D4E5F6000200600E /* StreamDetailView.swift */,
-            );
-            path = Stream;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000018 /* Card */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000200300F /* CardView.swift */,
-                A1B2C3D4E5F6000200600F /* CardViewModel.swift */,
-            );
-            path = Card;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000019 /* TrustBox */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003010 /* TrustBoxView.swift */,
-                A1B2C3D4E5F60002006010 /* TrustBoxViewModel.swift */,
-            );
-            path = TrustBox;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800001A /* CustomPages */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003011 /* CustomPageView.swift */,
-                A1B2C3D4E5F60002006011 /* CustomPageViewModel.swift */,
-                A1B2C3D4E5F60002005006 /* WebURLView.swift */,
-            );
-            path = CustomPages;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800001B /* DataList */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003014 /* DataListView.swift */,
-                A1B2C3D4E5F60002006012 /* DataListViewModel.swift */,
-            );
-            path = DataList;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800001C /* Forms */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000200300C /* FormView.swift */,
-                A1B2C3D4E5F60002006013 /* FormViewModel.swift */,
-            );
-            path = Forms;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800001D /* LicensePlate */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003012 /* LicensePlateView.swift */,
-                A1B2C3D4E5F60002006017 /* LicensePlateViewModel.swift */,
-            );
-            path = LicensePlate;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800001E /* Television */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002003013 /* TelevisionView.swift */,
-                A1B2C3D4E5F60002006016 /* TelevisionViewModel.swift */,
-            );
-            path = Television;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F6000800001F /* Dev */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002008003 /* DebugLogView.swift */,
-            );
-            path = Dev;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000020 /* Model */ = {
-            isa = PBXGroup;
-            children = (
-            );
-            path = Model;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000021 /* Repository */ = {
-            isa = PBXGroup;
-            children = (
-            );
-            path = Repository;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000022 /* API */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60008000023 /* Services */,
-                A1B2C3D4E5F60008000024 /* Model */,
-                A1B2C3D4E5F60008000025 /* Interceptors */,
-            );
-            path = API;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000023 /* Services */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F60002002001 /* AuthAPIService.swift */,
-                A1B2C3D4E5F60002003001 /* MenuAPIService.swift */,
-                A1B2C3D4E5F60002004001 /* PostAPIService.swift */,
-                A1B2C3D4E5F60002004002 /* SurveyAPIService.swift */,
-                A1B2C3D4E5F60002004003 /* MessageAPIService.swift */,
-                A1B2C3D4E5F60002004004 /* ContactAPIService.swift */,
-                A1B2C3D4E5F60002004005 /* CanteenAPIService.swift */,
-                A1B2C3D4E5F60002004006 /* StreamAPIService.swift */,
-                A1B2C3D4E5F60002004007 /* CardAPIService.swift */,
-                A1B2C3D4E5F60002004008 /* TrustBoxAPIService.swift */,
-                A1B2C3D4E5F60002004009 /* CustomPageAPIService.swift */,
-                A1B2C3D4E5F6000200400A /* DataListAPIService.swift */,
-                A1B2C3D4E5F6000200401F /* DocumentAPIService.swift */,
-                A1B2C3D4E5F6000200400B /* FormAPIService.swift */,
-                A1B2C3D4E5F6000200400C /* EmployeeAPIService.swift */,
-                A1B2C3D4E5F6000200400D /* TelevisionAPIService.swift */,
-                A1B2C3D4E5F6000200400E /* LicensePlateAPIService.swift */,
-                A1B2C3D4E5F6000200400F /* XMLConfigurationParser.swift */,
-            );
-            path = Services;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000024 /* Model */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000200100E /* AuthModels.swift */,
-                A1B2C3D4E5F6000200100F /* MenuModels.swift */,
-                A1B2C3D4E5F60002001010 /* PostModels.swift */,
-                A1B2C3D4E5F60002001011 /* SurveyModels.swift */,
-                A1B2C3D4E5F60002001012 /* MessageModels.swift */,
-                A1B2C3D4E5F60002001013 /* ContactModels.swift */,
-                A1B2C3D4E5F60002001014 /* CanteenModels.swift */,
-                A1B2C3D4E5F60002001015 /* OtherModels.swift */,
-            );
-            path = Model;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000025 /* Interceptors */ = {
-            isa = PBXGroup;
-            children = (
-                A1B2C3D4E5F6000200100D /* APIClient.swift */,
-            );
-            path = Interceptors;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000026 /* Repository */ = {
-            isa = PBXGroup;
-            children = (
-            );
-            path = Repository;
-            sourceTree = "<group>";
-        };
-        A1B2C3D4E5F60008000027 /* Local */ = {
-            isa = PBXGroup;
-            children = (
-            );
-            path = Local;
-            sourceTree = "<group>";
-        };
+		A1B2C3D4E5F60008000001 = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60008000002 /* ClonkaApp */,
+				A1B2C3D4E5F60008000010 /* ClonkaAppTests */,
+				A1B2C3D4E5F60008000011 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000002 /* ClonkaApp */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60008000003 /* App */,
+				A1B2C3D4E5F60008000004 /* UI */,
+				A1B2C3D4E5F60008000005 /* Domain */,
+				A1B2C3D4E5F60008000006 /* Data */,
+				A1B2C3D4E5F60008000007 /* DI */,
+				A1B2C3D4E5F60008000008 /* Util */,
+				A1B2C3D4E5F60008000009 /* Resources */,
+				A1B2C3D4E5F6000800000A /* Preview Content */,
+			);
+			path = ClonkaApp;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002000001 /* ClonkaApp.swift */,
+				A1B2C3D4E5F60002000002 /* AppState.swift */,
+				A1B2C3D4E5F60002000003 /* RootView.swift */,
+				A1B2C3D4E5F60002000004 /* SessionManager.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000004 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000800000B /* Auth */,
+				A1B2C3D4E5F6000800000C /* Menu */,
+				A1B2C3D4E5F6000800000D /* Components */,
+				A1B2C3D4E5F6000800000E /* Posts */,
+				A1B2C3D4E5F6000800000F /* Surveys */,
+				A1B2C3D4E5F60008000012 /* Messages */,
+				A1B2C3D4E5F60008000013 /* Profile */,
+				A1B2C3D4E5F60008000014 /* Settings */,
+				A1B2C3D4E5F60008000015 /* Contacts */,
+				A1B2C3D4E5F60008000016 /* Canteen */,
+				A1B2C3D4E5F60008000017 /* Stream */,
+				A1B2C3D4E5F60008000018 /* Card */,
+				A1B2C3D4E5F60008000019 /* TrustBox */,
+				A1B2C3D4E5F6000800001A /* CustomPages */,
+				A1B2C3D4E5F6000800001B /* DataList */,
+				A1B2C3D4E5F6000800001C /* Forms */,
+				A1B2C3D4E5F6000800001D /* LicensePlate */,
+				A1B2C3D4E5F6000800001E /* Television */,
+				A1B2C3D4E5F6000800001F /* Dev */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000005 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60008000020 /* Model */,
+				A1B2C3D4E5F60008000021 /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000006 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60008000022 /* API */,
+				A1B2C3D4E5F60008000026 /* Repository */,
+				A1B2C3D4E5F60008000027 /* Local */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000007 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000008 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000200100A /* AppResult.swift */,
+				A1B2C3D4E5F6000200100B /* AppLogger.swift */,
+				A1B2C3D4E5F6000200100C /* ConfigManager.swift */,
+				A1B2C3D4E5F60002002004 /* ColorExtensions.swift */,
+				A1B2C3D4E5F60002007001 /* ErrorReportStore.swift */,
+				A1B2C3D4E5F60002008001 /* DebugLogStore.swift */,
+				A1B2C3D4E5F60002008002 /* JobkaTheme.swift */,
+				A1B2C3D4E5F60002008004 /* L10n.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000009 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CF17E9A62FC6D52C003ED170 /* Localization */,
+				A1B2C3D4E5F60002000008 /* Assets.xcassets */,
+				A1B2C3D4E5F60002003016 /* publicConfig.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800000A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002000009 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800000B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002000005 /* LoginView.swift */,
+				A1B2C3D4E5F60002002002 /* LoginViewModel.swift */,
+				A1B2C3D4E5F60002002003 /* QRScannerView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800000C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002000006 /* MainTabView.swift */,
+				A1B2C3D4E5F60002003002 /* MenuViewModel.swift */,
+				A1B2C3D4E5F60002003003 /* MenuGridView.swift */,
+				A1B2C3D4E5F60002003004 /* MenuTileView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800000D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002000007 /* MaintenanceView.swift */,
+				A1B2C3D4E5F60002003015 /* UnknownModuleView.swift */,
+				A1B2C3D4E5F60002005001 /* SLoading.swift */,
+				A1B2C3D4E5F60002005002 /* SEmptyState.swift */,
+				A1B2C3D4E5F60002005003 /* SErrorState.swift */,
+				A1B2C3D4E5F60002005004 /* SAvatar.swift */,
+				A1B2C3D4E5F60002005005 /* HTMLContentView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800000E /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003005 /* PostListView.swift */,
+				A1B2C3D4E5F60002006001 /* PostListViewModel.swift */,
+				A1B2C3D4E5F60002006002 /* PostDetailViewModel.swift */,
+				A1B2C3D4E5F60002006003 /* PostDetailView.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800000F /* Surveys */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003006 /* SurveyListView.swift */,
+				A1B2C3D4E5F60002006004 /* SurveyListViewModel.swift */,
+				A1B2C3D4E5F60002006005 /* SurveyDetailViewModel.swift */,
+				A1B2C3D4E5F60002006006 /* SurveyDetailView.swift */,
+			);
+			path = Surveys;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000010 /* ClonkaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000200000A /* ClonkaAppTests.swift */,
+				A1B2C3D4E5F6000200000B /* APIIntegrationTests.swift */,
+				A1B2C3D4E5F6000200000C /* XMLParserTests.swift */,
+				A1B2C3D4E5F6000200000D /* AppResultTests.swift */,
+				A1B2C3D4E5F6000200000E /* AppLoggerTests.swift */,
+			);
+			path = ClonkaAppTests;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000011 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60006000001 /* ClonkaApp.app */,
+				A1B2C3D4E5F60006000002 /* ClonkaAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000012 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003007 /* MessageListView.swift */,
+				A1B2C3D4E5F60002006007 /* MessageListViewModel.swift */,
+				A1B2C3D4E5F60002006008 /* ChatViewModel.swift */,
+				A1B2C3D4E5F60002006009 /* ChatView.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000013 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000200300A /* ProfileView.swift */,
+				A1B2C3D4E5F6000200300B /* AboutAppView.swift */,
+				A1B2C3D4E5F60002006014 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000014 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003009 /* SettingsView.swift */,
+				A1B2C3D4E5F60002006015 /* SettingsViewModel.swift */,
+				A1B2C3D4E5F60002007002 /* DevToolsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000015 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003008 /* ContactListView.swift */,
+				A1B2C3D4E5F6000200600A /* ContactListViewModel.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000016 /* Canteen */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000200300D /* CanteenView.swift */,
+				A1B2C3D4E5F6000200600B /* CanteenViewModel.swift */,
+			);
+			path = Canteen;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000017 /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000200300E /* StreamListView.swift */,
+				A1B2C3D4E5F6000200600C /* StreamListViewModel.swift */,
+				A1B2C3D4E5F6000200600D /* StreamDetailViewModel.swift */,
+				A1B2C3D4E5F6000200600E /* StreamDetailView.swift */,
+			);
+			path = Stream;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000018 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000200300F /* CardView.swift */,
+				A1B2C3D4E5F6000200600F /* CardViewModel.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000019 /* TrustBox */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003010 /* TrustBoxView.swift */,
+				A1B2C3D4E5F60002006010 /* TrustBoxViewModel.swift */,
+			);
+			path = TrustBox;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800001A /* CustomPages */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003011 /* CustomPageView.swift */,
+				A1B2C3D4E5F60002006011 /* CustomPageViewModel.swift */,
+				A1B2C3D4E5F60002005006 /* WebURLView.swift */,
+			);
+			path = CustomPages;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800001B /* DataList */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003014 /* DataListView.swift */,
+				A1B2C3D4E5F60002006012 /* DataListViewModel.swift */,
+			);
+			path = DataList;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800001C /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000200300C /* FormView.swift */,
+				A1B2C3D4E5F60002006013 /* FormViewModel.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800001D /* LicensePlate */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003012 /* LicensePlateView.swift */,
+				A1B2C3D4E5F60002006017 /* LicensePlateViewModel.swift */,
+			);
+			path = LicensePlate;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800001E /* Television */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002003013 /* TelevisionView.swift */,
+				A1B2C3D4E5F60002006016 /* TelevisionViewModel.swift */,
+			);
+			path = Television;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F6000800001F /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002008003 /* DebugLogView.swift */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000020 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000021 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000022 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60008000023 /* Services */,
+				A1B2C3D4E5F60008000024 /* Model */,
+				A1B2C3D4E5F60008000025 /* Interceptors */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000023 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60002002001 /* AuthAPIService.swift */,
+				A1B2C3D4E5F60002003001 /* MenuAPIService.swift */,
+				A1B2C3D4E5F60002004001 /* PostAPIService.swift */,
+				A1B2C3D4E5F60002004002 /* SurveyAPIService.swift */,
+				A1B2C3D4E5F60002004003 /* MessageAPIService.swift */,
+				A1B2C3D4E5F60002004004 /* ContactAPIService.swift */,
+				A1B2C3D4E5F60002004005 /* CanteenAPIService.swift */,
+				A1B2C3D4E5F60002004006 /* StreamAPIService.swift */,
+				A1B2C3D4E5F60002004007 /* CardAPIService.swift */,
+				A1B2C3D4E5F60002004008 /* TrustBoxAPIService.swift */,
+				A1B2C3D4E5F60002004009 /* CustomPageAPIService.swift */,
+				A1B2C3D4E5F6000200400A /* DataListAPIService.swift */,
+				A1B2C3D4E5F6000200401F /* DocumentAPIService.swift */,
+				A1B2C3D4E5F6000200400B /* FormAPIService.swift */,
+				A1B2C3D4E5F6000200400C /* EmployeeAPIService.swift */,
+				A1B2C3D4E5F6000200400D /* TelevisionAPIService.swift */,
+				A1B2C3D4E5F6000200400E /* LicensePlateAPIService.swift */,
+				A1B2C3D4E5F6000200400F /* XMLConfigurationParser.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000024 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000200100E /* AuthModels.swift */,
+				A1B2C3D4E5F6000200100F /* MenuModels.swift */,
+				A1B2C3D4E5F60002001010 /* PostModels.swift */,
+				A1B2C3D4E5F60002001011 /* SurveyModels.swift */,
+				A1B2C3D4E5F60002001012 /* MessageModels.swift */,
+				A1B2C3D4E5F60002001013 /* ContactModels.swift */,
+				A1B2C3D4E5F60002001014 /* CanteenModels.swift */,
+				A1B2C3D4E5F60002001015 /* OtherModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000025 /* Interceptors */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6000200100D /* APIClient.swift */,
+			);
+			path = Interceptors;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000026 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5F60008000027 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CF17E9A62FC6D52C003ED170 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				CF17E9A52FC6D52C003ED170 /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-        A1B2C3D4E5F60005000001 /* ClonkaApp */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = A1B2C3D4E5F6000A000001 /* Build configuration list for PBXNativeTarget "ClonkaApp" */;
-            buildPhases = (
-                A1B2C3D4E5F60009000001 /* Sources */,
-                A1B2C3D4E5F60007000001 /* Frameworks */,
-                A1B2C3D4E5F60009000003 /* Resources */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-            );
-            name = ClonkaApp;
-            productName = ClonkaApp;
-            productReference = A1B2C3D4E5F60006000001 /* ClonkaApp.app */;
-            productType = "com.apple.product-type.application";
-        };
-        A1B2C3D4E5F60005000002 /* ClonkaAppTests */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = A1B2C3D4E5F6000A000002 /* Build configuration list for PBXNativeTarget "ClonkaAppTests" */;
-            buildPhases = (
-                A1B2C3D4E5F60009000002 /* Sources */,
-                A1B2C3D4E5F60007000002 /* Frameworks */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                A1B2C3D4E5F6000B000001 /* PBXTargetDependency */,
-            );
-            name = ClonkaAppTests;
-            productName = ClonkaAppTests;
-            productReference = A1B2C3D4E5F60006000002 /* ClonkaAppTests.xctest */;
-            productType = "com.apple.product-type.bundle.unit-test";
-        };
+		A1B2C3D4E5F60005000001 /* ClonkaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D4E5F6000A000001 /* Build configuration list for PBXNativeTarget "ClonkaApp" */;
+			buildPhases = (
+				A1B2C3D4E5F60009000001 /* Sources */,
+				A1B2C3D4E5F60007000001 /* Frameworks */,
+				A1B2C3D4E5F60009000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClonkaApp;
+			productName = ClonkaApp;
+			productReference = A1B2C3D4E5F60006000001 /* ClonkaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1B2C3D4E5F60005000002 /* ClonkaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D4E5F6000A000002 /* Build configuration list for PBXNativeTarget "ClonkaAppTests" */;
+			buildPhases = (
+				A1B2C3D4E5F60009000002 /* Sources */,
+				A1B2C3D4E5F60007000002 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1B2C3D4E5F6000B000001 /* PBXTargetDependency */,
+			);
+			name = ClonkaAppTests;
+			productName = ClonkaAppTests;
+			productReference = A1B2C3D4E5F60006000002 /* ClonkaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-        A1B2C3D4E5F60004000001 /* Project object */ = {
-            isa = PBXProject;
-            attributes = {
-                BuildIndependentTargetsInParallel = 1;
-                LastSwiftUpdateCheck = 1600;
-                LastUpgradeCheck = 2620;
-                ORGANIZATIONNAME = Skeleton;
-                TargetAttributes = {
-                    A1B2C3D4E5F60005000001 = {
-                        CreatedOnToolsVersion = 16.0;
-                    };
-                    A1B2C3D4E5F60005000002 = {
-                        CreatedOnToolsVersion = 16.0;
-                        TestTargetID = A1B2C3D4E5F60005000001;
-                    };
-                };
-            };
-            buildConfigurationList = A1B2C3D4E5F6000A000003 /* Build configuration list for PBXProject "ClonkaApp" */;
-            compatibilityVersion = "Xcode 14.0";
-            developmentRegion = en;
-            hasScannedForEncodings = 0;
-            knownRegions = (
-                en,
-                Base,
-            );
-            mainGroup = A1B2C3D4E5F60008000001;
-            productRefGroup = A1B2C3D4E5F60008000011 /* Products */;
-            projectDirPath = "";
-            projectRoot = "";
-            targets = (
-                A1B2C3D4E5F60005000001 /* ClonkaApp */,
-                A1B2C3D4E5F60005000002 /* ClonkaAppTests */,
-            );
-        };
+		A1B2C3D4E5F60004000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2620;
+				ORGANIZATIONNAME = Skeleton;
+				TargetAttributes = {
+					A1B2C3D4E5F60005000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					A1B2C3D4E5F60005000002 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A1B2C3D4E5F60005000001;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3D4E5F6000A000003 /* Build configuration list for PBXProject "ClonkaApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B2C3D4E5F60008000001;
+			productRefGroup = A1B2C3D4E5F60008000011 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D4E5F60005000001 /* ClonkaApp */,
+				A1B2C3D4E5F60005000002 /* ClonkaAppTests */,
+			);
+		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-        A1B2C3D4E5F60009000003 /* Resources */ = {
-            isa = PBXResourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                A1B2C3D4E5F60001000009 /* Preview Assets.xcassets in Resources */,
-                A1B2C3D4E5F60001000008 /* Assets.xcassets in Resources */,
-                A1B2C3D4E5F60001003016 /* publicConfig.json in Resources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		A1B2C3D4E5F60009000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F60001000009 /* Preview Assets.xcassets in Resources */,
+				A1B2C3D4E5F60001000008 /* Assets.xcassets in Resources */,
+				CF17E9A72FC6D52C003ED170 /* Localizable.xcstrings in Resources */,
+				A1B2C3D4E5F60001003016 /* publicConfig.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-        A1B2C3D4E5F60009000001 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                A1B2C3D4E5F60001000001 /* ClonkaApp.swift in Sources */,
-                A1B2C3D4E5F60001000002 /* AppState.swift in Sources */,
-                A1B2C3D4E5F60001000003 /* RootView.swift in Sources */,
-                A1B2C3D4E5F60001000004 /* SessionManager.swift in Sources */,
-                A1B2C3D4E5F60001000005 /* LoginView.swift in Sources */,
-                A1B2C3D4E5F60001000006 /* MainTabView.swift in Sources */,
-                A1B2C3D4E5F60001000007 /* MaintenanceView.swift in Sources */,
-                A1B2C3D4E5F6000100100A /* AppResult.swift in Sources */,
-                A1B2C3D4E5F6000100100B /* AppLogger.swift in Sources */,
-                A1B2C3D4E5F6000100100C /* ConfigManager.swift in Sources */,
-                A1B2C3D4E5F6000100100D /* APIClient.swift in Sources */,
-                A1B2C3D4E5F6000100100E /* AuthModels.swift in Sources */,
-                A1B2C3D4E5F6000100100F /* MenuModels.swift in Sources */,
-                A1B2C3D4E5F60001001010 /* PostModels.swift in Sources */,
-                A1B2C3D4E5F60001001011 /* SurveyModels.swift in Sources */,
-                A1B2C3D4E5F60001001012 /* MessageModels.swift in Sources */,
-                A1B2C3D4E5F60001001013 /* ContactModels.swift in Sources */,
-                A1B2C3D4E5F60001001014 /* CanteenModels.swift in Sources */,
-                A1B2C3D4E5F60001001015 /* OtherModels.swift in Sources */,
-                A1B2C3D4E5F60001002001 /* AuthAPIService.swift in Sources */,
-                A1B2C3D4E5F60001002002 /* LoginViewModel.swift in Sources */,
-                A1B2C3D4E5F60001002003 /* QRScannerView.swift in Sources */,
-                A1B2C3D4E5F60001002004 /* ColorExtensions.swift in Sources */,
-                A1B2C3D4E5F60001003001 /* MenuAPIService.swift in Sources */,
-                A1B2C3D4E5F60001003002 /* MenuViewModel.swift in Sources */,
-                A1B2C3D4E5F60001003003 /* MenuGridView.swift in Sources */,
-                A1B2C3D4E5F60001003004 /* MenuTileView.swift in Sources */,
-                A1B2C3D4E5F60001003005 /* PostListView.swift in Sources */,
-                A1B2C3D4E5F60001003006 /* SurveyListView.swift in Sources */,
-                A1B2C3D4E5F60001003007 /* MessageListView.swift in Sources */,
-                A1B2C3D4E5F60001003008 /* ContactListView.swift in Sources */,
-                A1B2C3D4E5F60001003009 /* SettingsView.swift in Sources */,
-                A1B2C3D4E5F6000100300A /* ProfileView.swift in Sources */,
-                A1B2C3D4E5F6000100300B /* AboutAppView.swift in Sources */,
-                A1B2C3D4E5F6000100300C /* FormView.swift in Sources */,
-                A1B2C3D4E5F6000100300D /* CanteenView.swift in Sources */,
-                A1B2C3D4E5F6000100300E /* StreamListView.swift in Sources */,
-                A1B2C3D4E5F6000100300F /* CardView.swift in Sources */,
-                A1B2C3D4E5F60001003010 /* TrustBoxView.swift in Sources */,
-                A1B2C3D4E5F60001003011 /* CustomPageView.swift in Sources */,
-                A1B2C3D4E5F60001003012 /* LicensePlateView.swift in Sources */,
-                A1B2C3D4E5F60001003013 /* TelevisionView.swift in Sources */,
-                A1B2C3D4E5F60001003014 /* DataListView.swift in Sources */,
-                A1B2C3D4E5F60001003015 /* UnknownModuleView.swift in Sources */,
-                A1B2C3D4E5F60001004001 /* PostAPIService.swift in Sources */,
-                A1B2C3D4E5F60001004002 /* SurveyAPIService.swift in Sources */,
-                A1B2C3D4E5F60001004003 /* MessageAPIService.swift in Sources */,
-                A1B2C3D4E5F60001004004 /* ContactAPIService.swift in Sources */,
-                A1B2C3D4E5F60001004005 /* CanteenAPIService.swift in Sources */,
-                A1B2C3D4E5F60001004006 /* StreamAPIService.swift in Sources */,
-                A1B2C3D4E5F60001004007 /* CardAPIService.swift in Sources */,
-                A1B2C3D4E5F60001004008 /* TrustBoxAPIService.swift in Sources */,
-                A1B2C3D4E5F60001004009 /* CustomPageAPIService.swift in Sources */,
-                A1B2C3D4E5F6000100400A /* DataListAPIService.swift in Sources */,
-                A1B2C3D4E5F6000100401F /* DocumentAPIService.swift in Sources */,
-                A1B2C3D4E5F6000100400B /* FormAPIService.swift in Sources */,
-                A1B2C3D4E5F6000100400C /* EmployeeAPIService.swift in Sources */,
-                A1B2C3D4E5F6000100400D /* TelevisionAPIService.swift in Sources */,
-                A1B2C3D4E5F6000100400E /* LicensePlateAPIService.swift in Sources */,
-                A1B2C3D4E5F6000100400F /* XMLConfigurationParser.swift in Sources */,
-                A1B2C3D4E5F60001005001 /* SLoading.swift in Sources */,
-                A1B2C3D4E5F60001005002 /* SEmptyState.swift in Sources */,
-
-                A1B2C3D4E5F60001005003 /* SErrorState.swift in Sources */,
-                A1B2C3D4E5F60001005004 /* SAvatar.swift in Sources */,
-
-                A1B2C3D4E5F60001005005 /* HTMLContentView.swift in Sources */,
-                A1B2C3D4E5F60001005006 /* WebURLView.swift in Sources */,
-                A1B2C3D4E5F60001006001 /* PostListViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006002 /* PostDetailViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006003 /* PostDetailView.swift in Sources */,
-                A1B2C3D4E5F60001006004 /* SurveyListViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006005 /* SurveyDetailViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006006 /* SurveyDetailView.swift in Sources */,
-                A1B2C3D4E5F60001006007 /* MessageListViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006008 /* ChatViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006009 /* ChatView.swift in Sources */,
-                A1B2C3D4E5F6000100600A /* ContactListViewModel.swift in Sources */,
-                A1B2C3D4E5F6000100600B /* CanteenViewModel.swift in Sources */,
-                A1B2C3D4E5F6000100600C /* StreamListViewModel.swift in Sources */,
-                A1B2C3D4E5F6000100600D /* StreamDetailViewModel.swift in Sources */,
-                A1B2C3D4E5F6000100600E /* StreamDetailView.swift in Sources */,
-                A1B2C3D4E5F6000100600F /* CardViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006010 /* TrustBoxViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006011 /* CustomPageViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006012 /* DataListViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006013 /* FormViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006014 /* ProfileViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006015 /* SettingsViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006016 /* TelevisionViewModel.swift in Sources */,
-                A1B2C3D4E5F60001006017 /* LicensePlateViewModel.swift in Sources */,
-                A1B2C3D4E5F60001007001 /* ErrorReportStore.swift in Sources */,
-                A1B2C3D4E5F60001007002 /* DevToolsView.swift in Sources */,
-                A1B2C3D4E5F60001008001 /* DebugLogStore.swift in Sources */,
-                A1B2C3D4E5F60001008002 /* JobkaTheme.swift in Sources */,
-                A1B2C3D4E5F60001008003 /* DebugLogView.swift in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        A1B2C3D4E5F60009000002 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                A1B2C3D4E5F6000100000A /* ClonkaAppTests.swift in Sources */,
-                A1B2C3D4E5F6000100000B /* APIIntegrationTests.swift in Sources */,
-                A1B2C3D4E5F6000100000C /* XMLParserTests.swift in Sources */,
-                A1B2C3D4E5F6000100000D /* AppResultTests.swift in Sources */,
-                A1B2C3D4E5F6000100000E /* AppLoggerTests.swift in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		A1B2C3D4E5F60009000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F60001000001 /* ClonkaApp.swift in Sources */,
+				A1B2C3D4E5F60001000002 /* AppState.swift in Sources */,
+				A1B2C3D4E5F60001000003 /* RootView.swift in Sources */,
+				A1B2C3D4E5F60001000004 /* SessionManager.swift in Sources */,
+				A1B2C3D4E5F60001000005 /* LoginView.swift in Sources */,
+				A1B2C3D4E5F60001000006 /* MainTabView.swift in Sources */,
+				A1B2C3D4E5F60001000007 /* MaintenanceView.swift in Sources */,
+				A1B2C3D4E5F6000100100A /* AppResult.swift in Sources */,
+				A1B2C3D4E5F6000100100B /* AppLogger.swift in Sources */,
+				A1B2C3D4E5F6000100100C /* ConfigManager.swift in Sources */,
+				A1B2C3D4E5F6000100100D /* APIClient.swift in Sources */,
+				A1B2C3D4E5F6000100100E /* AuthModels.swift in Sources */,
+				A1B2C3D4E5F6000100100F /* MenuModels.swift in Sources */,
+				A1B2C3D4E5F60001001010 /* PostModels.swift in Sources */,
+				A1B2C3D4E5F60001001011 /* SurveyModels.swift in Sources */,
+				A1B2C3D4E5F60001001012 /* MessageModels.swift in Sources */,
+				A1B2C3D4E5F60001001013 /* ContactModels.swift in Sources */,
+				A1B2C3D4E5F60001001014 /* CanteenModels.swift in Sources */,
+				A1B2C3D4E5F60001001015 /* OtherModels.swift in Sources */,
+				A1B2C3D4E5F60001002001 /* AuthAPIService.swift in Sources */,
+				A1B2C3D4E5F60001002002 /* LoginViewModel.swift in Sources */,
+				A1B2C3D4E5F60001002003 /* QRScannerView.swift in Sources */,
+				A1B2C3D4E5F60001002004 /* ColorExtensions.swift in Sources */,
+				A1B2C3D4E5F60001003001 /* MenuAPIService.swift in Sources */,
+				A1B2C3D4E5F60001003002 /* MenuViewModel.swift in Sources */,
+				A1B2C3D4E5F60001003003 /* MenuGridView.swift in Sources */,
+				A1B2C3D4E5F60001003004 /* MenuTileView.swift in Sources */,
+				A1B2C3D4E5F60001003005 /* PostListView.swift in Sources */,
+				A1B2C3D4E5F60001003006 /* SurveyListView.swift in Sources */,
+				A1B2C3D4E5F60001003007 /* MessageListView.swift in Sources */,
+				A1B2C3D4E5F60001003008 /* ContactListView.swift in Sources */,
+				A1B2C3D4E5F60001003009 /* SettingsView.swift in Sources */,
+				A1B2C3D4E5F6000100300A /* ProfileView.swift in Sources */,
+				A1B2C3D4E5F6000100300B /* AboutAppView.swift in Sources */,
+				A1B2C3D4E5F6000100300C /* FormView.swift in Sources */,
+				A1B2C3D4E5F6000100300D /* CanteenView.swift in Sources */,
+				A1B2C3D4E5F6000100300E /* StreamListView.swift in Sources */,
+				A1B2C3D4E5F6000100300F /* CardView.swift in Sources */,
+				A1B2C3D4E5F60001003010 /* TrustBoxView.swift in Sources */,
+				A1B2C3D4E5F60001003011 /* CustomPageView.swift in Sources */,
+				A1B2C3D4E5F60001003012 /* LicensePlateView.swift in Sources */,
+				A1B2C3D4E5F60001003013 /* TelevisionView.swift in Sources */,
+				A1B2C3D4E5F60001003014 /* DataListView.swift in Sources */,
+				A1B2C3D4E5F60001003015 /* UnknownModuleView.swift in Sources */,
+				A1B2C3D4E5F60001004001 /* PostAPIService.swift in Sources */,
+				A1B2C3D4E5F60001004002 /* SurveyAPIService.swift in Sources */,
+				A1B2C3D4E5F60001004003 /* MessageAPIService.swift in Sources */,
+				A1B2C3D4E5F60001004004 /* ContactAPIService.swift in Sources */,
+				A1B2C3D4E5F60001004005 /* CanteenAPIService.swift in Sources */,
+				A1B2C3D4E5F60001004006 /* StreamAPIService.swift in Sources */,
+				A1B2C3D4E5F60001004007 /* CardAPIService.swift in Sources */,
+				A1B2C3D4E5F60001004008 /* TrustBoxAPIService.swift in Sources */,
+				A1B2C3D4E5F60001004009 /* CustomPageAPIService.swift in Sources */,
+				A1B2C3D4E5F6000100400A /* DataListAPIService.swift in Sources */,
+				A1B2C3D4E5F6000100401F /* DocumentAPIService.swift in Sources */,
+				A1B2C3D4E5F6000100400B /* FormAPIService.swift in Sources */,
+				A1B2C3D4E5F6000100400C /* EmployeeAPIService.swift in Sources */,
+				A1B2C3D4E5F6000100400D /* TelevisionAPIService.swift in Sources */,
+				A1B2C3D4E5F6000100400E /* LicensePlateAPIService.swift in Sources */,
+				A1B2C3D4E5F6000100400F /* XMLConfigurationParser.swift in Sources */,
+				A1B2C3D4E5F60001005001 /* SLoading.swift in Sources */,
+				A1B2C3D4E5F60001005002 /* SEmptyState.swift in Sources */,
+				A1B2C3D4E5F60001005003 /* SErrorState.swift in Sources */,
+				A1B2C3D4E5F60001005004 /* SAvatar.swift in Sources */,
+				A1B2C3D4E5F60001005005 /* HTMLContentView.swift in Sources */,
+				A1B2C3D4E5F60001005006 /* WebURLView.swift in Sources */,
+				A1B2C3D4E5F60001006001 /* PostListViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006002 /* PostDetailViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006003 /* PostDetailView.swift in Sources */,
+				A1B2C3D4E5F60001006004 /* SurveyListViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006005 /* SurveyDetailViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006006 /* SurveyDetailView.swift in Sources */,
+				A1B2C3D4E5F60001006007 /* MessageListViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006008 /* ChatViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006009 /* ChatView.swift in Sources */,
+				A1B2C3D4E5F6000100600A /* ContactListViewModel.swift in Sources */,
+				A1B2C3D4E5F6000100600B /* CanteenViewModel.swift in Sources */,
+				A1B2C3D4E5F6000100600C /* StreamListViewModel.swift in Sources */,
+				A1B2C3D4E5F6000100600D /* StreamDetailViewModel.swift in Sources */,
+				A1B2C3D4E5F6000100600E /* StreamDetailView.swift in Sources */,
+				A1B2C3D4E5F6000100600F /* CardViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006010 /* TrustBoxViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006011 /* CustomPageViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006012 /* DataListViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006013 /* FormViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006014 /* ProfileViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006015 /* SettingsViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006016 /* TelevisionViewModel.swift in Sources */,
+				A1B2C3D4E5F60001006017 /* LicensePlateViewModel.swift in Sources */,
+				A1B2C3D4E5F60001007001 /* ErrorReportStore.swift in Sources */,
+				A1B2C3D4E5F60001007002 /* DevToolsView.swift in Sources */,
+				A1B2C3D4E5F60001008001 /* DebugLogStore.swift in Sources */,
+				A1B2C3D4E5F60001008002 /* JobkaTheme.swift in Sources */,
+				A1B2C3D4E5F60001008003 /* DebugLogView.swift in Sources */,
+				A1B2C3D4E5F60001008004 /* L10n.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B2C3D4E5F60009000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F6000100000A /* ClonkaAppTests.swift in Sources */,
+				A1B2C3D4E5F6000100000B /* APIIntegrationTests.swift in Sources */,
+				A1B2C3D4E5F6000100000C /* XMLParserTests.swift in Sources */,
+				A1B2C3D4E5F6000100000D /* AppResultTests.swift in Sources */,
+				A1B2C3D4E5F6000100000E /* AppLoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-        A1B2C3D4E5F6000B000001 /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = A1B2C3D4E5F60005000001 /* ClonkaApp */;
-            targetProxy = A1B2C3D4E5F60003000001 /* PBXContainerItemProxy */;
-        };
+		A1B2C3D4E5F6000B000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1B2C3D4E5F60005000001 /* ClonkaApp */;
+			targetProxy = A1B2C3D4E5F60003000001 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-        A1B2C3D4E5F6000C000001 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                COPY_PHASE_STRIP = NO;
-                DEBUG_INFORMATION_FORMAT = dwarf;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                ENABLE_TESTABILITY = YES;
-                ENABLE_USER_SCRIPT_SANDBOXING = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu17;
-                GCC_DYNAMIC_NO_PIC = NO;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_OPTIMIZATION_LEVEL = 0;
-                GCC_PREPROCESSOR_DEFINITIONS = (
-                    "DEBUG=1",
-                    "$(inherited)",
-                );
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-                LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-                MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-                MTL_FAST_MATH = YES;
-                ONLY_ACTIVE_ARCH = YES;
-                SDKROOT = iphoneos;
-                STRING_CATALOG_GENERATE_SYMBOLS = YES;
-                SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
-                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-                SWIFT_STRICT_CONCURRENCY = complete;
-            };
-            name = Debug;
-        };
-        A1B2C3D4E5F6000C000002 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                COPY_PHASE_STRIP = NO;
-                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-                ENABLE_NS_ASSERTIONS = NO;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                ENABLE_USER_SCRIPT_SANDBOXING = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu17;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-                LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-                MTL_ENABLE_DEBUG_INFO = NO;
-                MTL_FAST_MATH = YES;
-                SDKROOT = iphoneos;
-                STRING_CATALOG_GENERATE_SYMBOLS = YES;
-                SWIFT_COMPILATION_MODE = wholemodule;
-                SWIFT_STRICT_CONCURRENCY = complete;
-                VALIDATE_PRODUCT = YES;
-            };
-            name = Release;
-        };
-        A1B2C3D4E5F6000C000003 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-                CODE_SIGN_STYLE = Automatic;
-                CURRENT_PROJECT_VERSION = 1;
-                DEVELOPMENT_ASSET_PATHS = "\"ClonkaApp/Preview Content\"";
-                DEVELOPMENT_TEAM = LEXTNQ98P4;
-                ENABLE_PREVIEWS = YES;
-                GENERATE_INFOPLIST_FILE = YES;
-                INFOPLIST_KEY_CFBundleDisplayName = "Clonka Swift";
-                INFOPLIST_KEY_NSCameraUsageDescription = "Clonka needs camera access to scan QR codes for login.";
-                INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-                INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-                INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-                IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                );
-                MARKETING_VERSION = 1.0;
-                PRODUCT_BUNDLE_IDENTIFIER = "cz.skeleton.clonka-swift";
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-                SUPPORTS_MACCATALYST = NO;
-                SWIFT_EMIT_LOC_STRINGS = YES;
-                SWIFT_VERSION = 5.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-            };
-            name = Debug;
-        };
-        A1B2C3D4E5F6000C000004 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-                CODE_SIGN_STYLE = Automatic;
-                CURRENT_PROJECT_VERSION = 1;
-                DEVELOPMENT_ASSET_PATHS = "\"ClonkaApp/Preview Content\"";
-                DEVELOPMENT_TEAM = LEXTNQ98P4;
-                ENABLE_PREVIEWS = YES;
-                GENERATE_INFOPLIST_FILE = YES;
-                INFOPLIST_KEY_CFBundleDisplayName = "Clonka Swift";
-                INFOPLIST_KEY_NSCameraUsageDescription = "Clonka needs camera access to scan QR codes for login.";
-                INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-                INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-                INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-                IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                );
-                MARKETING_VERSION = 1.0;
-                PRODUCT_BUNDLE_IDENTIFIER = "cz.skeleton.clonka-swift";
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-                SUPPORTS_MACCATALYST = NO;
-                SWIFT_EMIT_LOC_STRINGS = YES;
-                SWIFT_VERSION = 5.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-            };
-            name = Release;
-        };
-        A1B2C3D4E5F6000C000005 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                BUNDLE_LOADER = "$(TEST_HOST)";
-                CODE_SIGN_STYLE = Automatic;
-                CURRENT_PROJECT_VERSION = 1;
-                GENERATE_INFOPLIST_FILE = YES;
-                IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-                MARKETING_VERSION = 1.0;
-                PRODUCT_BUNDLE_IDENTIFIER = cz.skeleton.clonka.tests;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-                SUPPORTS_MACCATALYST = NO;
-                SWIFT_EMIT_LOC_STRINGS = NO;
-                SWIFT_VERSION = 5.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClonkaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClonkaApp";
-            };
-            name = Debug;
-        };
-        A1B2C3D4E5F6000C000006 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                BUNDLE_LOADER = "$(TEST_HOST)";
-                CODE_SIGN_STYLE = Automatic;
-                CURRENT_PROJECT_VERSION = 1;
-                GENERATE_INFOPLIST_FILE = YES;
-                IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-                MARKETING_VERSION = 1.0;
-                PRODUCT_BUNDLE_IDENTIFIER = cz.skeleton.clonka.tests;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-                SUPPORTS_MACCATALYST = NO;
-                SWIFT_EMIT_LOC_STRINGS = NO;
-                SWIFT_VERSION = 5.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClonkaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClonkaApp";
-            };
-            name = Release;
-        };
+		A1B2C3D4E5F6000C000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5F6000C000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1B2C3D4E5F6000C000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ClonkaApp/Preview Content\"";
+				DEVELOPMENT_TEAM = LEXTNQ98P4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Clonka Swift";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Clonka needs camera access to scan QR codes for login.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.skeleton.clonka-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5F6000C000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ClonkaApp/Preview Content\"";
+				DEVELOPMENT_TEAM = LEXTNQ98P4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Clonka Swift";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Clonka needs camera access to scan QR codes for login.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cz.skeleton.clonka-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A1B2C3D4E5F6000C000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.skeleton.clonka.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClonkaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClonkaApp";
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5F6000C000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cz.skeleton.clonka.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClonkaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ClonkaApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-        A1B2C3D4E5F6000A000001 /* Build configuration list for PBXNativeTarget "ClonkaApp" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                A1B2C3D4E5F6000C000003 /* Debug */,
-                A1B2C3D4E5F6000C000004 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        A1B2C3D4E5F6000A000002 /* Build configuration list for PBXNativeTarget "ClonkaAppTests" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                A1B2C3D4E5F6000C000005 /* Debug */,
-                A1B2C3D4E5F6000C000006 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        A1B2C3D4E5F6000A000003 /* Build configuration list for PBXProject "ClonkaApp" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                A1B2C3D4E5F6000C000001 /* Debug */,
-                A1B2C3D4E5F6000C000002 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
+		A1B2C3D4E5F6000A000001 /* Build configuration list for PBXNativeTarget "ClonkaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5F6000C000003 /* Debug */,
+				A1B2C3D4E5F6000C000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D4E5F6000A000002 /* Build configuration list for PBXNativeTarget "ClonkaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5F6000C000005 /* Debug */,
+				A1B2C3D4E5F6000C000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D4E5F6000A000003 /* Build configuration list for PBXProject "ClonkaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5F6000C000001 /* Debug */,
+				A1B2C3D4E5F6000C000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-    };
-    rootObject = A1B2C3D4E5F60004000001 /* Project object */;
+	};
+	rootObject = A1B2C3D4E5F60004000001 /* Project object */;
 }

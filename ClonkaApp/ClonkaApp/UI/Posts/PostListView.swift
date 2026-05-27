@@ -2,10 +2,12 @@ import SwiftUI
 
 struct PostListView: View {
     let moduleId: Int
+    let title: String
     @StateObject private var viewModel: PostListViewModel
 
-    init(moduleId: Int) {
+    init(moduleId: Int, title: String = "Posts") {
         self.moduleId = moduleId
+        self.title = title
         _viewModel = StateObject(wrappedValue: PostListViewModel(moduleId: moduleId))
     }
 
@@ -34,7 +36,7 @@ struct PostListView: View {
                 }
             }
         }
-        .navigationTitle("Posts")
+        .navigationTitle(title)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {

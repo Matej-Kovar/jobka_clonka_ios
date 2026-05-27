@@ -2,9 +2,11 @@ import SwiftUI
 
 struct PostDetailView: View {
     @StateObject private var viewModel: PostDetailViewModel
+    let title: String
 
-    init(postId: Int) {
+    init(postId: Int, title: String = "Post") {
         _viewModel = StateObject(wrappedValue: PostDetailViewModel(postId: postId))
+        self.title = title
     }
 
     var body: some View {
@@ -18,7 +20,7 @@ struct PostDetailView: View {
                     VStack(alignment: .leading, spacing: 20) {
                         // Header
                         VStack(alignment: .leading, spacing: 8) {
-                            Text(detail.displayName ?? "Post")
+                            Text(detail.displayName ?? title)
                                 .font(.title2.bold())
                             if let date = detail.datePublish {
                                 Label {

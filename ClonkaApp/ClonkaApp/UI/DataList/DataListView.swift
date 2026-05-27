@@ -2,16 +2,18 @@ import SwiftUI
 
 struct DataListView: View {
     let moduleId: Int
+    let title: String
     @StateObject private var viewModel: DataListViewModel
 
-    init(moduleId: Int) {
+    init(moduleId: Int, title: String = "Data List") {
         self.moduleId = moduleId
+        self.title = title
         _viewModel = StateObject(wrappedValue: DataListViewModel(moduleId: moduleId))
     }
 
     var body: some View {
         contentView
-            .navigationTitle("Data List")
+            .navigationTitle(title)
             .searchable(text: $viewModel.searchText, prompt: "Search")
             .onSubmit(of: .search) { Task { await viewModel.search() } }
             .refreshable { await viewModel.load() }

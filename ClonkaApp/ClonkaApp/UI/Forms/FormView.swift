@@ -2,12 +2,14 @@ import SwiftUI
 
 struct FormView: View {
     let moduleId: Int
+    let title: String
     @StateObject private var viewModel: FormViewModel
     @State private var successAnimationTrigger = false
     @EnvironmentObject private var appState: AppState
     
-    init(moduleId: Int) {
+    init(moduleId: Int, title: String = "Form") {
         self.moduleId = moduleId
+        self.title = title
         _viewModel = StateObject(wrappedValue: FormViewModel(moduleId: moduleId))
     }
 
@@ -25,7 +27,7 @@ struct FormView: View {
                 formContent
             }
         }
-        .navigationTitle("Form")
+        .navigationTitle(title)
         .task { await viewModel.load() }
         .environment(\.openURL, OpenURLAction { url in
             handleLinkTap(url)
