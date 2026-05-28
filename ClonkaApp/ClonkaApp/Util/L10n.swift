@@ -64,6 +64,7 @@ enum L10n: String {
     case Survey_Submitted
     case Survey_Thanks
     case Post_ApproveFail
+    case Post_Notice
     
     var key: LocalizedStringKey {
         LocalizedStringKey(rawValue)

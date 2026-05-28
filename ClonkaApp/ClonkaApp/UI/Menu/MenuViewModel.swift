@@ -12,6 +12,10 @@ final class MenuViewModel: ObservableObject {
     @Published var companyName: String?
     @Published var companyColor: String?
 
+    @Published var popupsQueue: [PostPopup] = []
+    @Published var currentPopup: PostPopup?
+    @Published var currentPopupDetail: PostDetail? = nil
+
     struct FolderEntry: Identifiable {
         let id: Int
         let title: String
@@ -62,6 +66,7 @@ final class MenuViewModel: ObservableObject {
             companyColor = config.company?.companyColor
             AppLogger.menu.info("✅ Menu loaded: \(config.menuItems.count) items")
             await loadBadgeCounts()
+            await loadPopups()
 
         case .failure(let error):
             if case .unauthorized = error {
@@ -85,6 +90,61 @@ final class MenuViewModel: ObservableObject {
             }
             badgeCounts = map
             AppLogger.menu.info("🔢 Badge counts loaded: \(counts.count) items")
+        }
+    }
+
+    func loadPopups() async {
+        let result = await PostAPIService.fetchPopups()
+        if case .success(let popups) = result {
+            self.popupsQueue = popups
+            showNextPopup()
+        }
+    }
+
+    func showNextPopup() {
+        if let next = popupsQueue.first {
+            currentPopup = next
+            // Fetch full post detail (attachments, images) for richer popup display
+            currentPopupDetail = nil
+            Task {
+                await loadPopupDetail(postId: next.postId)
+            }
+        } else {
+            currentPopup = nil
+            currentPopupDetail = nil
+        }
+    }
+
+    func dismissCurrentPopup(approved: Bool = false) {
+        guard let current = currentPopup else { return }
+        
+        // Remove from queue
+        popupsQueue.removeAll { $0.id == current.id }
+        currentPopup = nil
+        currentPopupDetail = nil
+        
+        Task {
+            if approved {
+                _ = await PostAPIService.approve(postId: current.id)
+            } else {
+                _ = await PostAPIService.markRead(postId: current.id)
+            }
+        }
+        
+        // Show next if any after a small delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.showNextPopup()
+        }
+    }
+
+    private func loadPopupDetail(postId: Int) async {
+        let result = await PostAPIService.fetchPostDetail(postId: postId)
+        switch result {
+        case .success(let detail):
+            currentPopupDetail = detail
+        case .failure(let error):
+            AppLogger.api.warning("Could not fetch popup detail for id=\(postId): \(error.localizedDescription)")
+            currentPopupDetail = nil
         }
     }
 

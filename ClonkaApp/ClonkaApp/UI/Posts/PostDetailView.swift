@@ -34,6 +34,17 @@ struct PostDetailView: View {
                         }
 
                         Divider()
+                            .padding(.bottom, 12)
+                        
+                        if let attachments = detail.attachments {
+                            let imageAttachments = attachments.filter { isImageAttachment($0) }
+                            if !imageAttachments.isEmpty {
+                                VStack(alignment: .leading, spacing: 12) {
+                                    SImageView(images: imageAttachments.map { SImageAttachment(documentId: $0.documentId, documentUrl: $0.documentUrl) })
+                                }
+                                .padding(.bottom, 8)
+                            }
+                        }
 
                         // Content
                         if let html = detail.textHtml, !html.isEmpty {
@@ -49,24 +60,32 @@ struct PostDetailView: View {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text(L10n.Post_Attachments.string)
                                     .font(.headline)
-                                ForEach(attachments) { att in
-                                    HStack(spacing: 10) {
-                                        ZStack {
-                                            RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                                .fill(Color(.systemGray6))
-                                                .frame(width: 36, height: 36)
-                                            Image(systemName: "paperclip")
-                                                .font(.callout)
-                                                .foregroundStyle(.secondary)
+                                let fileAttachments = attachments.filter { !isImageAttachment($0) }
+
+
+
+                                if !fileAttachments.isEmpty {
+                                    VStack(alignment: .leading, spacing: 8) {
+                                        ForEach(fileAttachments) { att in
+                                            HStack(spacing: 10) {
+                                                ZStack {
+                                                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                                        .fill(Color(.systemGray6))
+                                                        .frame(width: 36, height: 36)
+                                                    Image(systemName: "paperclip")
+                                                        .font(.callout)
+                                                        .foregroundStyle(.secondary)
+                                                }
+                                                Text(att.displayName ?? att.fileName ?? L10n.Post_Attachments.string)
+                                                    .font(.callout)
+                                                    .lineLimit(1)
+                                            }
+                                            .padding(8)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .background(Color(.systemGray6))
+                                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                         }
-                                        Text(att.displayName ?? att.fileName ?? L10n.Post_Attachments.string)
-                                            .font(.callout)
-                                            .lineLimit(1)
                                     }
-                                    .padding(8)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .background(Color(.systemGray6))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                 }
                             }
                         }
@@ -149,5 +168,24 @@ struct PostDetailView: View {
         .navigationTitle(L10n.Post_Detail.string)
         .navigationBarTitleDisplayMode(.inline)
         .task { await viewModel.load() }
+    }
+
+    // MARK: - Attachments
+
+    private func isImageAttachment(_ attachment: PostAttachment) -> Bool {
+        if attachment.contentType?.lowercased().hasPrefix("image/") == true {
+            return true
+        }
+
+        let candidates = [attachment.documentUrl, attachment.fileNameExtension, attachment.fileName, attachment.displayName]
+            .compactMap { $0?.lowercased() }
+
+        for value in candidates {
+            if [".png", ".jpg", ".jpeg", ".gif", ".webp", ".heic", ".heif"].contains(where: { value.hasSuffix($0) }) {
+                return true
+            }
+        }
+
+        return false
     }
 }

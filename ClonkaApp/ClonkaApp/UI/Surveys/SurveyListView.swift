@@ -85,6 +85,44 @@ struct SurveyCardView: View {
                     .background(isAnswered ? Color.green : Color.orange, in: Capsule())
             }
 
+            // Date/Time and Expiration Date with icons
+            VStack(alignment: .leading, spacing: 8) {
+                if let date = survey.datePublish {
+                    HStack(spacing: 4) {
+                        Image(systemName: "calendar")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        Text(date, style: .date)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        Image(systemName: "clock")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .padding(.leading, 8)
+                        Text(date, style: .time)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                
+                if let closeDate = survey.dateClose {
+                    HStack(spacing: 4) {
+                        Image(systemName: "calendar.badge.exclamationmark")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                        Text("Expires: ")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                        Text(closeDate, style: .date)
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                        Text(closeDate, style: .time)
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                    }
+                }
+            }
+
             if let total = survey.questionCount, total > 0 {
                 let answered = survey.answeredCount ?? 0
                 VStack(spacing: 4) {

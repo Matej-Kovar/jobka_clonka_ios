@@ -12,7 +12,7 @@ struct SLoading: View {
             ProgressView()
                 .controlSize(.large)
                 .tint(Color.accentColor)
-            Text(message)
+            Text(LocalizedStringKey(message))
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }

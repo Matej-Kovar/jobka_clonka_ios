@@ -72,8 +72,18 @@ struct PostPopup: Decodable, Identifiable {
     let text: String?
     let textHtml: String?
     let datePublish: Date?
+    let approvalType: String?
+    let textApprovalButton: String?
+    let textApprovalCheckbox: String?
+    let dateRead: Date?
+    let dateApproved: Date?
 
     var id: Int { postId }
+    
+    var needsApproval: Bool {
+        let type = approvalType ?? "none"
+        return type == "approve" || type == "approveWithCheckbox"
+    }
 }
 
 // MARK: - Request bodies

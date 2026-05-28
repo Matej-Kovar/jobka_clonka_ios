@@ -1,6 +1,78 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "—" : {
+
+    },
+    "(%lld)" : {
+
+    },
+    "[%@]" : {
+
+    },
+    "*" : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+
+    },
+    "%lld characters" : {
+
+    },
+    "%lld/%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld"
+          }
+        }
+      }
+    },
+    "%lld/%lld questions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld questions"
+          }
+        }
+      }
+    },
+    "%lldms" : {
+
+    },
+    "© 2024 Skeleton s.r.o." : {
+
+    },
+    "🔴" : {
+
+    },
+    "🟡" : {
+
+    },
+    "About" : {
+
+    },
+    "About App" : {
+
+    },
+    "Actions" : {
+
+    },
     "Activate" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -17,6 +89,33 @@
           }
         }
       }
+    },
+    "Active URLs" : {
+
+    },
+    "Add comment..." : {
+
+    },
+    "All" : {
+
+    },
+    "Anonymous Feedback" : {
+
+    },
+    "API" : {
+
+    },
+    "API Environment" : {
+
+    },
+    "App" : {
+
+    },
+    "App Info" : {
+
+    },
+    "App Version" : {
+
     },
     "App_Description" : {
       "extractionState" : "manual",
@@ -86,6 +185,9 @@
           }
         }
       }
+    },
+    "Appearance" : {
+
     },
     "Auth_AccessCode" : {
       "extractionState" : "manual",
@@ -420,6 +522,24 @@
         }
       }
     },
+    "Azure File URL" : {
+
+    },
+    "Azure Files" : {
+
+    },
+    "Build" : {
+
+    },
+    "by %@" : {
+
+    },
+    "Call" : {
+
+    },
+    "Camera" : {
+
+    },
     "Cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -443,6 +563,84 @@
         }
       }
     },
+    "Canteen" : {
+
+    },
+    "Card" : {
+
+    },
+    "Clear All Data" : {
+
+    },
+    "Clear Error Log" : {
+
+    },
+    "Client API" : {
+
+    },
+    "Client API URL" : {
+
+    },
+    "Clonka" : {
+
+    },
+    "Close" : {
+
+    },
+    "Comments" : {
+
+    },
+    "Contact" : {
+
+    },
+    "Contacts" : {
+
+    },
+    "Copied!" : {
+
+    },
+    "Copy" : {
+
+    },
+    "Copy Device Info" : {
+
+    },
+    "Copy Error Log" : {
+
+    },
+    "Create" : {
+
+    },
+    "Custom Page" : {
+
+    },
+    "Custom URLs" : {
+
+    },
+    "Dark" : {
+
+    },
+    "Debug Log" : {
+
+    },
+    "Detail" : {
+
+    },
+    "Details" : {
+
+    },
+    "Developer" : {
+
+    },
+    "Developer Mode" : {
+
+    },
+    "Developer Mode Active" : {
+
+    },
+    "Developer Tools" : {
+
+    },
     "DeveloperMode" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -460,6 +658,51 @@
         }
       }
     },
+    "Device" : {
+
+    },
+    "Done" : {
+
+    },
+    "e.g. ABC-1234" : {
+
+    },
+    "Email" : {
+
+    },
+    "Email (optional)" : {
+
+    },
+    "email@example.com" : {
+
+    },
+    "Employee Portal" : {
+
+    },
+    "Enter developer password" : {
+
+    },
+    "Enter group name" : {
+
+    },
+    "Enter License Plate" : {
+
+    },
+    "Enter QR Code" : {
+
+    },
+    "Environment" : {
+
+    },
+    "Error" : {
+
+    },
+    "Error Detail" : {
+
+    },
+    "Error Log (%lld)" : {
+
+    },
     "Error_Generic" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -476,6 +719,27 @@
           }
         }
       }
+    },
+    "Errors" : {
+
+    },
+    "Expires: " : {
+
+    },
+    "Form Submitted" : {
+
+    },
+    "Group Name" : {
+
+    },
+    "HTTP" : {
+
+    },
+    "https://..." : {
+
+    },
+    "ID_Login" : {
+
     },
     "Image_Fail" : {
       "extractionState" : "manual",
@@ -511,13 +775,28 @@
         }
       }
     },
+    "Info" : {
+
+    },
+    "Language" : {
+
+    },
+    "License Plates" : {
+
+    },
+    "Light" : {
+
+    },
+    "Load More" : {
+
+    },
     "Loading" : {
       "extractionState" : "manual",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Načítání"
+            "value" : "Načítání..."
           }
         },
         "en" : {
@@ -527,6 +806,12 @@
           }
         }
       }
+    },
+    "Log Entries" : {
+
+    },
+    "Logout" : {
+
     },
     "MaintenanceView_Description" : {
       "extractionState" : "manual",
@@ -629,6 +914,42 @@
         }
       }
     },
+    "Message Sent" : {
+
+    },
+    "Message..." : {
+
+    },
+    "Messages" : {
+
+    },
+    "Minimum 10 characters" : {
+
+    },
+    "Mode" : {
+
+    },
+    "New Group" : {
+
+    },
+    "New Message" : {
+
+    },
+    "New Post" : {
+
+    },
+    "No content available" : {
+
+    },
+    "No errors recorded" : {
+
+    },
+    "No log entries yet" : {
+
+    },
+    "No response body captured" : {
+
+    },
     "NoItemsFound" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -645,6 +966,27 @@
           }
         }
       }
+    },
+    "OK" : {
+
+    },
+    "Overview" : {
+
+    },
+    "Page ID: %lld" : {
+
+    },
+    "Password" : {
+
+    },
+    "Platform" : {
+
+    },
+    "PN: %@" : {
+
+    },
+    "Post" : {
+
     },
     "Post_ApprovalFail" : {
       "extractionState" : "manual",
@@ -765,6 +1107,17 @@
         }
       }
     },
+    "Post_Notice" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notice"
+          }
+        }
+      }
+    },
     "Post_Title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -781,6 +1134,63 @@
           }
         }
       }
+    },
+    "Profile" : {
+
+    },
+    "QR Code / Access Code" : {
+
+    },
+    "Remove Photo" : {
+
+    },
+    "Result" : {
+
+    },
+    "Retry" : {
+
+    },
+    "s" : {
+
+    },
+    "Save Custom URLs" : {
+
+    },
+    "Scan QR Code" : {
+
+    },
+    "Scan to verify" : {
+
+    },
+    "Search" : {
+
+    },
+    "Search contacts" : {
+
+    },
+    "Search employees" : {
+
+    },
+    "seconds" : {
+
+    },
+    "Select..." : {
+
+    },
+    "Settings" : {
+
+    },
+    "Slow Requests" : {
+
+    },
+    "Slow Threshold" : {
+
+    },
+    "Source" : {
+
+    },
+    "Stream" : {
+
     },
     "Submit" : {
       "localizations" : {
@@ -1081,6 +1491,27 @@
         }
       }
     },
+    "System" : {
+
+    },
+    "Tester Account" : {
+
+    },
+    "Thank you for your feedback." : {
+
+    },
+    "Theme" : {
+
+    },
+    "This page has no content" : {
+
+    },
+    "Time" : {
+
+    },
+    "Trust Box" : {
+
+    },
     "UnknownModule_Description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1114,6 +1545,33 @@
           }
         }
       }
+    },
+    "User" : {
+
+    },
+    "Version" : {
+
+    },
+    "Version 1.0.0" : {
+
+    },
+    "Webservice URL" : {
+
+    },
+    "WS API" : {
+
+    },
+    "WS URL" : {
+
+    },
+    "Your data has been saved." : {
+
+    },
+    "Your identity is not shared with anyone." : {
+
+    },
+    "Your Message" : {
+
     }
   },
   "version" : "1.0"

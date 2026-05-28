@@ -35,8 +35,13 @@ struct SurveyDetailView: View {
                 .padding(.horizontal)
                 .padding(.top, 8)
 
-            // Question content
+            // Survey content + questions
             TabView(selection: $viewModel.currentPage) {
+                // Intro page (page 0)
+                introPage
+                    .tag(0)
+                
+                // Question pages (pages 1+)
                 ForEach(Array(viewModel.questions.enumerated()), id: \.element.questionId) { index, question in
                     ScrollView {
                         VStack(alignment: .leading, spacing: 0) {
@@ -44,7 +49,7 @@ struct SurveyDetailView: View {
                                 .padding()
                         }
                     }
-                    .tag(index)
+                    .tag(index + 1)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
@@ -67,9 +72,10 @@ struct SurveyDetailView: View {
                     .foregroundStyle(.secondary)
             }
 
-            // Step dots
+            // Step dots (including intro page)
+            let totalPages = viewModel.questions.count + 1
             HStack(spacing: 6) {
-                ForEach(0..<viewModel.questions.count, id: \.self) { i in
+                ForEach(0..<totalPages, id: \.self) { i in
                     Capsule()
                         .fill(stepColor(for: i))
                         .frame(height: 4)
@@ -78,17 +84,28 @@ struct SurveyDetailView: View {
             }
             .animation(.spring(response: 0.3), value: viewModel.currentPage)
 
-            Text(L10n.Survey_Question.formatted(with: viewModel.currentPage + 1, viewModel.questions.count))
-                .font(.caption)
-                .foregroundStyle(.tertiary)
+            // Show step counter (skip intro in the count)
+            if viewModel.currentPage > 0 {
+                Text(L10n.Survey_Question.formatted(with: viewModel.currentPage, viewModel.questions.count))
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+            }
         }
         .padding(.bottom, 4)
     }
 
     private func stepColor(for index: Int) -> Color {
         if index == viewModel.currentPage { return Color.accentColor }
-        if viewModel.isQuestionAnswered(index) { return .green }
+        // Intro page (index 0) is always complete when not current
+        if index == 0 { return .green }
+        // For question pages, check if answered
+        let questionIndex = index - 1
+        if isQuestionAnswered(questionIndex) { return .green }
         return Color(.systemGray4)
+    }
+    
+    private func isQuestionAnswered(_ questionIndex: Int) -> Bool {
+        viewModel.isQuestionAnswered(questionIndex)
     }
 
     // MARK: - Question Card
@@ -149,12 +166,7 @@ struct SurveyDetailView: View {
         
         if !imageAttachments.isEmpty {
             VStack(alignment: .leading, spacing: 12) {
-                ForEach(imageAttachments) { attachment in
-                    ImageAttachmentLoader(
-                        attachment: attachment,
-                        questionId: questionId
-                    )
-                }
+                SImageView(images: imageAttachments.map { SImageAttachment(documentId: $0.documentId, documentUrl: $0.documentUrl) })
             }
             .task {
                 AppLogger.navigation.debug("📸 Q\(questionId): Rendering \(imageAttachments.count) images")
@@ -170,91 +182,6 @@ struct SurveyDetailView: View {
         guard let urlString = attachment.documentUrl?.lowercased() else { return false }
         return [".png", ".jpg", ".jpeg", ".gif", ".webp", ".heic", ".heif"].contains {
             urlString.hasSuffix($0)
-        }
-    }
-
-    // MARK: - Image Attachment Loader
-
-    @MainActor
-    private struct ImageAttachmentLoader: View {
-        let attachment: SurveyAttachment
-        let questionId: Int
-        @State private var imageURL: URL?
-        @State private var isLoading = true
-
-        var body: some View {
-            Group {
-                if let url = imageURL {
-                    AsyncImage(url: url) { phase in
-                        switch phase {
-                        case .empty:
-                            ProgressView()
-                                .frame(maxWidth: .infinity, minHeight: 180)
-                                .background(Color(.systemGray6))
-                                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(maxWidth: .infinity)
-                                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        case .failure(let error):
-                            Label(L10n.Image_Fail.key, systemImage: "photo")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                                .frame(maxWidth: .infinity, minHeight: 180)
-                                .background(Color(.systemGray6))
-                                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                                .onAppear {
-                                    AppLogger.navigation.error("📸 Q\(questionId): ❌ Failed to load image - \(error.localizedDescription)")
-                                }
-                        @unknown default:
-                            EmptyView()
-                        }
-                    }
-                } else if isLoading {
-                    ProgressView()
-                        .frame(maxWidth: .infinity, minHeight: 180)
-                        .background(Color(.systemGray6))
-                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                } else {
-                    Label(L10n.Image_URL.key, systemImage: "photo")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, minHeight: 180)
-                        .background(Color(.systemGray6))
-                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        .onAppear {
-                            AppLogger.navigation.warning("📸 Q\(questionId): Could not generate image URL for attachment - name: \(attachment.displayName ?? "?"), docId: \(attachment.documentId.map(String.init) ?? "unknown")")
-                        }
-                }
-            }
-            .task {
-                await loadImageURL()
-            }
-        }
-
-        private func loadImageURL() async {
-            isLoading = true
-            if let urlString = attachment.documentUrl,
-               let url = URL(string: urlString) {
-                imageURL = url
-                AppLogger.navigation.debug("📸 Q\(questionId): Using provided documentUrl")
-                isLoading = false
-                return
-            }
-            if let documentId = attachment.documentId {
-                imageURL = await DocumentAPIService.getDocumentImageURL(documentId: documentId)
-                if imageURL != nil {
-                    AppLogger.navigation.debug("📸 Q\(questionId): Generated URL from ID_Document=\(documentId)")
-                } else {
-                    AppLogger.navigation.warning("📸 Q\(questionId): Failed to generate URL from ID_Document=\(documentId)")
-                }
-            } else {
-                AppLogger.navigation.warning("📸 Q\(questionId): Attachment has no documentUrl or documentId")
-            }
-
-            isLoading = false
         }
     }
 
@@ -412,7 +339,8 @@ struct SurveyDetailView: View {
             .disabled(viewModel.currentPage == 0)
             .opacity(viewModel.currentPage == 0 ? 0.4 : 1)
 
-            if viewModel.currentPage < viewModel.questions.count - 1 {
+            let totalPages = viewModel.questions.count + 1
+            if viewModel.currentPage < totalPages - 1 {
                 Button {
                     withAnimation { viewModel.currentPage += 1 }
                 } label: {
@@ -462,6 +390,61 @@ struct SurveyDetailView: View {
                     .disabled(viewModel.isSubmitting)
                 }
             }
+        }
+    }
+
+    // MARK: - Intro Page
+
+    @ViewBuilder
+    private var introPage: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                // Survey intro card
+                VStack(alignment: .leading, spacing: 16) {
+                    // Survey title/name
+                    
+                    // Survey attachments (if any)
+                    if let attachments = viewModel.detail?.attachments, !attachments.isEmpty {
+                        let imageAttachments = attachments.filter { isImageAttachment($0) }
+                        if !imageAttachments.isEmpty {
+                            VStack(alignment: .leading, spacing: 12) {
+                                SImageView(images: imageAttachments.map { SImageAttachment(documentId: $0.documentId, documentUrl: $0.documentUrl) })
+                            }
+                            .task {
+                                AppLogger.navigation.debug("📸 Survey intro: Rendering \(attachments.count) images")
+                            }
+                        }
+                    }
+                    
+                    if let displayName = viewModel.detail?.displayName {
+                        Text(displayName)
+                            .font(.title2.bold())
+                            .foregroundStyle(.primary)
+                    }
+                    
+                    // Survey description
+                    if let surveyTextHtml = viewModel.detail?.surveyTextHtml, !surveyTextHtml.isEmpty {
+                        HTMLContentView(html: surveyTextHtml)
+                    } else if let surveyText = viewModel.detail?.surveyText, !surveyText.isEmpty {
+                        Text(surveyText)
+                            .font(.body)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .padding(20)
+                .background {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .fill(Color(.systemBackground))
+                        .shadow(color: .black.opacity(0.06), radius: 12, y: 4)
+                }
+                .overlay {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .strokeBorder(Color(.systemGray5), lineWidth: 1)
+                }
+                
+                
+            }
+            .padding()
         }
     }
 
