@@ -127,7 +127,7 @@ actor APIClient {
     func downloadData(url: URL) async -> AppResult<Data> {
         AppLogger.api.debug("⬇️ DOWNLOAD \(AppLogger.redactURL(url))")
         do {
-            let (data, response) = try await session.data(from: url)
+            let (data, response) = try await performNonCancellableDataTask(from: url)
             guard let httpResponse = response as? HTTPURLResponse else {
                 return .failure(.unknown(URLError(.badServerResponse)))
             }
@@ -146,6 +146,32 @@ actor APIClient {
             AppLogger.api.error(
                 "⬇️ DOWNLOAD FAILED: \(error.localizedDescription)")
             return .failure(.unknown(error))
+        }
+    }
+
+    private func performNonCancellableDataTask(for request: URLRequest) async throws -> (Data, URLResponse) {
+        try await withCheckedThrowingContinuation { continuation in
+            Task {
+                do {
+                    let result = try await session.data(for: request)
+                    continuation.resume(returning: result)
+                } catch {
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
+    private func performNonCancellableDataTask(from url: URL) async throws -> (Data, URLResponse) {
+        try await withCheckedThrowingContinuation { continuation in
+            Task {
+                do {
+                    let result = try await session.data(from: url)
+                    continuation.resume(returning: result)
+                } catch {
+                    continuation.resume(throwing: error)
+                }
+            }
         }
     }
 
@@ -254,7 +280,7 @@ actor APIClient {
         let startTime = CFAbsoluteTimeGetCurrent()
 
         do {
-            let (data, response) = try await session.data(for: request)
+            let (data, response) = try await performNonCancellableDataTask(for: request)
             let elapsed = CFAbsoluteTimeGetCurrent() - startTime
 
             guard let httpResponse = response as? HTTPURLResponse else {

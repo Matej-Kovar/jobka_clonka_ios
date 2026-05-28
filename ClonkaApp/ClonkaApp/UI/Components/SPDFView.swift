@@ -144,13 +144,19 @@ struct PDFKitView: UIViewRepresentable {
 /// Convenience SwiftUI view that shows a PDF with a close button when used inside a sheet.
 struct SPDFViewer: View {
     let url: URL
+    let title: String?
     @Environment(\.dismiss) private var dismiss
+
+    init(url: URL, title: String? = nil) {
+        self.url = url
+        self.title = title
+    }
 
     var body: some View {
         NavigationStack {
             PDFKitView(url: url)
                 .edgesIgnoringSafeArea(.bottom)
-                .navigationTitle(url.lastPathComponent)
+                .navigationTitle(title ?? url.lastPathComponent)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
@@ -160,5 +166,16 @@ struct SPDFViewer: View {
                     }
                 }
         }
+    }
+}
+
+struct IdentifiableURL: Identifiable {
+    let url: URL
+    let title: String?
+    var id: String { url.absoluteString }
+
+    init(url: URL, title: String? = nil) {
+        self.url = url
+        self.title = title
     }
 }

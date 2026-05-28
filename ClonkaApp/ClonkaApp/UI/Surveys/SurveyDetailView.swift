@@ -3,8 +3,7 @@ import SwiftUI
 struct SurveyDetailView: View {
     @StateObject private var viewModel: SurveyDetailViewModel
     @State private var successAnimationTrigger = false
-    @State private var showPDF: Bool = false
-    @State private var pdfURL: URL?
+    @State private var pdfURL: IdentifiableURL?
 
     init(surveyId: Int) {
         _viewModel = StateObject(wrappedValue: SurveyDetailViewModel(surveyId: surveyId))
@@ -26,11 +25,8 @@ struct SurveyDetailView: View {
         .navigationTitle(L10n.Survey_Title.key)
         .navigationBarTitleDisplayMode(.inline)
         .task { await viewModel.load() }
-        .sheet(isPresented: $showPDF) {
-            if let url = pdfURL {
-                PDFKitView(url: url)
-                    .id(url.absoluteString)
-            }
+        .sheet(item: $pdfURL) { identifiableURL in
+            SPDFViewer(url: identifiableURL.url, title: identifiableURL.title)
         }
     }
 
@@ -273,8 +269,7 @@ struct SurveyDetailView: View {
                     filePrefix: "survey_attachment"
                 )
                 await MainActor.run {
-                    self.pdfURL = localURL
-                    self.showPDF = true
+                    self.pdfURL = IdentifiableURL(url: localURL, title: attachment.displayName)
                 }
             } catch {
                 AppLogger.navigation.error("❌ Failed to load PDF in-app: \(error.localizedDescription)")

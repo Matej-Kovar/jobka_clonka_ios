@@ -3,8 +3,7 @@ import SwiftUI
 struct PostDetailView: View {
     @StateObject private var viewModel: PostDetailViewModel
     let title: String
-    @State private var showPDF: Bool = false
-    @State private var pdfURL: URL?
+    @State private var pdfURL: IdentifiableURL?
 
     init(postId: Int, title: String = L10n.Post_Title.string) {
         _viewModel = StateObject(wrappedValue: PostDetailViewModel(postId: postId))
@@ -184,11 +183,8 @@ struct PostDetailView: View {
         .navigationTitle(L10n.Post_Detail.string)
         .navigationBarTitleDisplayMode(.inline)
         .task { await viewModel.load() }
-        .sheet(isPresented: $showPDF) {
-            if let url = pdfURL {
-                PDFKitView(url: url)
-                    .id(url.absoluteString)
-            }
+        .sheet(item: $pdfURL) { identifiableURL in
+            SPDFViewer(url: identifiableURL.url, title: identifiableURL.title)
         }
     }
 
@@ -257,8 +253,7 @@ struct PostDetailView: View {
             do {
                 if let cached = await PDFDocumentResolver.cachedLocalPDF(for: preferredPDFURL) {
                     await MainActor.run {
-                        self.pdfURL = cached
-                        self.showPDF = true
+                        self.pdfURL = IdentifiableURL(url: cached, title: attachment.displayName ?? attachment.fileName)
                     }
                     return
                 }
@@ -268,8 +263,7 @@ struct PostDetailView: View {
                     filePrefix: "post_attachment"
                 )
                 await MainActor.run {
-                    self.pdfURL = localURL
-                    self.showPDF = true
+                    self.pdfURL = IdentifiableURL(url: localURL, title: attachment.displayName ?? attachment.fileName)
                 }
             } catch {
                 AppLogger.navigation.error("❌ Failed to load PDF in-app: \(error.localizedDescription)")

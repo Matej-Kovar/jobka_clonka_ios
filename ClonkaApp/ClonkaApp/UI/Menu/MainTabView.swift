@@ -198,8 +198,7 @@ struct MainTabView: View {
         @ObservedObject var viewModel: MenuViewModel
 
         @State private var checkboxChecked: Bool = false
-            @State private var showPDF: Bool = false
-            @State private var pdfURL: URL?
+        @State private var pdfURL: IdentifiableURL?
 
         var body: some View {
             ZStack {
@@ -373,11 +372,8 @@ struct MainTabView: View {
                 .cornerRadius(12)
                 .shadow(radius: 20)
                 .padding(24)
-                .sheet(isPresented: $showPDF) {
-                    if let url = pdfURL {
-                        PDFKitView(url: url)
-                            .id(url.absoluteString)
-                    }
+                .sheet(item: $pdfURL) { identifiableURL in
+                    SPDFViewer(url: identifiableURL.url, title: identifiableURL.title)
                 }
             }
         }
@@ -417,8 +413,7 @@ struct MainTabView: View {
                         filePrefix: "popup_attachment"
                     )
                     await MainActor.run {
-                        self.pdfURL = localURL
-                        self.showPDF = true
+                        self.pdfURL = IdentifiableURL(url: localURL, title: attachment.displayName ?? attachment.fileName)
                     }
                 } catch {
                     AppLogger.navigation.error("❌ Failed to load popup PDF in-app: \(error.localizedDescription)")
