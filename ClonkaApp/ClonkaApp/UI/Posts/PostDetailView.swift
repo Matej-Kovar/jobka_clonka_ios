@@ -3,6 +3,8 @@ import SwiftUI
 struct PostDetailView: View {
     @StateObject private var viewModel: PostDetailViewModel
     let title: String
+    @State private var showPDF: Bool = false
+    @State private var pdfURL: URL?
 
     init(postId: Int, title: String = L10n.Post_Title.string) {
         _viewModel = StateObject(wrappedValue: PostDetailViewModel(postId: postId))
@@ -67,23 +69,34 @@ struct PostDetailView: View {
                                 if !fileAttachments.isEmpty {
                                     VStack(alignment: .leading, spacing: 8) {
                                         ForEach(fileAttachments) { att in
-                                            HStack(spacing: 10) {
-                                                ZStack {
-                                                    RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                                        .fill(Color(.systemGray6))
-                                                        .frame(width: 36, height: 36)
-                                                    Image(systemName: "paperclip")
-                                                        .font(.callout)
-                                                        .foregroundStyle(.secondary)
+                                            Button {
+                                                Task {
+                                                    await openAttachment(att)
                                                 }
-                                                Text(att.displayName ?? att.fileName ?? L10n.Post_Attachments.string)
-                                                    .font(.callout)
-                                                    .lineLimit(1)
+                                            } label: {
+                                                HStack(spacing: 10) {
+                                                    ZStack {
+                                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                                            .fill(Color(.systemGray6))
+                                                            .frame(width: 36, height: 36)
+                                                        Image(systemName: "paperclip")
+                                                            .font(.callout)
+                                                            .foregroundStyle(.secondary)
+                                                    }
+                                                    Text(att.displayName ?? att.fileName ?? L10n.Post_Attachments.string)
+                                                        .font(.callout)
+                                                        .lineLimit(1)
+                                                    Spacer()
+                                                    Image(systemName: "arrow.up.right.square")
+                                                        .font(.caption)
+                                                        .foregroundStyle(.tertiary)
+                                                }
+                                                .padding(8)
+                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                                .background(Color(.systemGray6))
+                                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                             }
-                                            .padding(8)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                            .background(Color(.systemGray6))
-                                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                            .buttonStyle(.plain)
                                         }
                                     }
                                 }
@@ -163,11 +176,20 @@ struct PostDetailView: View {
                     }
                     .padding()
                 }
+                .task(id: detail.postId) {
+                    await preloadPDFAttachments(detail.attachments ?? [])
+                }
             }
         }
         .navigationTitle(L10n.Post_Detail.string)
         .navigationBarTitleDisplayMode(.inline)
         .task { await viewModel.load() }
+        .sheet(isPresented: $showPDF) {
+            if let url = pdfURL {
+                PDFKitView(url: url)
+                    .id(url.absoluteString)
+            }
+        }
     }
 
     // MARK: - Attachments
@@ -187,5 +209,89 @@ struct PostDetailView: View {
         }
 
         return false
+    }
+
+    private func isPDFAttachment(_ attachment: PostAttachment) -> Bool {
+        if let ct = attachment.contentType?.lowercased(), ct.contains("pdf") { return true }
+        let candidates = [attachment.documentUrl, attachment.fileNameExtension, attachment.fileName, attachment.displayName]
+            .compactMap { $0?.lowercased() }
+        for v in candidates {
+            if v.hasSuffix(".pdf") { return true }
+        }
+        return false
+    }
+
+    private func openURLInBrowser(_ url: URL) {
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url)
+        }
+    }
+
+    private func resolveDocumentURL(documentUrl: String?, documentId: Int?) async -> URL? {
+        if let urlStr = documentUrl, let url = URL(string: urlStr) {
+            return url
+        }
+        if let docId = documentId {
+            return await DocumentAPIService.getDocumentImageURL(documentId: docId)
+        }
+        return nil
+    }
+
+    private func openAttachment(_ attachment: PostAttachment) async {
+        guard let url = await resolveDocumentURL(documentUrl: attachment.documentUrl, documentId: attachment.documentId) else {
+            AppLogger.navigation.error("❌ Attachment has no URL or documentId")
+            return
+        }
+
+        let resolvedURL = PDFDocumentResolver.resolvePDFURL(from: url)
+        let preferredPDFURL: URL
+        if let docId = attachment.documentId,
+           let directURL = await DocumentAPIService.getDocumentImageURL(documentId: docId) {
+            preferredPDFURL = directURL
+        } else {
+            preferredPDFURL = resolvedURL
+        }
+        AppLogger.navigation.debug("📎 Opening attachment URL: \(url) -> resolved: \(resolvedURL) (attachmentId=\(attachment.attachmentId ?? 0))")
+
+        if isPDFAttachment(attachment) {
+            do {
+                if let cached = await PDFDocumentResolver.cachedLocalPDF(for: preferredPDFURL) {
+                    await MainActor.run {
+                        self.pdfURL = cached
+                        self.showPDF = true
+                    }
+                    return
+                }
+
+                let localURL = try await PDFDocumentResolver.downloadPDFToTemporaryFile(
+                    from: preferredPDFURL,
+                    filePrefix: "post_attachment"
+                )
+                await MainActor.run {
+                    self.pdfURL = localURL
+                    self.showPDF = true
+                }
+            } catch {
+                AppLogger.navigation.error("❌ Failed to load PDF in-app: \(error.localizedDescription)")
+            }
+            return
+        }
+
+        openURLInBrowser(resolvedURL)
+    }
+
+    private func preloadPDFAttachments(_ attachments: [PostAttachment]) async {
+        for attachment in attachments where isPDFAttachment(attachment) {
+            guard let url = await resolveDocumentURL(documentUrl: attachment.documentUrl, documentId: attachment.documentId) else { continue }
+            let resolvedURL = PDFDocumentResolver.resolvePDFURL(from: url)
+            let preferredPDFURL: URL
+            if let docId = attachment.documentId,
+               let directURL = await DocumentAPIService.getDocumentImageURL(documentId: docId) {
+                preferredPDFURL = directURL
+            } else {
+                preferredPDFURL = resolvedURL
+            }
+            await PDFDocumentResolver.preloadPDF(from: preferredPDFURL, filePrefix: "post_attachment")
+        }
     }
 }

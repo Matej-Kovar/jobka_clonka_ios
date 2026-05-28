@@ -3,6 +3,8 @@ import SwiftUI
 struct SurveyDetailView: View {
     @StateObject private var viewModel: SurveyDetailViewModel
     @State private var successAnimationTrigger = false
+    @State private var showPDF: Bool = false
+    @State private var pdfURL: URL?
 
     init(surveyId: Int) {
         _viewModel = StateObject(wrappedValue: SurveyDetailViewModel(surveyId: surveyId))
@@ -24,6 +26,12 @@ struct SurveyDetailView: View {
         .navigationTitle(L10n.Survey_Title.key)
         .navigationBarTitleDisplayMode(.inline)
         .task { await viewModel.load() }
+        .sheet(isPresented: $showPDF) {
+            if let url = pdfURL {
+                PDFKitView(url: url)
+                    .id(url.absoluteString)
+            }
+        }
     }
 
     // MARK: - Wizard View (one question at a time)
@@ -115,6 +123,7 @@ struct SurveyDetailView: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 16) {
                 imageAttachmentsView(q.attachments, questionId: q.questionId)
+                fileAttachmentsView(q.attachments, questionId: q.questionId)
                 HStack(alignment: .top, spacing: 8) {
                     Text("\(index + 1)")
                         .font(.title3.bold())
@@ -174,6 +183,42 @@ struct SurveyDetailView: View {
         }
     }
 
+    @ViewBuilder
+    private func fileAttachmentsView(_ attachments: [SurveyAttachment]?, questionId: Int) -> some View {
+        let fileAttachments = (attachments ?? []).filter { !isImageAttachment($0) }
+        if !fileAttachments.isEmpty {
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(fileAttachments) { att in
+                    Button {
+                        Task { await openAttachment(att) }
+                    } label: {
+                        HStack(spacing: 10) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                    .fill(Color(.systemGray6))
+                                    .frame(width: 36, height: 36)
+                                Image(systemName: "paperclip")
+                                    .font(.callout)
+                                    .foregroundStyle(.secondary)
+                            }
+                            Text(att.displayName ?? "Attachment")
+                                .font(.callout)
+                                .lineLimit(1)
+                            Spacer()
+                            Image(systemName: "arrow.up.right.square")
+                                .font(.caption)
+                                .foregroundStyle(.tertiary)
+                        }
+                        .padding(8)
+                        .background(Color(.systemGray6))
+                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        }
+    }
+
     private func isImageAttachment(_ attachment: SurveyAttachment) -> Bool {
         if attachment.contentType?.lowercased().hasPrefix("image/") == true {
             return true
@@ -183,6 +228,61 @@ struct SurveyDetailView: View {
         return [".png", ".jpg", ".jpeg", ".gif", ".webp", ".heic", ".heif"].contains {
             urlString.hasSuffix($0)
         }
+    }
+
+    private func isPDFAttachment(_ attachment: SurveyAttachment) -> Bool {
+        if let ct = attachment.contentType?.lowercased(), ct.contains("pdf") { return true }
+        let candidates = [attachment.documentUrl, attachment.displayName]
+            .compactMap { $0?.lowercased() }
+        for v in candidates {
+            if v.hasSuffix(".pdf") { return true }
+        }
+        return false
+    }
+
+    private func resolveDocumentURL(documentUrl: String?, documentId: Int?) async -> URL? {
+        if let urlStr = documentUrl, let url = URL(string: urlStr) {
+            return url
+        }
+        if let docId = documentId {
+            return await DocumentAPIService.getDocumentImageURL(documentId: docId)
+        }
+        return nil
+    }
+
+    private func openAttachment(_ attachment: SurveyAttachment) async {
+        guard let url = await resolveDocumentURL(documentUrl: attachment.documentUrl, documentId: attachment.documentId) else {
+            AppLogger.navigation.error("❌ Attachment has no URL or documentId")
+            return
+        }
+
+        let resolvedURL = PDFDocumentResolver.resolvePDFURL(from: url)
+        let preferredPDFURL: URL
+        if let docId = attachment.documentId,
+           let directURL = await DocumentAPIService.getDocumentImageURL(documentId: docId) {
+            preferredPDFURL = directURL
+        } else {
+            preferredPDFURL = resolvedURL
+        }
+        AppLogger.navigation.debug("📎 Opening attachment URL: \(url) -> resolved: \(resolvedURL) (documentId=\(attachment.documentId ?? 0))")
+
+        if isPDFAttachment(attachment) {
+            do {
+                let localURL = try await PDFDocumentResolver.downloadPDFToTemporaryFile(
+                    from: preferredPDFURL,
+                    filePrefix: "survey_attachment"
+                )
+                await MainActor.run {
+                    self.pdfURL = localURL
+                    self.showPDF = true
+                }
+            } catch {
+                AppLogger.navigation.error("❌ Failed to load PDF in-app: \(error.localizedDescription)")
+            }
+            return
+        }
+
+        DispatchQueue.main.async { UIApplication.shared.open(resolvedURL) }
     }
 
     // MARK: - Options (single/multi select)
@@ -414,6 +514,8 @@ struct SurveyDetailView: View {
                                 AppLogger.navigation.debug("📸 Survey intro: Rendering \(attachments.count) images")
                             }
                         }
+                        // Non-image attachments (files)
+                        fileAttachmentsView(viewModel.detail?.attachments, questionId: 0)
                     }
                     
                     if let displayName = viewModel.detail?.displayName {

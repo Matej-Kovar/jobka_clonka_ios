@@ -198,6 +198,8 @@ struct MainTabView: View {
         @ObservedObject var viewModel: MenuViewModel
 
         @State private var checkboxChecked: Bool = false
+            @State private var showPDF: Bool = false
+            @State private var pdfURL: URL?
 
         var body: some View {
             ZStack {
@@ -251,6 +253,52 @@ struct MainTabView: View {
                         if !imageAttachments.isEmpty {
                             SImageView(images: imageAttachments.map { SImageAttachment(documentId: $0.documentId, documentUrl: $0.documentUrl) })
                                 .padding([.leading, .trailing])
+                        }
+                        // Non-image attachments
+                        let fileAttachments = detail?.attachments?.filter { att in
+                            // reuse same logic as image filter
+                            if att.contentType?.lowercased().hasPrefix("image/") == true { return false }
+                            let candidates = [att.documentUrl, att.fileNameExtension, att.fileName, att.displayName]
+                                .compactMap { $0?.lowercased() }
+                            for value in candidates {
+                                if [".png", ".jpg", ".jpeg", ".gif", ".webp", ".heic", ".heif"].contains(where: { value.hasSuffix($0) }) {
+                                    return false
+                                }
+                            }
+                            return true
+                        } ?? []
+
+                        if !fileAttachments.isEmpty {
+                            VStack(alignment: .leading, spacing: 8) {
+                                ForEach(fileAttachments) { att in
+                                    Button {
+                                        Task { await openAttachment(att) }
+                                    } label: {
+                                        HStack(spacing: 10) {
+                                            ZStack {
+                                                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                                    .fill(Color(.systemGray6))
+                                                    .frame(width: 36, height: 36)
+                                                Image(systemName: "paperclip")
+                                                    .font(.callout)
+                                                    .foregroundStyle(.secondary)
+                                            }
+                                            Text(att.displayName ?? att.fileName ?? "Attachment")
+                                                .font(.callout)
+                                                .lineLimit(1)
+                                            Spacer()
+                                            Image(systemName: "arrow.up.right.square")
+                                                .font(.caption)
+                                                .foregroundStyle(.tertiary)
+                                        }
+                                        .padding(8)
+                                        .background(Color(.systemGray6))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                    }
+                                    .buttonStyle(.plain)
+                                }
+                            }
+                            .padding([.leading, .trailing])
                         }
                     }
 
@@ -325,7 +373,60 @@ struct MainTabView: View {
                 .cornerRadius(12)
                 .shadow(radius: 20)
                 .padding(24)
+                .sheet(isPresented: $showPDF) {
+                    if let url = pdfURL {
+                        PDFKitView(url: url)
+                            .id(url.absoluteString)
+                    }
+                }
             }
+        }
+
+        // Attachment helpers for popup (methods on the view so they are in-scope)
+        private func resolveDocumentURL(documentUrl: String?, documentId: Int?) async -> URL? {
+            if let urlStr = documentUrl, let url = URL(string: urlStr) { return url }
+            if let id = documentId { return await DocumentAPIService.getDocumentImageURL(documentId: id) }
+            return nil
+        }
+
+        private func isPDFAttachment(_ attachment: PostAttachment) -> Bool {
+            if let ct = attachment.contentType?.lowercased(), ct.contains("pdf") { return true }
+            let candidates = [attachment.documentUrl, attachment.fileNameExtension, attachment.fileName, attachment.displayName]
+                .compactMap { $0?.lowercased() }
+            for v in candidates { if v.hasSuffix(".pdf") { return true } }
+            return false
+        }
+
+        private func openAttachment(_ attachment: PostAttachment) async {
+            guard let url = await resolveDocumentURL(documentUrl: attachment.documentUrl, documentId: attachment.documentId) else { return }
+
+            let resolvedURL = PDFDocumentResolver.resolvePDFURL(from: url)
+            let preferredPDFURL: URL
+            if let docId = attachment.documentId,
+               let directURL = await DocumentAPIService.getDocumentImageURL(documentId: docId) {
+                preferredPDFURL = directURL
+            } else {
+                preferredPDFURL = resolvedURL
+            }
+            AppLogger.navigation.debug("📎 Popup opening attachment URL: \(url) -> resolved: \(resolvedURL) (attachmentId=\(attachment.attachmentId ?? 0))")
+
+            if isPDFAttachment(attachment) {
+                do {
+                    let localURL = try await PDFDocumentResolver.downloadPDFToTemporaryFile(
+                        from: preferredPDFURL,
+                        filePrefix: "popup_attachment"
+                    )
+                    await MainActor.run {
+                        self.pdfURL = localURL
+                        self.showPDF = true
+                    }
+                } catch {
+                    AppLogger.navigation.error("❌ Failed to load popup PDF in-app: \(error.localizedDescription)")
+                }
+                return
+            }
+
+            DispatchQueue.main.async { UIApplication.shared.open(resolvedURL) }
         }
     }
 }

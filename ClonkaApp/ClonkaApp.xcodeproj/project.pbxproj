@@ -112,6 +112,8 @@
 		A1B2C3D4E5F60001008004 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60002008004 /* L10n.swift */; };
 		CF17E9A72FC6D52C003ED170 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CF17E9A52FC6D52C003ED170 /* Localizable.xcstrings */; };
 		CFB5AC1F2FC81B260052C2B7 /* SImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5AC1E2FC81B260052C2B7 /* SImageView.swift */; };
+		CFB5AC242FC83A320052C2B7 /* SSafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5AC232FC83A320052C2B7 /* SSafariView.swift */; };
+		CFB5AC262FC83D6A0052C2B7 /* SPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5AC252FC83D6A0052C2B7 /* SPDFView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +234,8 @@
 		A1B2C3D4E5F60006000002 /* ClonkaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClonkaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF17E9A52FC6D52C003ED170 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		CFB5AC1E2FC81B260052C2B7 /* SImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SImageView.swift; sourceTree = "<group>"; };
+		CFB5AC232FC83A320052C2B7 /* SSafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSafariView.swift; sourceTree = "<group>"; };
+		CFB5AC252FC83D6A0052C2B7 /* SPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPDFView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +408,8 @@
 				A1B2C3D4E5F60002005004 /* SAvatar.swift */,
 				A1B2C3D4E5F60002005005 /* HTMLContentView.swift */,
 				CFB5AC1E2FC81B260052C2B7 /* SImageView.swift */,
+				CFB5AC232FC83A320052C2B7 /* SSafariView.swift */,
+				CFB5AC252FC83D6A0052C2B7 /* SPDFView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -785,6 +791,7 @@
 				A1B2C3D4E5F6000100100D /* APIClient.swift in Sources */,
 				A1B2C3D4E5F6000100100E /* AuthModels.swift in Sources */,
 				A1B2C3D4E5F6000100100F /* MenuModels.swift in Sources */,
+				CFB5AC262FC83D6A0052C2B7 /* SPDFView.swift in Sources */,
 				A1B2C3D4E5F60001001010 /* PostModels.swift in Sources */,
 				A1B2C3D4E5F60001001011 /* SurveyModels.swift in Sources */,
 				A1B2C3D4E5F60001001012 /* MessageModels.swift in Sources */,
@@ -865,6 +872,7 @@
 				A1B2C3D4E5F60001007001 /* ErrorReportStore.swift in Sources */,
 				A1B2C3D4E5F60001007002 /* DevToolsView.swift in Sources */,
 				A1B2C3D4E5F60001008001 /* DebugLogStore.swift in Sources */,
+				CFB5AC242FC83A320052C2B7 /* SSafariView.swift in Sources */,
 				A1B2C3D4E5F60001008002 /* JobkaTheme.swift in Sources */,
 				A1B2C3D4E5F60001008003 /* DebugLogView.swift in Sources */,
 				A1B2C3D4E5F60001008004 /* L10n.swift in Sources */,
