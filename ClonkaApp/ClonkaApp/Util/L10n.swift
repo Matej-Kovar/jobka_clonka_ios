@@ -65,6 +65,34 @@ enum L10n: String {
     case Survey_Thanks
     case Post_ApproveFail
     case Post_Notice
+    case Auth_EnterQRCode
+    case Auth_QRCAC
+    case Unknown
+    case Empty
+    case Confirm
+    case Close
+    case Menu_Title
+    case AboutApp_Version
+    case AboutApp_Developer
+    case AboutApp_DeveleperMode
+    case Profile_User
+    case Profile_Details
+    case Profile_TesterAccount
+    case Profile_RemovePhoto
+    case Profile_About
+    case Profile_Settings
+    case Profile_Logout
+    case Profile_Title
+    case Done
+    case AboutApp_Title
+    case Settings_Appearance
+    case Settings_Theme
+    case Settings_ThemeSystem
+    case Settings_ThemeDark
+    case Settings_ThemeLight
+    case Settings_Language
+    case Settings_AboutApp
+    case Settings_Title
     
     var key: LocalizedStringKey {
         LocalizedStringKey(rawValue)

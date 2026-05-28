@@ -17,14 +17,14 @@ struct QRScannerView: View {
                     cameraView
                 }
             }
-            .navigationTitle("Scan QR Code")
+            .navigationTitle(L10n.Auth_ScanQRCode.key)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button(L10n.Cancel.key) { dismiss() }
                 }
                 ToolbarItem(placement: .primaryAction) {
-                    Button(showManualEntry ? "Camera" : "Manual") {
+                    Button(showManualEntry ? L10n.Auth_Camera.key : L10n.Auth_Manual.key) {
                         if !cameraPermissionDenied {
                             showManualEntry.toggle()
                         }
@@ -85,16 +85,16 @@ struct QRScannerView: View {
                 .font(.system(size: 60))
                 .foregroundStyle(.secondary)
 
-            Text("Enter QR Code")
+            Text(L10n.Auth_EnterQRCode.key)
                 .font(.title2)
 
-            TextField("QR Code / Access Code", text: $manualCode)
+            TextField(L10n.Auth_QRCAC.string, text: $manualCode)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
 
-            Button("Submit") {
+            Button(L10n.Submit.key) {
                 guard !manualCode.isEmpty else { return }
                 onCodeScanned(manualCode)
             }

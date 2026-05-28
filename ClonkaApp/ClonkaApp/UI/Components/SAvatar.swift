@@ -10,7 +10,7 @@ struct SAvatar: View {
             Circle()
                 .fill(Color(hex: color ?? "#666"))
                 .frame(width: size, height: size)
-            Text(initials ?? "?")
+            Text(initials ?? L10n.Unknown.string)
                 .font(.system(size: size * 0.35, weight: .bold))
                 .foregroundStyle(.white)
         }

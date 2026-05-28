@@ -8,8 +8,8 @@ struct SettingsView: View {
     var body: some View {
         List {
             // Appearance
-            Section("Appearance") {
-                Picker("Theme", selection: Binding<Int>(
+            Section(L10n.Settings_Appearance.key) {
+                Picker(L10n.Settings_Theme.key, selection: Binding<Int>(
                     get: {
                         if appState.colorSchemeOverride == .dark { return 2 }
                         if appState.colorSchemeOverride == .light { return 1 }
@@ -23,15 +23,15 @@ struct SettingsView: View {
                         }
                     }
                 )) {
-                    Text("System").tag(0)
-                    Text("Light").tag(1)
-                    Text("Dark").tag(2)
+                    Text(L10n.Settings_ThemeSystem.key).tag(0)
+                    Text(L10n.Settings_ThemeLight.key).tag(1)
+                    Text(L10n.Settings_ThemeDark.key).tag(2)
                 }
             }
 
             // Language
             if !viewModel.languages.isEmpty {
-                Section("Language") {
+                Section(L10n.Settings_Language.key) {
                     ForEach(viewModel.languages) { lang in
                         Button {
                             Task {
@@ -41,7 +41,7 @@ struct SettingsView: View {
                             }
                         } label: {
                             HStack {
-                                Text(lang.Caption ?? lang.Code ?? "")
+                                Text(lang.Caption ?? lang.Code ?? L10n.Unknown.string)
                                     .foregroundStyle(.primary)
                                 Spacer()
                                 if lang.ID == viewModel.selectedLanguage || lang.Code == viewModel.selectedLanguage {
@@ -57,7 +57,7 @@ struct SettingsView: View {
             // About
             Section {
                 NavigationLink(destination: AboutAppView()) {
-                    Label("About App", systemImage: "info.circle")
+                    Label(L10n.Settings_AboutApp.key, systemImage: "info.circle")
                 }
             }
 
@@ -87,7 +87,7 @@ struct SettingsView: View {
                 }
             }
         }
-        .navigationTitle("Settings")
+        .navigationTitle(L10n.Settings_Title.key)
         .onAppear {
             viewModel.loadFromSession(sessionManager)
         }

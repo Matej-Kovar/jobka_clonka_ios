@@ -17,9 +17,9 @@ struct ProfileView: View {
                             size: 70
                         )
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(sessionManager.currentProfile?.displayName ?? "User")
+                            Text(sessionManager.currentProfile?.displayName ?? L10n.Profile_User.string)
                                 .font(.title3.bold())
-                            Text("PN: \(sessionManager.currentProfile?.personalNumber ?? "")")
+                            Text("\(L10n.Auth_PN.string): \(sessionManager.currentProfile?.personalNumber ?? L10n.Unknown.string)")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                             if let email = sessionManager.currentProfile?.email {
@@ -39,12 +39,12 @@ struct ProfileView: View {
 
                 // Extended profile info
                 if let profile = viewModel.profile {
-                    Section("Details") {
+                    Section(L10n.Profile_Details.key) {
                         if let lang = profile.lang {
                             Label(lang, systemImage: "globe")
                         }
                         if profile.isTester == true {
-                            Label("Tester Account", systemImage: "wrench.and.screwdriver")
+                            Label(L10n.Profile_TesterAccount.key, systemImage: "wrench.and.screwdriver")
                         }
                     }
                 }
@@ -54,17 +54,17 @@ struct ProfileView: View {
                     Button(role: .destructive) {
                         Task { await viewModel.deletePhoto() }
                     } label: {
-                        Label("Remove Photo", systemImage: "trash")
+                        Label(L10n.Profile_RemovePhoto.key, systemImage: "trash")
                     }
                 }
 
                 // Navigation
                 Section {
                     NavigationLink(destination: SettingsView()) {
-                        Label("Settings", systemImage: "gearshape")
+                        Label(L10n.Profile_Settings.key, systemImage: "gearshape")
                     }
                     NavigationLink(destination: AboutAppView()) {
-                        Label("About", systemImage: "info.circle")
+                        Label(L10n.Profile_About.key, systemImage: "info.circle")
                     }
                 }
 
@@ -76,14 +76,14 @@ struct ProfileView: View {
                             dismiss()
                         }
                     } label: {
-                        Label("Logout", systemImage: "rectangle.portrait.and.arrow.right")
+                        Label(L10n.Profile_Logout.key, systemImage: "rectangle.portrait.and.arrow.right")
                     }
                 }
             }
-            .navigationTitle("Profile")
+            .navigationTitle(L10n.Profile_Title.key)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Done") { dismiss() }
+                    Button(L10n.Done.key) { dismiss() }
                 }
             }
             .task { await viewModel.load() }

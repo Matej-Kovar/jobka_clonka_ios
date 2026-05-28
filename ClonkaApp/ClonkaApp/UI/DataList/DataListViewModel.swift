@@ -2,7 +2,10 @@ import Foundation
 
 struct DataDetailPresentation: Identifiable {
     let id = UUID()
+    let dataId: String
     let response: DataDetailResponse
+
+    var editFormModuleId: Int? { response.ID_EditFormCompanyMenuItem }
 }
 
 @MainActor
@@ -83,7 +86,10 @@ final class DataListViewModel: ObservableObject {
         let result = await DataListAPIService.fetchDetail(moduleId: self.moduleId, dataId: dataId)
         switch result {
         case .success(let detail):
-            selectedDetail = DataDetailPresentation(response: detail)
+            if let editFormId = detail.ID_EditFormCompanyMenuItem, editFormId > 0, detail.IsUpdate == true {
+                await FormAPIService.prefetchFields(companyMenuItemId: editFormId, dataId: dataId)
+            }
+            selectedDetail = DataDetailPresentation(dataId: dataId, response: detail)
         case .failure(let error):
             AppLogger.api.error("📊 Detail load failed: \(error.localizedDescription)")
             detailError = error.localizedDescription

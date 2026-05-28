@@ -11,12 +11,12 @@ struct AboutAppView: View {
             Image(systemName: "building.2")
                 .font(.system(size: 60))
                 .foregroundStyle(JobkaTheme.primary)
-            Text("Clonka")
+            Text(L10n.App_Name.key)
                 .font(.largeTitle.bold())
-            Text("Employee Portal")
+            Text(L10n.App_Description.key)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
-            Text("Version 1.0.0")
+            Text(L10n.AboutApp_Version.key)
                 .font(.caption)
                 .foregroundStyle(.tertiary)
                 .onTapGesture {
@@ -30,21 +30,21 @@ struct AboutAppView: View {
                         }
                     }
                 }
-            Text("© 2024 Skeleton s.r.o.")
+            Text(L10n.AboutApp_Developer.key)
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
 
             if appState.isDeveloperMode {
-                Label("Developer Mode Active", systemImage: "wrench.and.screwdriver")
+                Label(L10n.AboutApp_DeveleperMode.key, systemImage: "wrench.and.screwdriver")
                     .font(.caption2)
                     .foregroundStyle(JobkaTheme.primary)
             }
         }
-        .navigationTitle("About")
-        .alert("Developer Mode", isPresented: $showDeveloperPrompt) {
-            TextField("Password", text: $developerPassword)
-            Button("Cancel", role: .cancel) { developerPassword = "" }
-            Button("Activate") {
+        .navigationTitle(L10n.AboutApp_Title.key)
+        .alert(L10n.DeveloperMode.key, isPresented: $showDeveloperPrompt) {
+            TextField(L10n.Auth_Password.key, text: $developerPassword)
+            Button(L10n.Auth_Password.key, role: .cancel) { developerPassword = "" }
+            Button(L10n.Activate.key) {
                 if developerPassword.lowercased() == "skeleton" {
                     appState.isDeveloperMode = true
                     AppLogger.auth.info("🔓 Developer mode activated from About")
@@ -52,7 +52,7 @@ struct AboutAppView: View {
                 developerPassword = ""
             }
         } message: {
-            Text("Enter developer password")
+            Text(L10n.Auth_EnterDeveloperPassword.key)
         }
     }
 }

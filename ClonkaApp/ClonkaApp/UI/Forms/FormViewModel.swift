@@ -11,7 +11,12 @@ final class FormViewModel: ObservableObject {
     @Published var errorMessage: String?
 
     let moduleId: Int
-    init(moduleId: Int) { self.moduleId = moduleId }
+    let dataId: String?
+
+    init(moduleId: Int, dataId: String? = nil) {
+        self.moduleId = moduleId
+        self.dataId = dataId
+    }
 
     var sortedFields: [FormFieldDefinition] {
         fields.sorted { ($0.Order ?? 0) < ($1.Order ?? 0) }
@@ -24,7 +29,16 @@ final class FormViewModel: ObservableObject {
     func load() async {
         isLoading = true
         errorMessage = nil
-        let result = await FormAPIService.fetchFields(companyMenuItemId: moduleId)
+        if let cached = FormAPIService.cachedFields(companyMenuItemId: moduleId, dataId: dataId) {
+            fields = cached
+            for f in cached {
+                if let v = f.DefaultValue, !v.isEmpty { values[f.id] = v }
+            }
+            isLoading = false
+            return
+        }
+
+        let result = await FormAPIService.fetchFields(companyMenuItemId: moduleId, dataId: dataId)
         switch result {
         case .success(let items):
             fields = items
@@ -50,7 +64,7 @@ final class FormViewModel: ObservableObject {
                 Value: values[field.id] ?? ""
             )
         }
-        let result = await FormAPIService.submitForm(companyFormId: formId, dataItems: dataItems)
+        let result = await FormAPIService.submitForm(companyFormId: formId, dataItems: dataItems, dataId: dataId)
         switch result {
         case .success: isSubmitted = true
         case .failure(let error): errorMessage = error.localizedDescription

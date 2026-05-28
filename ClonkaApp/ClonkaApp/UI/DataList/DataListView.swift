@@ -26,7 +26,22 @@ struct DataListView: View {
                 }
             }
             .sheet(item: $viewModel.selectedDetail) { detail in
-                dataDetailSheet(detail)
+                if let editFormId = detail.editFormModuleId, detail.response.IsUpdate == true {
+                    NavigationStack {
+                        FormView(
+                            moduleId: editFormId,
+                            title: detail.response.DisplayName ?? title,
+                            dataId: detail.dataId
+                        )
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Done") { viewModel.selectedDetail = nil }
+                            }
+                        }
+                    }
+                } else {
+                    dataDetailSheet(detail)
+                }
             }
             .alert("Error", isPresented: .init(
                 get: { viewModel.detailError != nil },
@@ -191,6 +206,29 @@ struct DataListView: View {
                     } else {
                         SEmptyState(icon: "doc.text", message: "No details available")
                             .frame(height: 200)
+                    }
+
+                    if let editFormId = detail.editFormModuleId, detail.response.IsUpdate == true {
+                        VStack(spacing: 12) {
+                            Divider()
+                            NavigationLink {
+                                FormView(
+                                    moduleId: editFormId,
+                                    title: detail.response.DisplayName ?? title,
+                                    dataId: detail.dataId
+                                )
+                            } label: {
+                                HStack(spacing: 8) {
+                                    Image(systemName: "pencil.circle.fill")
+                                    Text("Edit / Approve")
+                                }
+                                .font(.body.weight(.semibold))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 14)
+                            }
+                            .buttonStyle(.borderedProminent)
+                        }
+                        .padding()
                     }
                 }
             }

@@ -26,6 +26,16 @@
         }
       }
     },
+    "%@: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@: %2$@"
+          }
+        }
+      }
+    },
     "%lld" : {
 
     },
@@ -55,20 +65,82 @@
     "%lldms" : {
 
     },
-    "© 2024 Skeleton s.r.o." : {
-
-    },
     "🔴" : {
 
     },
     "🟡" : {
 
     },
-    "About" : {
-
-    },
     "About App" : {
 
+    },
+    "AboutApp_Developer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "© 2024 Skeleton s.r.o."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "© 2024 Skeleton s.r.o."
+          }
+        }
+      }
+    },
+    "AboutApp_DeveloperMode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vývojářský mód aktivován"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer Mode Active"
+          }
+        }
+      }
+    },
+    "AboutApp_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O aplikaci"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        }
+      }
+    },
+    "AboutApp_Version" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 1.0.0"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 1.0.é"
+          }
+        }
+      }
     },
     "Actions" : {
 
@@ -187,7 +259,14 @@
       }
     },
     "Appearance" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzhled"
+          }
+        }
+      }
     },
     "Auth_AccessCode" : {
       "extractionState" : "manual",
@@ -294,6 +373,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enter personal number"
+          }
+        }
+      }
+    },
+    "Auth_EnterQRCode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zadat QR kód"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter QR Code"
           }
         }
       }
@@ -476,6 +572,23 @@
         }
       }
     },
+    "Auth_QRCAC" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR kód / Přístupový kód"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR Code / Access Code"
+          }
+        }
+      }
+    },
     "Auth_SavedAccounts" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -537,9 +650,6 @@
     "Call" : {
 
     },
-    "Camera" : {
-
-    },
     "Cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -581,14 +691,42 @@
     "Client API URL" : {
 
     },
-    "Clonka" : {
-
-    },
     "Close" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zavřít"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
     },
     "Comments" : {
 
+    },
+    "Confirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potvrdit"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm"
+          }
+        }
+      }
     },
     "Contact" : {
 
@@ -626,16 +764,7 @@
     "Detail" : {
 
     },
-    "Details" : {
-
-    },
     "Developer" : {
-
-    },
-    "Developer Mode" : {
-
-    },
-    "Developer Mode Active" : {
 
     },
     "Developer Tools" : {
@@ -662,9 +791,25 @@
 
     },
     "Done" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovo"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
     },
     "e.g. ABC-1234" : {
+
+    },
+    "Edit / Approve" : {
 
     },
     "Email" : {
@@ -676,19 +821,27 @@
     "email@example.com" : {
 
     },
-    "Employee Portal" : {
-
-    },
-    "Enter developer password" : {
-
+    "Empty" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"\""
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"\""
+          }
+        }
+      }
     },
     "Enter group name" : {
 
     },
     "Enter License Plate" : {
-
-    },
-    "Enter QR Code" : {
 
     },
     "Environment" : {
@@ -795,6 +948,9 @@
     "Info" : {
 
     },
+    "Key" : {
+      "extractionState" : "manual"
+    },
     "Language" : {
 
     },
@@ -825,9 +981,6 @@
       }
     },
     "Log Entries" : {
-
-    },
-    "Logout" : {
 
     },
     "MaintenanceView_Description" : {
@@ -865,6 +1018,7 @@
       }
     },
     "Manual" : {
+      "extractionState" : "stale",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -931,6 +1085,23 @@
         }
       }
     },
+    "Menu_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu"
+          }
+        }
+      }
+    },
     "Message Sent" : {
 
     },
@@ -993,13 +1164,7 @@
     "Page ID: %lld" : {
 
     },
-    "Password" : {
-
-    },
     "Platform" : {
-
-    },
-    "PN: %@" : {
 
     },
     "Post" : {
@@ -1127,6 +1292,12 @@
     "Post_Notice" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nevím co je notice"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1153,13 +1324,151 @@
       }
     },
     "Profile" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil"
+          }
+        }
+      }
     },
-    "QR Code / Access Code" : {
-
+    "Profile_About" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O aplikaci"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        }
+      }
     },
-    "Remove Photo" : {
-
+    "Profile_Details" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detaily"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Details"
+          }
+        }
+      }
+    },
+    "Profile_Logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odhlásit"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logout"
+          }
+        }
+      }
+    },
+    "Profile_RemovePhoto" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstranit fotku"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove Photo"
+          }
+        }
+      }
+    },
+    "Profile_Settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavení"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "Profile_TesterAccount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testovací účet"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tester Account"
+          }
+        }
+      }
+    },
+    "Profile_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile"
+          }
+        }
+      }
+    },
+    "Profile_User" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uživatel"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User"
+          }
+        }
+      }
     },
     "Result" : {
 
@@ -1171,9 +1480,6 @@
 
     },
     "Save Custom URLs" : {
-
-    },
-    "Scan QR Code" : {
 
     },
     "Scan to verify" : {
@@ -1196,6 +1502,94 @@
     },
     "Settings" : {
 
+    },
+    "Settings_AboutApp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About App"
+          }
+        }
+      }
+    },
+    "Settings_Appearance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        }
+      }
+    },
+    "Settings_Language" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Language"
+          }
+        }
+      }
+    },
+    "Settings_Theme" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Theme"
+          }
+        }
+      }
+    },
+    "Settings_ThemeDark" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark"
+          }
+        }
+      }
+    },
+    "Settings_ThemeLight" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light"
+          }
+        }
+      }
+    },
+    "Settings_ThemeSystem" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        }
+      }
+    },
+    "Settings_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
     },
     "Slow Requests" : {
 
@@ -1364,6 +1758,12 @@
     "Survey_QuestionCount" : {
       "extractionState" : "manual",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Question %1$lld of %2$lld"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1511,9 +1911,6 @@
     "System" : {
 
     },
-    "Tester Account" : {
-
-    },
     "Thank you for your feedback." : {
 
     },
@@ -1528,6 +1925,23 @@
     },
     "Trust Box" : {
 
+    },
+    "Unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neznámé"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        }
+      }
     },
     "UnknownModule_Description" : {
       "extractionState" : "manual",
@@ -1567,9 +1981,6 @@
 
     },
     "Version" : {
-
-    },
-    "Version 1.0.0" : {
 
     },
     "Webservice URL" : {

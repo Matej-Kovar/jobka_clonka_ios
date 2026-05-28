@@ -197,7 +197,7 @@ struct SurveyDetailView: View {
                                     .font(.callout)
                                     .foregroundStyle(.secondary)
                             }
-                            Text(att.displayName ?? "Attachment")
+                            Text(att.displayName ?? L10n.Post_Attachments.string)
                                 .font(.callout)
                                 .lineLimit(1)
                             Spacer()
@@ -374,7 +374,7 @@ struct SurveyDetailView: View {
     private func textAnswerView(_ q: SurveyQuestion) -> some View {
         if viewModel.isSubmitted {
             // Read-only display of submitted/answered text
-            Text(viewModel.answers[q.questionId] ?? "—")
+            Text(viewModel.answers[q.questionId] ?? L10n.Unknown.string)
                 .font(.body)
                 .padding(12)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -386,7 +386,7 @@ struct SurveyDetailView: View {
                 }
         } else {
             let binding = Binding<String>(
-                get: { viewModel.answers[q.questionId] ?? "" },
+                get: { viewModel.answers[q.questionId] ?? L10n.Unknown.string },
                 set: { viewModel.answers[q.questionId] = $0 }
             )
             if q.isTextArea == true {

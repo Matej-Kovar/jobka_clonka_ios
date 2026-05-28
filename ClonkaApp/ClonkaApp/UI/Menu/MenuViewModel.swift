@@ -22,7 +22,7 @@ final class MenuViewModel: ObservableObject {
     }
 
     var currentTitle: String {
-        folderStack.last?.title ?? companyName ?? "Menu"
+        folderStack.last?.title ?? companyName ?? L10n.Menu_Title.string
     }
 
     var isInFolder: Bool {

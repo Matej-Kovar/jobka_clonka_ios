@@ -35,7 +35,7 @@ struct MainTabView: View {
                                 Circle()
                                     .fill(Color(hex: profile.color ?? "#666"))
                                     .frame(width: 32, height: 32)
-                                Text(profile.initials ?? "?")
+                                Text(profile.initials ?? L10n.Unknown.string)
                                     .font(.system(size: 12, weight: .bold))
                                     .foregroundStyle(.white)
                             }
@@ -315,11 +315,11 @@ struct MainTabView: View {
                                     HTMLContentView(html: html)
                                         .frame(minHeight: 200)
                                 } else {
-                                    Text(detail?.text ?? "")
+                                    Text(detail?.text ?? L10n.Empty.string)
                                         .foregroundColor(.primary)
                                 }
                             } else {
-                                Text("")
+                                Text(L10n.Empty.key)
                             }
                         }
                         .padding()
@@ -342,7 +342,7 @@ struct MainTabView: View {
                             Button {
                                 viewModel.dismissCurrentPopup(approved: true)
                             } label: {
-                                Text(popup.textApprovalButton ?? "Confirm")
+                                Text(popup.textApprovalButton ?? L10n.Confirm.string)
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .frame(maxWidth: .infinity)
@@ -360,7 +360,7 @@ struct MainTabView: View {
                             Button {
                                 viewModel.dismissCurrentPopup()
                             } label: {
-                                Text("Close")
+                                Text(L10n.Close.key)
                                     .font(.headline)
                                     .frame(maxWidth: .infinity)
                                     .padding()

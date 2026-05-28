@@ -161,7 +161,7 @@ struct SPDFViewer: View {
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button(action: { dismiss() }) {
-                            Text("Close")
+                            Text(L10n.Close.key)
                         }
                     }
                 }

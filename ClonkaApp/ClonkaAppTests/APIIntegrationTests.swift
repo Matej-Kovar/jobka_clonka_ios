@@ -244,4 +244,88 @@ final class APIIntegrationTests: XCTestCase {
             print("Stream posts fetch: \(error)")
         }
     }
+
+    // MARK: - Canteen Tests
+
+    func testFetchCanteen() async throws {
+        let result = await CanteenAPIService.fetchCanteens(companyMenuItemId: 29783)
+        switch result {
+        case .success(let canteens):
+            print("Canteens: \(canteens.count)")
+        case .failure(let error):
+            print("Canteens fetch (expected to fail on test server): \(error)")
+        }
+    }
+
+    // MARK: - Card Tests
+
+    func testFetchCard() async throws {
+        let result = await CardAPIService.fetchCard(companyMenuItemId: 29784)
+        switch result {
+        case .success(let card):
+            print("Card fetched: \(card.CardNumber ?? "No number")")
+        case .failure(let error):
+            print("Card fetch (expected to fail on test server): \(error)")
+        }
+    }
+
+    // MARK: - License Plate Tests
+
+    func testLicensePlateSearch() async throws {
+        let result = await LicensePlateAPIService.processImage(licensePlate: "TEST-123")
+        switch result {
+        case .success(let response):
+            print("License plate response: \(response.Displayname ?? "Unknown")")
+        case .failure(let error):
+            print("License plate check: \(error)")
+        }
+    }
+
+    // MARK: - Data List Tests
+
+    func testFetchDataList() async throws {
+        let result = await DataListAPIService.fetchList(companyMenuItemId: 29788)
+        switch result {
+        case .success(let list):
+            print("Data list items: \(list.Items?.count ?? 0)")
+        case .failure(let error):
+            print("Data list fetch: \(error)")
+        }
+    }
+
+    // MARK: - Forms Tests
+
+    func testFetchFormFields() async throws {
+        let result = await FormAPIService.fetchFields(companyMenuItemId: 29781)
+        switch result {
+        case .success(let fields):
+            print("Form fields: \(fields.count)")
+        case .failure(let error):
+            print("Form fields fetch: \(error)")
+        }
+    }
+
+    // MARK: - Custom Pages Tests
+
+    func testFetchCustomPages() async throws {
+        let result = await CustomPageAPIService.fetchPages(companyMenuItemId: 99999)
+        switch result {
+        case .success(let pages):
+            print("Custom pages: \(pages.count)")
+        case .failure(let error):
+            print("Custom pages fetch: \(error)")
+        }
+    }
+
+    // MARK: - Television Tests
+
+    func testFetchTelevision() async throws {
+        let result = await TelevisionAPIService.fetchDetail(companyMenuItemId: 99999)
+        switch result {
+        case .success(let detail):
+            print("Television detail: \(detail.DisplayName ?? "Unknown")")
+        case .failure(let error):
+            print("Television detail fetch: \(error)")
+        }
+    }
 }

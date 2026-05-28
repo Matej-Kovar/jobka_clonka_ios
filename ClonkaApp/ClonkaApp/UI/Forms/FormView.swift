@@ -3,14 +3,16 @@ import SwiftUI
 struct FormView: View {
     let moduleId: Int
     let title: String
+    let dataId: String?
     @StateObject private var viewModel: FormViewModel
     @State private var successAnimationTrigger = false
     @EnvironmentObject private var appState: AppState
     
-    init(moduleId: Int, title: String = "Form") {
+    init(moduleId: Int, title: String = "Form", dataId: String? = nil) {
         self.moduleId = moduleId
         self.title = title
-        _viewModel = StateObject(wrappedValue: FormViewModel(moduleId: moduleId))
+        self.dataId = dataId
+        _viewModel = StateObject(wrappedValue: FormViewModel(moduleId: moduleId, dataId: dataId))
     }
 
     var body: some View {
