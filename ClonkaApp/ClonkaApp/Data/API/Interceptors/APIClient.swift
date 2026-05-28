@@ -513,14 +513,23 @@ struct ValidationMessage: Decodable {
         // Also support camelCase from Client.Api
         case codeLower = "code"
         case messageLower = "message"
+        // Support Property and DisplayName from Webservice.Core form validation responses
+        case property = "Property"
+        case propertyLower = "property"
+        case displayName = "DisplayName"
+        case displayNameLower = "displayName"
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         code = try container.decodeIfPresent(String.self, forKey: .code)
             ?? container.decodeIfPresent(String.self, forKey: .codeLower)
+            ?? container.decodeIfPresent(String.self, forKey: .property)
+            ?? container.decodeIfPresent(String.self, forKey: .propertyLower)
         message = try container.decodeIfPresent(String.self, forKey: .message)
             ?? container.decodeIfPresent(String.self, forKey: .messageLower)
+            ?? container.decodeIfPresent(String.self, forKey: .displayName)
+            ?? container.decodeIfPresent(String.self, forKey: .displayNameLower)
     }
 }
 
